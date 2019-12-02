@@ -1,4 +1,4 @@
-package v2;
+package sample;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,4 +30,3 @@ public class CSVreader_mp {
         return email_pass;
     }
 }
-
