@@ -1,4 +1,4 @@
-package mp_v1;
+package mp.src.mp_v1;
 
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;

@@ -1,4 +1,4 @@
-package logbook_v1;
+package logbook.src.logbook_v1;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

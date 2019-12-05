@@ -1,4 +1,4 @@
-package logbook_v1;
+package logbook.src.logbook_v1;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -65,20 +65,20 @@ public class Controller_lb_v1_1 implements Initializable
 
     public void buttonAdd(ActionEvent actionEvent) {
         System.out.println("YES");
-        //Today today = new Today(11,22,33,44,55,66);
-        Today today = new Today(PreBinput.getText(), PostBinput.getText(), PreLinput.getText(), PostLinput.getText(),
+        //Today Today = new Today(11,22,33,44,55,66);
+        Today Today = new Today(PreBinput.getText(), PostBinput.getText(), PreLinput.getText(), PostLinput.getText(),
                PreDinput.getText(), PostDinput.getText());
-        inputTable.getItems().add(today);
+        inputTable.getItems().add(Today);
         //Integer PreB = PreBinput.getText();
     }
 
-    public void EditValue(TableColumn.CellEditEvent<Today, String> todayStringCellEditEvent) {
-        Today today = inputTable.getSelectionModel().getSelectedItem();
-        today.setPreB(todayStringCellEditEvent.getNewValue());
-        today.setPostB(todayStringCellEditEvent.getNewValue());
-        today.setPreL(todayStringCellEditEvent.getNewValue());
-        today.setPostL(todayStringCellEditEvent.getNewValue());
-        today.setPreD(todayStringCellEditEvent.getNewValue());
-        today.setPostD(todayStringCellEditEvent.getNewValue());
+    public void EditValue(TableColumn.CellEditEvent<Today, String> TodayStringCellEditEvent) {
+        Today Today = inputTable.getSelectionModel().getSelectedItem();
+        Today.setPreB(TodayStringCellEditEvent.getNewValue());
+        Today.setPostB(TodayStringCellEditEvent.getNewValue());
+        Today.setPreL(TodayStringCellEditEvent.getNewValue());
+        Today.setPostL(TodayStringCellEditEvent.getNewValue());
+        Today.setPreD(TodayStringCellEditEvent.getNewValue());
+        Today.setPostD(TodayStringCellEditEvent.getNewValue());
     }
 }

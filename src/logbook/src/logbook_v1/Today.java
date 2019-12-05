@@ -1,4 +1,4 @@
-package logbook_v1;
+package logbook.src.logbook_v1;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.SimpleIntegerProperty;

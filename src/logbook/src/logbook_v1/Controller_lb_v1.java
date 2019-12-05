@@ -1,4 +1,4 @@
-package logbook_v1;
+package logbook.src.logbook_v1;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,9 +21,6 @@ import java.util.ResourceBundle;
 
 public class Controller_lb_v1 implements Initializable
 {
-
-
-
     @FXML
     public TableView<Today> inputTable;
     //public TableColumn<Today, String> gluc_carb;
@@ -47,7 +44,6 @@ public class Controller_lb_v1 implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-
         PreB.setCellValueFactory(new PropertyValueFactory<Today,Integer>("PreB"));
         PostB.setCellValueFactory(new PropertyValueFactory<Today,Integer>("PostB"));
         PreL.setCellValueFactory(new PropertyValueFactory<Today,Integer>("PreL"));
@@ -59,15 +55,12 @@ public class Controller_lb_v1 implements Initializable
 
         //inputTable.setEditable(true);
         //PreB.setCellValueFactory(TextFieldTableCell.forTableColumn());
-
     }
 
-    private ObservableList<Today> data = FXCollections.observableArrayList(
-       new Today("1" , "2" , "3" , "4" , "5", "6" ));
-        // new Today("Carbs Eaten"  , 11, 22, 33, 44, 55, 66)
-        //);
+    private ObservableList<Today> data = FXCollections.observableArrayList(new Today("1" , "2" , "3" , "4" , "5", "6" ));
+        // new Today("Carbs Eaten"  , 11, 22, 33, 44, 55, 66));
 
-    //final ObservableList<Today> data = FXCollections.observableArrayList(
+    // final ObservableList<Today> data = FXCollections.observableArrayList(
            // new Today("Blood Glucose", 1 , 2 , 3 , 4 , 5, 6 ),
              // new Today("Carbs Eaten"  , 11, 22, 33, 44, 55, 66)
     //);
@@ -77,9 +70,7 @@ public class Controller_lb_v1 implements Initializable
 
                 //System.out.println("YUP");
 
-
         //}
-
 
 
     //public void buttonAdd(ActionEvent actionEvent) {
@@ -88,7 +79,6 @@ public class Controller_lb_v1 implements Initializable
        //inputTable.getItems().add(today);
 
     //}
-
 
     //public void buttonAdd(ActionEvent actionEvent) {
         //Today today = new Today(gluc_carb_input.getText(), gluc_input.getText(), carb_input.getText(), gluc_input2.getText(), carb_input2.getText(), gluc_input3.getText(), carb_input3.getText());
