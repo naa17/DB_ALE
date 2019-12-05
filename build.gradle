@@ -1,0 +1,15 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+    id 'application'
+}
+
+/*dependencies {
+    runtimeOnly group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+
+}*/
+
+application {
+    // Define the main class for the application
+    mainClassName = 'DB_ALE.Main'
+}
