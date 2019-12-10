@@ -2,8 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../mp/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/out/production/mp_v2/Images/Logo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/out/production/mp_v2/Images/Unknown.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/out/production/mp_v2/META-INF/mp_v2.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/out/production/mp_v2/mp_v2/CSVreader_mp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/out/production/mp_v2/mp_v2/Controller_mp_v2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/out/production/mp_v2/mp_v2/Main_mp_v2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/src/Images/Logo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/src/Images/Unknown.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/src/mp_v1/CSVreader_mp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/src/mp_v1/Controller_mp_v1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/src/mp_v1/Main_mp_v1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/src/mp_v1/mp_v1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mp/src/mp_v1/mp_v1_1.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logbook_v1/Today.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logbook_v1/Today.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/logbook/logbook_v1/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/logbook/logbook_v1/ControllerV2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/logbook/logbook_v1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/logbook/logbook_v1/logbook_v1.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/logbook/logbook_v1/logbook_v2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/logbook/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logbook_v1/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logbook_v1/Controller_lb_v1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logbook_v1/ControllerV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logbook_v1/Controller_lb_v1_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logbook_v1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logbook_v1/Main_lb_v1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logbook_v1/logbook_v1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logbook_v1/lb_v1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logbook_v1/logbook_v2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logbook_v1/lb_v1_1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mp_v2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/mp_v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../mp/mp_v1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/out/production/mp_v2/Images/Logo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/out/production/mp_v2/Images/Unknown.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/out/production/mp_v2/sample/CSVreader_mp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/out/production/mp_v2/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/out/production/mp_v2/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/out/production/mp_v2/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/out/production/mp_v2/sample/sample_v1.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/src/Images/Logo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/src/Images/Unknown.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/src/sample/CSVreader_mp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/src/sample/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/src/sample/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../mp/out/production/mp_v2/mp_v2/mp_v2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mp_v2/src/sample/sample_v1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../mp/out/production/mp_v2/mp_v2/mp_v2_1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/.idea/sample.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/background.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/v1.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/v1_1.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/v2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/v3.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample/v4.fxml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,19 +126,6 @@
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/logbook_v1/Main_lb_v1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -85,37 +143,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1905" />
-    <option name="width" value="1950" />
-    <option name="height" value="2175" />
-  </component>
   <component name="ProjectId" id="1UCXCz9a9iH6UPfahI4VT6Ch5Yg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="logbook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="logbook" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
@@ -130,7 +163,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -205,6 +238,7 @@
       </method>
     </configuration>
     <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -240,47 +274,8 @@
       <workItem from="1574934289388" duration="4107000" />
       <workItem from="1574942839086" duration="12052000" />
       <workItem from="1575202895670" duration="24122000" />
-      <workItem from="1575551784355" duration="3000" />
-      <workItem from="1575980250705" duration="25000" />
-      <workItem from="1575980312918" duration="610000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="638000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1292" height="732" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2540453" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -291,28 +286,8 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
           </value>
         </entry>
       </map>
@@ -320,15 +295,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/logbook_v1/Main_lb_v1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
