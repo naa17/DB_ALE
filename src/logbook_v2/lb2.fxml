@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logbook_v2.Controller_lb2">
+   <children>
+      <Text layoutX="44.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comprehensive Logbook" />
+      <TextField id="preB_gluc" fx:id="preB_gluc" layoutX="138.0" layoutY="246.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <Text layoutX="123.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Glucose" />
+      <Text layoutX="217.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carbs Eaten" />
+      <Text layoutX="298.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Dose" />
+      <TextField id="postB_gluc" fx:id="postB_gluc" layoutX="138.0" layoutY="278.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="preL_gluc" fx:id="preL_gluc" layoutX="138.0" layoutY="312.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="postL_gluc" fx:id="postL_gluc" layoutX="138.0" layoutY="345.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="preD_gluc" fx:id="preD_gluc" layoutX="138.0" layoutY="378.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="postD_gluc" fx:id="postD_gluc" layoutX="138.0" layoutY="411.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="bed_gluc" fx:id="bed_gluc" layoutX="138.0" layoutY="445.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="preB_carbs" fx:id="preB_carbs" layoutX="225.0" layoutY="245.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="postB_carbs" fx:id="postB_carbs" layoutX="225.0" layoutY="277.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="preL_carbs" fx:id="preL_carbs" layoutX="225.0" layoutY="311.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="postL_carbs" fx:id="postL_carbs" layoutX="225.0" layoutY="344.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="preD_carbs" fx:id="preD_carbs" layoutX="225.0" layoutY="377.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="postD_carbs" fx:id="postD_carbs" layoutX="225.0" layoutY="410.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="bed_carbs" fx:id="bed_carbs" layoutX="225.0" layoutY="444.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="preB_ins" fx:id="preB_ins" layoutX="307.0" layoutY="245.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="postB_ins" fx:id="postB_ins" layoutX="307.0" layoutY="277.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="preL_ins" fx:id="preL_ins" layoutX="307.0" layoutY="311.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="postL_ins" fx:id="postL_ins" layoutX="307.0" layoutY="344.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="preD_ins" fx:id="preD_ins" layoutX="307.0" layoutY="377.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="postD_ins" fx:id="postD_ins" layoutX="307.0" layoutY="410.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <TextField id="bed_ins" fx:id="bed_ins" layoutX="307.0" layoutY="444.0" onAction="#addVals" prefHeight="25.0" prefWidth="47.0" />
+      <Button id="add_Button" layoutX="50.0" layoutY="214.0" mnemonicParsing="false" onAction="#addVals" text="Add" />
+      <TableView layoutX="22.0" layoutY="85.0" prefHeight="109.0" prefWidth="762.0">
+        <columns>
+          <TableColumn prefWidth="110.0" text="Before Breakfast" />
+          <TableColumn prefWidth="110.0" text="After Breakfast" />
+            <TableColumn prefWidth="110.0" text="Before Lunch" />
+            <TableColumn minWidth="0.0" prefWidth="110.0" text="After Lunch" />
+            <TableColumn prefWidth="110.0" text="Before Dinner" />
+            <TableColumn prefWidth="110.0" text="After Dinner" />
+            <TableColumn prefWidth="110.0" text="Bedtime" />
+        </columns>
+      </TableView>
+      <Text layoutX="30.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Before Brekfast" />
+      <Text layoutX="31.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="After Breakfast" />
+      <Text layoutX="35.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Before Lunch" />
+      <Text layoutX="39.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="After Lunch" />
+      <Text layoutX="32.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Before Dinner" />
+      <Text layoutX="40.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="After Dinner" />
+      <Text layoutX="48.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bedtime" />
+      <BarChart layoutX="403.0" layoutY="250.0" prefHeight="231.0" prefWidth="341.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>
