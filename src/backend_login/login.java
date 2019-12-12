@@ -1,4 +1,4 @@
-//This code uses prepared statements
+package backend_login;//This code uses prepared statements
 //preferred because: Never insert user input directly into your SQL query. You are giving the user the opportunity to do anything they want in your database
 
 import java.sql.*;

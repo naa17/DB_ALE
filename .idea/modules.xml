@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DB_ALE.iml" filepath="$PROJECT_DIR$/.idea/modules/DB_ALE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DB_ALE.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DB_ALE.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DB_ALE.test.iml" filepath="$PROJECT_DIR$/.idea/modules/DB_ALE.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/main_page.iml" filepath="$PROJECT_DIR$/main_page.iml" />
     </modules>
   </component>

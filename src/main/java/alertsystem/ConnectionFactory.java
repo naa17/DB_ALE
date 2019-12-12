@@ -1,4 +1,4 @@
-package backend_login;
+package alertsystem;
 
 import java.net.URI;
 import java.sql.Connection;
