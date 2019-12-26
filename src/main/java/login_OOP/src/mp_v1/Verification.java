@@ -1,4 +1,4 @@
-package mp_v1;
+package login_OOP.src.mp_v1;
 
 public class Verification {
     public String email;

@@ -1,6 +1,6 @@
-package mp_v1;
+package login_OOP.src.mp_v1;
 
-import com.sun.deploy.security.SelectableSecurityManager;
+//import com.sun.deploy.security.SelectableSecurityManager;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -57,21 +57,21 @@ import java.util.List;
                     Verification verification = new Verification(email, passw);
 
                     // CSV code below - delete if OOP is successful
-                    File file = new File("logindetails.csv");
-                    if (file.createNewFile()){
-                        System.out.println("Done");
+                    //File file = new File("logindetails.csv");
+                    //if (file.createNewFile()){
+                        //System.out.println("Done");
 
-                        FileWriter csvWriter = new FileWriter("logindetails.csv");
-                        csvWriter.append(loginDetails.get(0));
-                        csvWriter.append(",");
-                        csvWriter.append(loginDetails.get(1));
+                        //FileWriter csvWriter = new FileWriter("logindetails.csv");
+                        //csvWriter.append(loginDetails.get(0));
+                        //csvWriter.append(",");
+                        //csvWriter.append(loginDetails.get(1));
 
-                        csvWriter.flush();
-                        csvWriter.close();
+                        //csvWriter.flush();
+                        //csvWriter.close();
 
-                        List<String> email_pass = CSVreader_mp.readCSV("logindetails.csv");
+                        //List<String> email_pass = CSVreader_mp.readCSV("logindetails.csv");
 
-                    }else System.out.println("You have a problem :(");
+                    //}else System.out.println("You have a problem :(");
                 }
 
 

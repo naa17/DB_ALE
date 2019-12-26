@@ -1,4 +1,4 @@
-package mp_v1;
+package login_OOP.src.mp_v1;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
