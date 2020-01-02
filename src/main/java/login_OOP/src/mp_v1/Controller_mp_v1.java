@@ -1,19 +1,13 @@
 package login_OOP.src.mp_v1;
 
 //import com.sun.deploy.security.SelectableSecurityManager;
-import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.scene.control.TextField;
 
-import java.io.*;
-import java.net.URL;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,33 +54,40 @@ import java.util.List;
                 if(filled==1)
                 {
                     // CLASS DECLARATION BELOW
-                    Verification verification = new Verification(email, passw);
+                    //Verification verification = new Verification();
 
                     // CSV code below - delete if OOP is successful
-                    File file = new File("logindetails.csv");
-                    if (file.createNewFile()){
-                        System.out.println("Done");
+                    //File file = new File("logindetails.csv");
+                    //if (file.createNewFile()){
+                        //System.out.println("Done");
 
-                        FileWriter csvWriter = new FileWriter("logindetails.csv");
-                        csvWriter.append(loginDetails.get(0));
-                        csvWriter.append(",");
-                        csvWriter.append(loginDetails.get(1));
+                        //FileWriter csvWriter = new FileWriter("logindetails.csv");
+                        //csvWriter.append(loginDetails.get(0));
+                        //csvWriter.append(",");
+                        //csvWriter.append(loginDetails.get(1));
 
-                        csvWriter.flush();
-                        csvWriter.close();
+                        //csvWriter.flush();
+                        //csvWriter.close();
 
-                        List<String> email_pass = CSVreader_mp.readCSV("logindetails.csv");
-                        Login.checkLogin(email_pass);
+                        //List<String> email_pass = CSVreader_mp.readCSV("logindetails.csv");
+                        //Login.checkLogin(email_pass);
 
-                        if (login_OOP.src.mp_v1.Login.getLogin()){
-                            System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
+                        Login.checkLogin(loginDetails);
+                        objectToJson.objectToJson(verificationDAO.getDetailsForEmail(email));
+
+                        try {
+                            if (login_OOP.src.mp_v1.Login.getLogin()){
+                            System.out.println("YOU HAVE SAFELY LOGGED IN O.O");}
                             //URL url2 = new File("/Users/admin/Documents/Java/group_project/DB_ALE/src/main/java/login_OOP/src/mp_v1/lb1_v2.fxml").toURI().toURL();
                             //Parent root2 = FXMLLoader.load(url2);
                             //Stage window2 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
                             //window2.setTitle("Logbook Page");
                             //window2.setScene(new Scene(root2, 650, 400));
                             //window2.show();
-                        }else {System.out.println("YUPPP NOT VORKING -.-");}
+                        }catch(Exception e){
+                            e.printStackTrace();
+                            //System.out.println("JUPP NOT VORWKKING");    // prints standard error
+                        }
 
 
                         }else System.out.println("You have a problem :(");
@@ -94,7 +95,7 @@ import java.util.List;
                 }
 
         }
-    }
+
 
 
 

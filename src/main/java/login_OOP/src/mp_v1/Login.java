@@ -30,7 +30,7 @@ public class Login {
             //Print out
             System.out.println("Invalid email - Register?");
         }
-
+    
         //Checking for password
         String dbPwd = rs.getString("password"); //from table
         if (password.equals(dbPwd)) {

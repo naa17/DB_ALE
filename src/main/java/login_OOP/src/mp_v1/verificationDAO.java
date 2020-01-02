@@ -1,11 +1,13 @@
+package login_OOP.src.mp_v1;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 public class verificationDAO implements DAO{
-    private Verification createVerification(ResultSet rs) {
+    private static Verification createVerification(ResultSet rs) {
         Verification p = new Verification();
         try {
-            p.setId(rs.getInt("id"));
+            //p.setId(rs.getInt("id"));
             p.setEmail(rs.getString("email"));
             p.setPassword(rs.getString("password"));
         } catch (SQLException ex) {
@@ -32,7 +34,7 @@ public class verificationDAO implements DAO{
         return list;
     }
 
-    public List<Verification> getDetailsForEmail(String email) {
+    public static List<Verification> getDetailsForEmail(String email) {
         String sql = "Select * from contact where email like '%" +
                 email + "%'";
         List<Verification> list = new ArrayList<>();
