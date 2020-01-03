@@ -74,6 +74,7 @@ import java.util.List;
 
                         Login.checkLogin(loginDetails);
                         objectToJson.objectToJson(verificationDAO.getDetailsForEmail(email));
+                        System.out.println("JSONised data: COMPLETE :D");
 
                         try {
                             if (login_OOP.src.mp_v1.Login.getLogin()){
