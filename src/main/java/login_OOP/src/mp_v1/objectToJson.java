@@ -1,4 +1,4 @@
-package login_OOP.src.mp_v1;//converts input (a list) to Json format
+package login_OOP.src.mp_v1;//converts input (a list of Verification objects) to Json format. Outputs a json string
 import com.google.gson.Gson;
 
 import java.util.List;

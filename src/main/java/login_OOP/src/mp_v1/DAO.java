@@ -1,5 +1,6 @@
 package login_OOP.src.mp_v1;
 
+//interface for the database connection details
 public interface DAO {
     public static final String DB_URL =
             "jdbc:postgresql://ec2-54-217-243-19.eu-west-1.compute.amazonaws.com:5432/d9j82vpkevcs4r";

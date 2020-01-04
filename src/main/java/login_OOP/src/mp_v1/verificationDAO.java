@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 public class verificationDAO implements DAO{
+    //creates a new Verification object (email, password) from the database
     private static Verification createVerification(ResultSet rs) {
         Verification p = new Verification();
         try {
@@ -14,6 +15,9 @@ public class verificationDAO implements DAO{
         }
         return p;
     }
+
+    //returns Verification objects
+    // corresponding to all database existing patients
     public List<Verification> getDetails() {
         String sql = "Select * from test order by name";
         List<Verification> list = new ArrayList<>();
@@ -34,6 +38,8 @@ public class verificationDAO implements DAO{
         return list;
     }
 
+    //returns Verification object list
+    //containing all patients that have matching email in the DB
     public static List<Verification> getDetailsForEmail(String email) {
         String sql = "Select * from contact where email like '%" +
                 email + "%'";
