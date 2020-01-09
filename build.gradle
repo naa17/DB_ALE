@@ -2,9 +2,12 @@ plugins {
     // Apply the java plugin to add support for Java
     id 'java'
     id 'application'
+    id 'war'
     id 'org.springframework.boot' version '2.0.5.RELEASE'
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'
 }
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
 
 dependencies {
     runtimeOnly group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
@@ -20,9 +23,22 @@ dependencies {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 application {
     // Define the main class for the application
     mainClassName = 'DB_ALE.Main'
 }
+war {
+    from {
+        // all of the library jar files used are to be zipped into the war file
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
