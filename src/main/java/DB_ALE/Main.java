@@ -20,7 +20,7 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws IOException {
         try{
-            URL url = new File("/Users/admin/Documents/Java/group_project/DB_ALE/src/main/java/login_OOP/src/mp_v1/mp_v1_1.fxml").toURI().toURL();
+            URL url = new File("/Users/Sarah/Documents/Year 3/Programming 3/DB_ALE/src/main/java/login_OOP/src/mp_v1/mp_v1_1.fxml").toURI().toURL();
             Parent root = FXMLLoader.load(url);
             primaryStage.setTitle("Login Page");
             primaryStage.setScene(new Scene(root, 800, 500));
