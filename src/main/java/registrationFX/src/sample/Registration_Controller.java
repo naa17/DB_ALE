@@ -81,7 +81,7 @@ public class Registration_Controller {
         }
 
 
-        if (filled == 1) {
+        if (filled == 1 && isValidEmailAddress(patient_Email) && isValidEmailAddress(doctor_Contact)) {
             System.out.println("ready to get rollinnn");
             //String name_no_spaces = patient_Name.replaceAll("\\s+", "");
             //System.out.println(name_no_spaces);
@@ -111,11 +111,29 @@ public class Registration_Controller {
             //doctor_Name, doctor_Contact, diabetes_Type, insulin_Type, insulin_Admin);
 
 
-        } else {
-            System.out.println("You have a problem :(");
+        } else if(!isValidEmailAddress(patient_Email)|| !isValidEmailAddress(doctor_Contact)){
+            showAlert("Invalid email address","The email you entered is not a valid email");
 
         }
 
+    }
+
+    //This function checks to see if the recipient's email address is valid or not
+    public static boolean isValidEmailAddress(String email) {
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(email);
+        return m.matches();
+    }
+
+    //This function creates alerts and pop-up windows
+    private static void showAlert(String header, String content)
+    {
+        Alert alert1 = new Alert(Alert.AlertType.WARNING);
+        alert1.setTitle("Warning Dialog");
+        alert1.setHeaderText(header);
+        alert1.setContentText(content);
+        alert1.showAndWait();
     }
 
 }

@@ -1,19 +1,22 @@
 package simple_logbook.src.sample;
 
+import alertsystem.JavaMail;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class logbookBackend {
 //
 //    private static String name1 = "a h";
 //    private static String name = name1.replaceAll("\\s+","");
 
-    public static void insertToDB(Today_v1_2 today, String name) {
+    public static void insertToDB(Today_v1_2 today, ArrayList<String> names, String login_email) {
 
         Connection conn = null;
         Statement stmt = null;
-        final String CREATE_TABLE_SQL="insert into "+ name+" (glucose, carbs, timesofday) VALUES ("+today.getGluc()+","+today.getCarb() +",'" +today.getTime()+"');";
+        final String CREATE_TABLE_SQL="insert into "+ names.get(1)+" (glucose, carbs, timesofday) VALUES ("+today.getGluc()+","+today.getCarb() +",'" +today.getTime()+"');";
 
         try {
 
@@ -23,8 +26,16 @@ public class logbookBackend {
             stmt.executeUpdate(CREATE_TABLE_SQL);
 
             System.out.println("Values inserted");
+            JavaMail mail = new JavaMail();
+
+            if (today.getTime().substring(0,2).equals("po")){
+                mail.mainEmail(login_email, names);
+            }
+
 
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
