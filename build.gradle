@@ -28,7 +28,7 @@ repositories {
 
 application {
     // Define the main class for the application
-    mainClassName = 'alertsystem.JavaMail'
+    mainClassName = 'DB_ALE.Main'
 }
 war {
     from {
