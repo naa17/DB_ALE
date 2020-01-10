@@ -5,7 +5,8 @@ import login_OOP.src.mp_v1.DAO;
 import java.sql.*;
 
 public class registrationBackend implements DAO {
-    public registrationBackend(){}
+    public registrationBackend() {
+    }
 
     //Input: user entered email from the registration page
     //Output: Boolean. False if the email already exists
@@ -28,7 +29,7 @@ public class registrationBackend implements DAO {
             }
             rs.close();
             conn.close();
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         //email has not yet been registered --> Can proceed to be registered.
@@ -42,7 +43,7 @@ public class registrationBackend implements DAO {
     public static void createLogbook(Patient p) {
 
         //Simple Logbook
-        if ( (p.getInsulinType().equals("No insulin intake")) & (p.getInsulinAdmin().equals("No insulin intake")) ) {
+        if ((p.getInsulinType().equals("No insulin intake")) & (p.getInsulinAdmin().equals("No insulin intake"))) {
             String name1 = p.getName();
             String name = name1.replaceAll("\\s+", "");
             final String CREATE_TABLE_SQL = "CREATE TABLE " + name + " ("
@@ -50,7 +51,6 @@ public class registrationBackend implements DAO {
                     + "timesofday VARCHAR(255),"
                     + "glucose numeric,"
                     + "carbs numeric)";
-
 
 
             Connection conn = null;
@@ -84,15 +84,18 @@ public class registrationBackend implements DAO {
     }
 
 
-        //registers the patient in the database
-    public static void registerPatient(Patient p){
+    //registers the patient in the database
+    public static void registerPatient(Patient p) {
+
+        p.setLogbookType(logbookType(p));
+
         String INSERT_USER_SQL = "INSERT INTO patientsfulldetails" +
                 "  (name, contact, email, password, doctorName, doctorContact, diabetesType, insulinType, insulinAdmin) VALUES " +
-                " (?, ?, ?, ?, ?,?,?,?,?);";
+                " (?, ?, ?, ?, ?,?,?,?,?,?);";
 
         Connection conn = null;
         PreparedStatement preparedStatement = null;
-        try{
+        try {
             conn = sample.ConnectionFactory.getConnection();
 
             preparedStatement = conn.prepareStatement(INSERT_USER_SQL);
@@ -105,6 +108,7 @@ public class registrationBackend implements DAO {
             preparedStatement.setString(7, p.getDiabetesType());
             preparedStatement.setString(8, p.getInsulinType());
             preparedStatement.setString(9, p.getInsulinAdmin());
+            preparedStatement.setString(10, p.getLogbookType());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -114,6 +118,19 @@ public class registrationBackend implements DAO {
     }
 
 
+    //determining the logbook type from user input in registration
+    public static String logbookType(Patient p){
+        if((p.getInsulinType().equals("No Insulin intake")) & (p.getInsulinAdmin().equals("No Insulin intake"))){
+            return "simple";
+        }
+        if((p.getInsulinAdmin()=="Insulin pump")){
+            return "intensive";
+        }
+        else{
+            return "comprehensive";
+        }
+    }
+}
 //    //Input: Object from Patient class
 //    //Void method: no output.
 //    //This method copies email/pwd into login verification table
@@ -146,4 +163,4 @@ public class registrationBackend implements DAO {
 //            e.printStackTrace();
 //        }
 //    }
-}
+

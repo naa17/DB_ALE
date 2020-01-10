@@ -10,7 +10,11 @@
       </configuration>
     </facet>
     <facet type="Osmorc" name="OSGi">
+<<<<<<< HEAD
       <configuration manifestGenerationMode="Manually" manifestLocation="MANIFEST.MF" jarfileLocation="DB_ALE.main.jar" outputPathType="OsgiOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+=======
+      <configuration manifestGenerationMode="Manually" manifestLocation="MANIFEST.MF" jarfileLocation="DB_ALE.main.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+>>>>>>> b44b747c1915197fe39066de72c4c4ddb21eb420
         <additionalProperties />
         <additionalJARContents />
       </configuration>
@@ -20,18 +24,88 @@
         <webroots>
           <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF/maven" relative="/META-INF/maven" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF/maven/javax.mail" relative="/META-INF/maven/javax.mail" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF/maven/javax.mail/javax.mail-api" relative="/META-INF/maven/javax.mail/javax.mail-api" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax/mail" relative="/javax/mail" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax/mail/event" relative="/javax/mail/event" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax/mail/internet" relative="/javax/mail/internet" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax/mail/search" relative="/javax/mail/search" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax/mail/util" relative="/javax/mail/util" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF/hk2-locator" relative="/META-INF/hk2-locator" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF/maven" relative="/META-INF/maven" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF/maven/com.sun.mail" relative="/META-INF/maven/com.sun.mail" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF/maven/com.sun.mail/javax.mail" relative="/META-INF/maven/com.sun.mail/javax.mail" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun" relative="/com/sun" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail" relative="/com/sun/mail" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail/auth" relative="/com/sun/mail/auth" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail/handlers" relative="/com/sun/mail/handlers" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail/iap" relative="/com/sun/mail/iap" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail/imap" relative="/com/sun/mail/imap" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail/imap/protocol" relative="/com/sun/mail/imap/protocol" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail/pop3" relative="/com/sun/mail/pop3" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail/smtp" relative="/com/sun/mail/smtp" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail/util" relative="/com/sun/mail/util" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com/sun/mail/util/logging" relative="/com/sun/mail/util/logging" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/javax/mail" relative="/javax/mail" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/javax/mail/event" relative="/javax/mail/event" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/javax/mail/internet" relative="/javax/mail/internet" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/javax/mail/search" relative="/javax/mail/search" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/javax/mail/util" relative="/javax/mail/util" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/com/sun" relative="/com/sun" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/com/sun/activation" relative="/com/sun/activation" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/com/sun/activation/registries" relative="/com/sun/activation/registries" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/com/sun/activation/viewers" relative="/com/sun/activation/viewers" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/javax" relative="/javax" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/javax/activation" relative="/javax/activation" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/META-INF/maven" relative="/META-INF/maven" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/META-INF/maven/com.google.code.gson" relative="/META-INF/maven/com.google.code.gson" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/META-INF/maven/com.google.code.gson/gson" relative="/META-INF/maven/com.google.code.gson/gson" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com/google" relative="/com/google" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com/google/gson" relative="/com/google/gson" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com/google/gson/annotations" relative="/com/google/gson/annotations" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com/google/gson/internal" relative="/com/google/gson/internal" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com/google/gson/internal/bind" relative="/com/google/gson/internal/bind" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com/google/gson/internal/bind/util" relative="/com/google/gson/internal/bind/util" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com/google/gson/reflect" relative="/com/google/gson/reflect" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com/google/gson/stream" relative="/com/google/gson/stream" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/spring-boot-starter-web-2.0.5.RELEASE.jar_bbd5fd2715598caab595fb477aee4295/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/META-INF/services" relative="/META-INF/services" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org" relative="/org" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql" relative="/org/postgresql" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/copy" relative="/org/postgresql/copy" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/core" relative="/org/postgresql/core" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/core/types" relative="/org/postgresql/core/types" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/core/v2" relative="/org/postgresql/core/v2" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/core/v3" relative="/org/postgresql/core/v3" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/ds" relative="/org/postgresql/ds" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/ds/common" relative="/org/postgresql/ds/common" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/ds/jdbc23" relative="/org/postgresql/ds/jdbc23" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/ds/jdbc4" relative="/org/postgresql/ds/jdbc4" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/fastpath" relative="/org/postgresql/fastpath" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/geometric" relative="/org/postgresql/geometric" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/gss" relative="/org/postgresql/gss" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/jdbc2" relative="/org/postgresql/jdbc2" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/jdbc2/optional" relative="/org/postgresql/jdbc2/optional" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/jdbc3" relative="/org/postgresql/jdbc3" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/jdbc3g" relative="/org/postgresql/jdbc3g" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/jdbc4" relative="/org/postgresql/jdbc4" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/largeobject" relative="/org/postgresql/largeobject" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/ssl" relative="/org/postgresql/ssl" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/translation" relative="/org/postgresql/translation" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/util" relative="/org/postgresql/util" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/xa" relative="/org/postgresql/xa" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/xa/jdbc3" relative="/org/postgresql/xa/jdbc3" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org/postgresql/xa/jdbc4" relative="/org/postgresql/xa/jdbc4" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/spring-boot-starter-json-2.0.5.RELEASE.jar_e50a0d1bb99dfcb6af2db6751ab121ec/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/spring-boot-starter-2.0.5.RELEASE.jar_52a87ddaf32e5be96e2d7a7aac99ac93/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/spring-boot-starter-tomcat-2.0.5.RELEASE.jar_9941f20af82bdf7d16eb209e0c775fd8/META-INF" relative="/META-INF" />

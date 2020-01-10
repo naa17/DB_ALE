@@ -15,6 +15,13 @@
           </node>
         </introspection-scope>
       </schema-mapping>
+<<<<<<< HEAD
+=======
+    </data-source>
+    <data-source name="d9j82vpkevcs4r@ec2-54-217-243-19.eu-west-1.compute.amazonaws.com" uuid="6b58ef5d-04a4-460e-81b4-91826a87c77b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <schema-mapping />
+>>>>>>> b44b747c1915197fe39066de72c4c4ddb21eb420
     </data-source>
   </component>
 </project>
