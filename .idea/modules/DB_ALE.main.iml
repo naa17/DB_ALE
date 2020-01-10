@@ -10,7 +10,7 @@
       </configuration>
     </facet>
     <facet type="Osmorc" name="OSGi">
-      <configuration manifestGenerationMode="Manually" manifestLocation="MANIFEST.MF" jarfileLocation="DB_ALE.main.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+      <configuration manifestGenerationMode="Manually" manifestLocation="MANIFEST.MF" jarfileLocation="DB_ALE.main.jar" outputPathType="OsgiOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties />
         <additionalJARContents />
       </configuration>
@@ -18,7 +18,7 @@
     <facet type="web" name="Web Gradle : DB_ALE-1.0-SNAPSHOT.war">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
+          <root url="file://C:\Users\Sarah\Documents\Year 3\Programming 3\DB_ALE\src\main\webapp" relative="/" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax" relative="/javax" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF" relative="/META-INF" />
@@ -29,6 +29,7 @@
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/javax" relative="/javax" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com" relative="/com" />
+<<<<<<< HEAD
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/spring-boot-starter-web-2.0.5.RELEASE.jar_bbd5fd2715598caab595fb477aee4295/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org" relative="/org" />
@@ -101,13 +102,53 @@
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/slf4j-api-1.7.25.jar_bd81d88ddc2dabd126adb2aa9cbee290/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/slf4j-api-1.7.25.jar_bd81d88ddc2dabd126adb2aa9cbee290/org" relative="/org" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/log4j-api-2.10.0.jar_1a6f35522c9ac50f819a658e6730f3b5" relative="/" />
+=======
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/javafx" relative="/javafx" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11-linux.jar_9bc680a24bb3d767b5393e5066c7f829/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11-linux.jar_9bc680a24bb3d767b5393e5066c7f829/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11-linux.jar_9bc680a24bb3d767b5393e5066c7f829" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11.jar_c46cdf859c136f089179e5b4caa39715/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11.jar_03d989cb6fe156f4d2b6de3f72103683/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org" relative="/org" />
+>>>>>>> 38056c6f2e551cb2e93f1dbe9846de106211bcf0
         </webroots>
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
+    <output url="file://$MODULE_DIR$/../../out/production/classes" />
     <exclude-output />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/javax" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11.jar_03d989cb6fe156f4d2b6de3f72103683/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/javafx" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11-linux.jar_9bc680a24bb3d767b5393e5066c7f829" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11-linux.jar_9bc680a24bb3d767b5393e5066c7f829/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11-linux.jar_9bc680a24bb3d767b5393e5066c7f829/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11.jar_c46cdf859c136f089179e5b4caa39715/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/javax" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org" />
     <content url="file://$MODULE_DIR$/../../src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
     </content>
@@ -117,42 +158,11 @@
     <orderEntry type="library" name="Gradle: com.sun.mail:javax.mail:1.5.3" level="project" />
     <orderEntry type="library" name="Gradle: javax.activation:activation:1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:linux:11" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:linux:11" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:11" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:linux:11" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:11" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" level="project" />
-    <orderEntry type="library" name="Gradle: org.hibernate.validator:hibernate-validator:6.0.12.Final" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.0.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.0.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:2.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-logging:2.0.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: javax.annotation:javax.annotation-api:1.3.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.0.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.0.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.0.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.0.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.0.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.6" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.6" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.6" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.yaml:snakeyaml:1.19" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.6" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:8.5.34" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:8.5.34" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:8.5.34" level="project" />
-    <orderEntry type="library" name="Gradle: javax.validation:validation-api:2.0.1.Final" level="project" />
-    <orderEntry type="library" name="Gradle: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml:classmate:1.3.4" level="project" />
-    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.10.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:1.7.25" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.0.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.6" level="project" />
-    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.2.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.10.0" level="project" />
   </component>
 </module>

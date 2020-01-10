@@ -76,7 +76,7 @@ import java.util.List;
                         try {
                             if (login_OOP.src.mp_v1.Login.getLogin()){
                                 System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
-                                URL url2 = new File("C:\\prg3_verFri\\DB_ALE\\src\\main\\java\\simple_logbook\\src\\sample\\lb_v1_2.fxml").toURI().toURL();
+                                URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
                                 Parent root2 = FXMLLoader.load(url2);
                                 Stage window2 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
                                 window2.setTitle("Logbook Page");
@@ -102,7 +102,7 @@ import java.util.List;
 
             if (getRegister()) {
                 System.out.println("YOU IN REGISTER");
-                URL url1 = new File("C:\\prg3_verFri\\DB_ALE\\src\\main\\java\\registrationFX\\src\\sample\\registration.fxml").toURI().toURL();
+                URL url1 = new File("registration.fxml").toURI().toURL();
                 Parent root1 = FXMLLoader.load((url1));
                 System.out.println("YEAH YOU HERE");
                 Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

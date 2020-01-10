@@ -13,6 +13,8 @@
           <node kind="database" qname="d9j82vpkevcs4r" />
         </introspection-scope>
       </schema-mapping>
+    <data-source name="d9j82vpkevcs4r@ec2-54-217-243-19.eu-west-1.compute.amazonaws.com" uuid="5d62edb2-e515-47fc-a92c-c85315ce1d54">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
     </data-source>
   </component>
 </project>

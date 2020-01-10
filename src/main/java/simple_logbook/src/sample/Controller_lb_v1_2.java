@@ -52,22 +52,6 @@ public class Controller_lb_v1_2 implements Initializable {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // load values from database into table - from the same day
     public void loadAdd(ActionEvent actionEvent) {
         System.out.println("load");

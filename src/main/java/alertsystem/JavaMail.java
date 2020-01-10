@@ -1,5 +1,8 @@
 package alertsystem;
 
+import alertsystem.ConnectionFactory;
+import alertsystem.EmailSender;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
