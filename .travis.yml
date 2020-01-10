@@ -17,8 +17,6 @@ env:
     - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
     - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar
     - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar
-    - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/lib/ant-javafx.jar
-    - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/lib/javafx-mx.jar
 deploy:
   provider: heroku
   api_key:
