@@ -1,8 +1,8 @@
 language: java
+os: windows
 jdk: openjdk8
 before_install:
   - chmod +x gradlew
-  - sudo apt install openjfx
 install:
   - ./gradlew assemble
 script:
