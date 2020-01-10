@@ -4,7 +4,7 @@
     <facet type="web" name="Web Gradle : DB_ALE-1.0-SNAPSHOT.war">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
+          <root url="file://C:\Users\Sarah\Documents\Year 3\Programming 3\DB_ALE\src\main\webapp" relative="/" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax" relative="/javax" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF" relative="/META-INF" />
@@ -34,8 +34,32 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
+    <output url="file://$MODULE_DIR$/../../out/production/classes" />
     <exclude-output />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/javax" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11.jar_03d989cb6fe156f4d2b6de3f72103683/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/javafx" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11-linux.jar_9bc680a24bb3d767b5393e5066c7f829" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11-linux.jar_9bc680a24bb3d767b5393e5066c7f829/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11-linux.jar_9bc680a24bb3d767b5393e5066c7f829/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-11.jar_c46cdf859c136f089179e5b4caa39715/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/javax" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org" />
     <content url="file://$MODULE_DIR$/../../src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
     </content>

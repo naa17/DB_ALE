@@ -10,11 +10,11 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/DB_ALE-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="prg3_verFri.DB_ALE.main/web/Web Gradle : DB_ALE-1.0-SNAPSHOT.war" />
+      <element id="javaee-facet-resources" facet="Programming 3.DB_ALE.main/web/Web Gradle : DB_ALE-1.0-SNAPSHOT.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="prg3_verFri.DB_ALE.main" />
-          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+          <element id="module-output" name="Programming 3.DB_ALE.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: javax.mail:javax.mail-api:1.5.3" />
