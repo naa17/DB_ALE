@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller_lb_v1_2 implements Initializable {
@@ -74,7 +75,7 @@ public class Controller_lb_v1_2 implements Initializable {
         buildData();
     }
 
-    public String findTable(String login_email) {
+    public ArrayList<String> findTable(String login_email) {
 
         Connection conn = null;
         Statement stmt = null;
@@ -91,11 +92,14 @@ public class Controller_lb_v1_2 implements Initializable {
             System.out.println("RS Sucksss");
             ResultSet rs = stmt.executeQuery(sql);
             System.out.println("uhm");
+            ArrayList<String> names = new ArrayList<String>();
             while (rs.next()) {
                 System.out.println(rs.getString("name"));
-                String name = rs.getString("name").replaceAll("\\s+", "");
-                System.out.println(name);
-                return name;
+                //String name = rs.getString("name").replaceAll("\\s+", "");
+                names.add(rs.getString("name"));
+                names.add(rs.getString("name").replaceAll("\\s+", ""));
+                System.out.println(names);
+                return names;
 
 
             }
@@ -117,7 +121,8 @@ public class Controller_lb_v1_2 implements Initializable {
         try {
             String login_email = Controller_mp_v1.email1;
             System.out.println(login_email);
-            String login_name = findTable(login_email);
+            ArrayList<String> login_names = findTable(login_email);
+            String login_name = login_names.get(1);
             String SQL = "Select * from " + login_name  ;
 
             Statement st = con.createStatement();
@@ -196,8 +201,8 @@ public void btnAdd(ActionEvent actionEvent) {
     table.getItems().add(newToday);
 
     String login_email = Controller_mp_v1.email1;
-    String login_name = findTable(login_email);
-    logbookBackend.insertToDB(newToday, login_name);
+    ArrayList<String> login_names = findTable(login_email);
+    logbookBackend.insertToDB(newToday, login_names, login_email);
 
 
 

@@ -1,29 +1,110 @@
 package alertsystem;
 
-import alertsystem.EmailSender;
-import alertsystem.ConnectionFactory;
-/*
-import org.postgresql.core.ConnectionFactory;
-*/
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JavaMail {
-    public static void main(String[] args) throws Exception {
-        /*Connection conn = ConnectionFactory.getConnection();
 
-        PreparedStatement ps =conn.prepareStatement("SELECT email, password from test WHERE email = ?");
-*/
-        int BGC_Average_upper, BGC_Average_lower, myBGC;
-        BGC_Average_upper = 4;
-        BGC_Average_lower = 7;
-        myBGC = 40;
-        if (myBGC>BGC_Average_upper || myBGC<BGC_Average_lower){
-            EmailSender.sendMail("krithika.balaji17@imperial.ac.uk", "Krithika Balaji");
+    //This is the main function that is run
+    public static void mainEmail(String login_email, ArrayList<String> names) throws Exception
+    {
+        //names.get(0) is name with spaces
+        //names.get(1) is name without spaces
+
+        //Initialize string statements for database
+        String getGlu = "SELECT glucose from " + names.get(1) + " WHERE timesofday LIKE 'po%'";
+        String getDoc = "SELECT doctorcontact, doctorname from patientsfulldetails WHERE email like '" + login_email +"'";
+
+        //Initialize arrays
+        ArrayList<String> doc = new ArrayList<>();
+        ArrayList<Double> glucoseList = new ArrayList<>();
+
+        //extract the values for doctor details and the list of glucose values
+        doc = (ArrayList<String>) extractDoctor(getDoc);
+        glucoseList = (ArrayList<Double>) extractGlucoseList(getGlu);
+        boolean sent = sendEmail(doc.get(0), doc.get(1), glucoseList, names.get(0));
+        String str;
+        if(sent == true) {
+            str = "Your glucose values are out of bounds - email has been sent to your doctor successfully!";
+            System.out.println(str);
         }
-        else{
-            System.out.println("Your BGC levels are fine! no email has been sent!");
+    }
+
+
+    //This function sends an email if it needs to be sent and the email address is valid
+    public static boolean sendEmail(String recipient, String recipient_name, ArrayList<Double> glucose, String patientName) throws Exception
+    {
+        boolean hasSent = false;
+
+        //Function checks to see if any values from the logbook are out of bounds
+        if (checkValues(glucose)) {
+            hasSent = EmailSender.sendMail(recipient, recipient_name, patientName);
         }
+
+        return hasSent;
+
+    }
+
+    public static List<Double> extractGlucoseList(String str) throws SQLException {
+        Connection conn = ConnectionFactory.getConnection();
+        //Create the sql string selecting the post breakfast, lunch and dinner BGC for the last entry
+
+        Statement s = conn.createStatement();
+        ResultSet rs = s.executeQuery(str);
+
+        ArrayList<Double> postglucose = new ArrayList<>();
+        double tempglu;
+        while(rs.next())
+        {
+            tempglu = Double.valueOf(rs.getString(1));
+            postglucose.add(tempglu); //This is glucose
+        }
+
+        return postglucose;
+    }
+
+    public static List<String> extractDoctor(String str) throws SQLException {
+        Connection conn = ConnectionFactory.getConnection();
+        //Create the sql string selecting the post breakfast, lunch and dinner BGC for the last entry
+
+        Statement s = conn.createStatement();
+        ResultSet rs = s.executeQuery(str);
+
+        ArrayList<String> doctor = new ArrayList<>();
+
+        while(rs.next())
+        {
+            doctor.add(rs.getString(1)); //This is email doctor
+            doctor.add(rs.getString(2)); //This is name doctor
+        }
+
+        return doctor;
+    }
+
+    // This function checks the database and returns a true or false depending on whether on not an email needs to be sent
+    public static boolean checkValues(ArrayList<Double> glucose)
+    {
+        //Setting up values
+        int BGC_Average_upper_post_b_glu, BGC_Average_lower_post_b_glu, count;
+        BGC_Average_upper_post_b_glu = 5;
+        BGC_Average_lower_post_b_glu = 9;
+        count = 0;
+
+        for(int i = 0; i < glucose.size(); i++)
+        {
+            if (glucose.get(i) > BGC_Average_upper_post_b_glu || glucose.get(i) < BGC_Average_lower_post_b_glu)
+            {
+                count = count + 1;
+            }
+        }
+
+        boolean value;
+        value = false;
+        if(count > 2) //If the person has 2 glucose values out of bounds
+        {
+            value = true;
+        }
+        return value;
     }
 }
