@@ -1,5 +1,4 @@
 package alertsystem;
-
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 import javax.mail.*;
@@ -7,27 +6,40 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import javax.sql.DataSource;
 import java.util.Properties;
+
 
 public class EmailSender
 {
-    /*public static void main(String[] args) throws Exception {
-        sendMail("krithika.balaji18@gmail.com"); //Note: sender and recipient is the same
-    }*/
-
-    public static void sendMail(String recipient, String recipient_name) throws Exception {
+    public static boolean sendMail(String recipient, String recipient_name) throws Exception {
         System.out.println("Preparing to send email...");
-        Properties properties = new Properties(); //used to configure the properties of the mail - it's a key-value store
+        boolean hasSent;
 
         //In order to send a mail using your application - need to configure minimum 4 fields
+        Session sess;
+        String myAccountEmail = "krithika.balaji18@gmail.com";
+        String password = "!gr@du@t3d!!";
+        sess = doPasswordAuthentication(myAccountEmail, password);
+        System.out.println(sess);
+        Message message = prepareMessage(sess, myAccountEmail, recipient, recipient_name);
+        System.out.println("I am entering the Transport.send(message) section...");
+        try{
+            Transport.send(message);
+            hasSent = true;
+        } catch(MessagingException e){
+            hasSent = false;
+        }
+
+        System.out.println("Message sent successfully!");
+        return hasSent;
+    }
+
+    public static Session doPasswordAuthentication(String myAccountEmail, String password) {
+        Properties properties = new Properties(); //used to configure the properties of the mail - it's a key-value store
         properties.put("mail.smtp.auth", "true"); //defines whether an authentication is required for the email server - for gmail it is mandatory to have a username and password
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");
-
-        String myAccountEmail = "krithika.balaji18@gmail.com";
-        String password = "!gr@du@t3d!!";
 
         Session session = Session.getInstance(properties, new Authenticator(){
             @Override
@@ -36,22 +48,17 @@ public class EmailSender
             }
         });
 
-        Message message = prepareMessage(session, myAccountEmail, recipient, recipient_name);
-        System.out.println("I am entering the Transport.send(message) section...");
-
-        Transport.send(message);
-
-        System.out.println("Message sent successfully!");
+        return session;
     }
 
-    private static Message prepareMessage(Session session, String myAccountEmail, String recipient, String recipient_name)
+    public static Message prepareMessage(Session session, String myAccountEmail, String recipient, String recipient_name)
     {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
 
-            String subjectString = "registrationFX.src.sample.Patient "+recipient_name + " needs your attention.";
+            String subjectString = "Patient "+recipient_name + " needs your attention.";
             message.setSubject(subjectString);
 
             //Create the message part
@@ -69,7 +76,7 @@ public class EmailSender
 
             //Working on the attachment
             messageBodyPart = new MimeBodyPart();
-            String filename = "C:/PRG3/SendEmailV2/src/main/java/lectureDBP.pdf";
+            String filename = "/Users/admin/Documents/Java/group_project/DB_ALE/src/main/java/alertsystem/lectureDBP.pdf";
             FileDataSource source = new FileDataSource(filename);
             messageBodyPart.setDataHandler(new DataHandler(source));
             messageBodyPart.setFileName(filename);

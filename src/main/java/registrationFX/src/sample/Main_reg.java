@@ -10,7 +10,7 @@ public class Main_reg extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("registration.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../../../../../registration.fxml"));
         primaryStage.setTitle("Registration Page");
         primaryStage.setScene(new Scene(root, 650, 400));
         primaryStage.show();
