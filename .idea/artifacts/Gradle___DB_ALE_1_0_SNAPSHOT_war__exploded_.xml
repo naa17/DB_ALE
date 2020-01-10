@@ -21,11 +21,6 @@
           <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.5.3" />
           <element id="library" level="project" name="Gradle: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.7" />
-          <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:linux:11" />
-          <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:linux:11" />
-          <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:11" />
-          <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:linux:11" />
-          <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:11" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.0.5.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.0.5.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter:2.0.5.RELEASE" />
@@ -46,8 +41,8 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.6" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.6" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.6" />
-          <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.19" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.6" />
+          <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.19" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:8.5.34" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:8.5.34" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:8.5.34" />
@@ -63,6 +58,11 @@
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.2.3" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-api:2.10.0" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/11/794488e3b1f4635d9a1b842bdc872a5eb8fd54ca/javafx-controls-11-linux.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11/4ab9edd8d481a420044c473fdb5718ccdd35c836/javafx-graphics-11-linux.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11/a736dd079047ec0b72b8c4970842a5c5e0c19f2f/javafx-graphics-11.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11/f8d1ced6047b010f1e3bb92dc060862179ce5897/javafx-base-11-linux.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11/9fcd3e8e3227ec97bf503f7991fad1f3b14d005/javafx-base-11.jar" />
         </element>
       </element>
     </root>
