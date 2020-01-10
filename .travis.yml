@@ -1,6 +1,7 @@
 language: java
 before_install:
   - chmod +x gradlew
+  - sude apt install openjfx
 script:
   - ./gradlew build --info
 before_cache:
