@@ -14,8 +14,7 @@ cache:
     - $HOME/.gradle/wrapper/
 env:
   global:
-    - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-    - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar
+    - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/bin
 deploy:
   provider: heroku
   api_key:
