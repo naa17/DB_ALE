@@ -6,6 +6,8 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.5'
 }
 version '1.0-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
 dependencies {
     runtimeOnly group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
