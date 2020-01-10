@@ -5,21 +5,28 @@ import java.util.ArrayList;
 import java.util.List;
 public class verificationDAO implements DAO{
     //creates a new Verification object (email, password) from the database
-    private static Verification createVerification(ResultSet rs) {
+    private static Verification createVerification(ResultSet rs) throws SQLException {
         Verification p = new Verification();
+        //p.setId(rs.getInt("id"));
         try {
-            //p.setId(rs.getInt("id"));
             p.setEmail(rs.getString("email"));
             p.setPassword(rs.getString("password"));
-        } catch (SQLException ex) {
-        }
+        }catch(SQLException ex){}
+        return p;
+    }
+
+    public static Verification createPatient(List<String> listname) {
+        Verification p = new Verification();
+        //p.setId(rs.getInt("id"));
+        p.setEmail(listname.get(0));
+        p.setPassword(listname.get(1));
         return p;
     }
 
     //returns Verification objects
     // corresponding to all database existing patients
     public List<Verification> getDetails() {
-        String sql = "Select * from test order by name";
+        String sql = "Select * from patientsfulldetails order by name";
         List<Verification> list = new ArrayList<>();
         try {
             Class.forName(DRIVER);
@@ -41,7 +48,7 @@ public class verificationDAO implements DAO{
     //returns Verification object list
     //containing all patients that have matching email in the DB
     public static List<Verification> getDetailsForEmail(String email) {
-        String sql = "Select * from contact where email like '%" +
+        String sql = "Select * from patientsfulldetails where email like '%" +
                 email + "%'";
         List<Verification> list = new ArrayList<>();
         try {

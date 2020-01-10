@@ -1,4 +1,4 @@
-package logbook_v1;
+package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,13 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Launcher_lb1 extends Application {
+public class Main_lb_v1_2 extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("lb1.fxml"));
-        primaryStage.setTitle("Logbook v1");
-        primaryStage.setScene(new Scene(root, 800, 400));
+        Parent root = FXMLLoader.load(getClass().getResource("lb_v1_2.fxml"));
+        primaryStage.setTitle("Simple Logbook");
+        primaryStage.setScene(new Scene(root, 650, 600));
         primaryStage.show();
     }
 
@@ -21,3 +21,4 @@ public class Launcher_lb1 extends Application {
         launch(args);
     }
 }
+

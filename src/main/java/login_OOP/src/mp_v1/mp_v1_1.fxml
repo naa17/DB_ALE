@@ -46,7 +46,7 @@
     </Button>
     <Line endX="100.0" layoutX="440.0" layoutY="237.0" startX="-100.0" />
     <Text layoutX="384.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  New to DB ALE ?" wrappingWidth="114.21875" />
-    <Button layoutX="385.0" layoutY="276.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="114.0" text="REGISTER NOW!" textFill="#f20101">
+    <Button layoutX="385.0" layoutY="276.0" mnemonicParsing="false" onAction="#regButton" prefHeight="40.0" prefWidth="114.0" text="REGISTER NOW!" textFill="#f20101">
         <font>
             <Font name="Avenir Heavy Oblique" size="12.0" />
         </font>

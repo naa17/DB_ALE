@@ -16,7 +16,7 @@ public class Login {
 
         Connection conn = ConnectionFactory.getConnection();
 
-        String sql = "SELECT email, password FROM test WHERE email = ?";
+        String sql = "SELECT email, password FROM patientsfulldetails WHERE email = ?";
 
         PreparedStatement ps =conn.prepareStatement(sql);
         ps.setString (1, email1);

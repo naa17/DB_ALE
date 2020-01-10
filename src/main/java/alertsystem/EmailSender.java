@@ -51,7 +51,7 @@ public class EmailSender
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
 
-            String subjectString = "Patient "+recipient_name + " needs your attention.";
+            String subjectString = "registrationFX.src.sample.Patient "+recipient_name + " needs your attention.";
             message.setSubject(subjectString);
 
             //Create the message part
