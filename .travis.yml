@@ -1,6 +1,5 @@
 language: java
-os: windows
-jdk: openjdk8
+jdk: openjdk10
 before_install:
   - chmod +x gradlew
 install:
