@@ -12,6 +12,8 @@ public class Patient {
     private String diabetesType;
     private String insulinType;
     private String insulinAdmin;
+    //added logbookType field
+    private String logbookType;
 
     public Patient(){
     }
@@ -77,6 +79,13 @@ public class Patient {
     }
     public void setInsulinAdmin(String InsulinAdmin) {
         this.insulinAdmin = InsulinAdmin;
+    }
+
+    public String getLogbookType() {
+        return logbookType;
+    }
+    public void setLogbookType(String Name) {
+        this.name = logbookType;
     }
 
     public Patient(String name, String contact, String email, String password,String doctorName, String doctorContact, String diabetesType,
