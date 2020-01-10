@@ -12,9 +12,7 @@ cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
-env:
-  global:
-    -JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
 deploy:
   provider: heroku
   api_key:
