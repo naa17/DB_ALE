@@ -19,14 +19,14 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: javax.mail:javax.mail-api:1.5.3" />
           <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.5.3" />
+          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.7" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:linux:11" />
-          <element id="library" level="project" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" />
-          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:linux:11" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:11" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:linux:11" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:11" />
+          <element id="library" level="project" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" />
         </element>
       </element>
     </root>
