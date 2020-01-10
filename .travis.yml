@@ -1,9 +1,11 @@
 language: java
 before_install:
   - chmod +x gradlew
-  - sudo apt install openjfx
+install:
+  - ./gradlew assemble
 script:
   - ./gradlew build --info
+  - gradle check
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
