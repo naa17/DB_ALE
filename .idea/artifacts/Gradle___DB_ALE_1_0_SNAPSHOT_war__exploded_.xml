@@ -10,50 +10,28 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/DB_ALE-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="prg3_verFri.DB_ALE.main/web/Web Gradle : DB_ALE-1.0-SNAPSHOT.war" />
+      <element id="javaee-facet-resources" facet="DB_ALE.main/web/Web Gradle : DB_ALE-1.0-SNAPSHOT.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="prg3_verFri.DB_ALE.main" />
-          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+          <element id="module-output" name="DB_ALE.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: javax.mail:javax.mail-api:1.5.3" />
           <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.5.3" />
+          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.7" />
+          <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:win:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:linux:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:win:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:12" />
-          <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:win:12" />
-          <element id="library" level="project" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" />
-          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:linux:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:win:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:linux:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:win:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:12" />
-<<<<<<< HEAD
           <element id="library" level="project" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jsimone/webapp-runner/8.5.11.3/16054a160c454e65c65c2236a18a202451a37085/webapp-runner-8.5.11.3.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-jasper/8.5.11/2b53bb3995fee912b4466bd03cd1040e2d7e4897/tomcat-embed-jasper-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/8.5.11/dfa65e7857d46630761c0571758a56f7cbd1e9ba/tomcat-embed-websocket-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/8.5.11/72761f51fc7cef3ee19d4aafc7adc605df9f611f/tomcat-embed-core-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-logging-juli/8.5.2/eb8d86e9972274272133c73a976ea744d9086cf1/tomcat-embed-logging-juli-8.5.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jasper/8.5.11/8427564a815f30317d1b3e305fa0f30b20589e32/tomcat-jasper-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jasper-el/8.5.11/f1f08934306df5ccf4a96152ef95b6284c3739fb/tomcat-jasper-el-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jsp-api/8.5.11/c99b2ed8354556a5885bb543a9b6c6ebdff1bf94/tomcat-jsp-api-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.beust/jcommander/1.48/bfcb96281ea3b59d626704f74bc6d625ff51cbce/jcommander-1.48.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/2852e6e05fbb95076fc091f6d1780f1f8fe35e0f/commons-io-2.5.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/8.5.11/60253815b897166903bf5ec41219c5bb15333a69/tomcat-embed-el-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/4.5.1/bee1367ac12fb6a20b422ff8711ebeb4f0a42316/ecj-4.5.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-util-scan/8.5.11/f3c7dc0d89c345001c09df8034ca491cc7cef073/tomcat-util-scan-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-api/8.5.11/3400a9d5d50d9aae375ba4499b5aa21d452765af/tomcat-api-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-servlet-api/8.5.11/41030742a5f4df5ea125e0dabca7a027daaa5a4a/tomcat-servlet-api-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-util/8.5.11/15bb54a0e015cc3abe981afb4ce66b518787c55a/tomcat-util-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-juli/8.5.11/fa0b261ce002175b65ebb6ae8eb4345cb7e57da3/tomcat-juli-8.5.11.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-el-api/8.5.11/852cbcf336417dc85bbd41564f6c73d2dee1a402/tomcat-el-api-8.5.11.jar" />
-=======
->>>>>>> e8ce0952a65672d1ca89fe825b9b3c0f0020168d
         </element>
       </element>
     </root>
