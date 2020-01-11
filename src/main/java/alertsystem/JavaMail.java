@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +25,9 @@ public class JavaMail {
         String getGlu;
         if(logbookType != 3)
         {
-             getGlu = "SELECT glucose from " + names.get(1) + " WHERE timesofday LIKE 'po%'";
+             getGlu = "SELECT glucose from " + names.get(1) + " WHERE timesofday LIKE 'po%' and date LIKE '" + getDate() +"'";
         }else{
-            getGlu = "SELECT glucose from " + names.get(1);
+            getGlu = "SELECT glucose from " + names.get(1) + " WHERE date LIKE '" + getDate() + "'";
         }
 
         String getDoc = "SELECT doctorcontact, doctorname from patientsfulldetails WHERE email like '" + login_email +"'";
@@ -46,6 +48,16 @@ public class JavaMail {
             System.out.println(content);
         }
     }
+
+    // Function from https://dzone.com/articles/getting-current-date-time-in-java
+    public static String getDate(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        LocalDate today = LocalDate.now();
+
+        return (formatter.format(today));
+    }
+// end of reference
 
 
     //This function sends an email if it needs to be sent and the email address is valid
