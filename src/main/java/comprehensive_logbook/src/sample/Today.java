@@ -8,6 +8,7 @@ public class Today {
     public SimpleStringProperty Time;
     public SimpleStringProperty Date;
 
+
     public Today(String Gluc, String Carb, String Ins, String Time, String Date)
     {
         this.Gluc = new SimpleStringProperty(Gluc);
