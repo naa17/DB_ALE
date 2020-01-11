@@ -18,6 +18,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import login_OOP.src.mp_v1.Controller_mp_v1;
+import registrationFX.src.sample.Registration_Controller;
 
 import java.io.File;
 import java.net.URL;
@@ -203,10 +204,18 @@ public class Controller_lb2 implements Initializable {
         table.getItems().add(newToday);
 
         String login_email = Controller_mp_v1.email1;
+        if (isNullOrEmpty((login_email))){
+            login_email = Registration_Controller.emailReg;
+        }
         ArrayList<String> login_names = findTable(login_email);
         System.out.println("~~~~~~~~~~~~~~~~");
         System.out.println("entering insert to db");
         compBackend.insertToDB(newToday, login_names, login_email);
+    }
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.isEmpty())
+            return false;
+        return true;
     }
 
 
