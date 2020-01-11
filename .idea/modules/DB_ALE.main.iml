@@ -18,7 +18,7 @@
     <facet type="web" name="Web Gradle : DB_ALE-1.0-SNAPSHOT.war">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
+          <root url="file://C:\Users\Sarah\Documents\Year 3\Programming 3\DB_ALE\src\main\webapp" relative="/" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax" relative="/javax" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF" relative="/META-INF" />
@@ -29,6 +29,7 @@
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/javax" relative="/javax" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com" relative="/com" />
+<<<<<<< HEAD
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/com" relative="/com" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-11-linux.jar_9fe033000601ab792ea7def7951a1857/com/sun" relative="/com/sun" />
@@ -195,15 +196,81 @@
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946/javafx/util" relative="/javafx/util" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11-linux.jar_43885b22d340f67d14c733c2d6d28946/javafx/util/converter" relative="/javafx/util/converter" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-11.jar_03d989cb6fe156f4d2b6de3f72103683/META-INF" relative="/META-INF" />
+=======
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-fxml-12-win.jar_fdc6e13a9929751e97c4accdb0fabf0f/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-fxml-12-win.jar_fdc6e13a9929751e97c4accdb0fabf0f/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-fxml-12-win.jar_fdc6e13a9929751e97c4accdb0fabf0f/javafx" relative="/javafx" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-fxml-12-win.jar_fdc6e13a9929751e97c4accdb0fabf0f" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-linux.jar_eb143eb7fc1310428067f95855b6cd09/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-linux.jar_eb143eb7fc1310428067f95855b6cd09/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-linux.jar_eb143eb7fc1310428067f95855b6cd09/javafx" relative="/javafx" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-linux.jar_eb143eb7fc1310428067f95855b6cd09" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-win.jar_637c157e80ff14df0b44809df38fb4b9/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-win.jar_637c157e80ff14df0b44809df38fb4b9/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-win.jar_637c157e80ff14df0b44809df38fb4b9/javafx" relative="/javafx" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-win.jar_637c157e80ff14df0b44809df38fb4b9" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12.jar_b8e4b9b57692b17666109470b26c4fb3/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-linux.jar_ef309d9a0c5ec4a613fc00b5a7679c26/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-linux.jar_ef309d9a0c5ec4a613fc00b5a7679c26/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-linux.jar_ef309d9a0c5ec4a613fc00b5a7679c26" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-win.jar_021bbd5f351c8f5035a94e350b522936/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-win.jar_021bbd5f351c8f5035a94e350b522936" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12.jar_d444eb5cb3edc6e1982be450781ae615/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-linux.jar_b5266be430dc5436adafcff36336be67/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-linux.jar_b5266be430dc5436adafcff36336be67/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-linux.jar_b5266be430dc5436adafcff36336be67" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-win.jar_d2f19f857e09579131c62334ceb3c924/META-INF" relative="/META-INF" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-win.jar_d2f19f857e09579131c62334ceb3c924/com" relative="/com" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-win.jar_d2f19f857e09579131c62334ceb3c924" relative="/" />
+          <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12.jar_7e2c4b51ad99d790ac90f5ad3b5c376b/META-INF" relative="/META-INF" />
+>>>>>>> ee6e0beedcf3263833f5b8f74cb225b1fe6fb521
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org" relative="/org" />
         </webroots>
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <output url="file://$MODULE_DIR$/../../out/production/classes" />
     <exclude-output />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/javax" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/gson-2.7.jar_1f64285cb80b7c64032ed85af9a90fec/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-linux.jar_b5266be430dc5436adafcff36336be67" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-linux.jar_b5266be430dc5436adafcff36336be67/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-linux.jar_b5266be430dc5436adafcff36336be67/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-win.jar_d2f19f857e09579131c62334ceb3c924" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-win.jar_d2f19f857e09579131c62334ceb3c924/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12-win.jar_d2f19f857e09579131c62334ceb3c924/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-base-12.jar_7e2c4b51ad99d790ac90f5ad3b5c376b/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-linux.jar_eb143eb7fc1310428067f95855b6cd09" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-linux.jar_eb143eb7fc1310428067f95855b6cd09/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-linux.jar_eb143eb7fc1310428067f95855b6cd09/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-linux.jar_eb143eb7fc1310428067f95855b6cd09/javafx" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-win.jar_637c157e80ff14df0b44809df38fb4b9" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-win.jar_637c157e80ff14df0b44809df38fb4b9/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-win.jar_637c157e80ff14df0b44809df38fb4b9/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12-win.jar_637c157e80ff14df0b44809df38fb4b9/javafx" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-controls-12.jar_b8e4b9b57692b17666109470b26c4fb3/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-fxml-12-win.jar_fdc6e13a9929751e97c4accdb0fabf0f" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-fxml-12-win.jar_fdc6e13a9929751e97c4accdb0fabf0f/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-fxml-12-win.jar_fdc6e13a9929751e97c4accdb0fabf0f/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-fxml-12-win.jar_fdc6e13a9929751e97c4accdb0fabf0f/javafx" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-linux.jar_ef309d9a0c5ec4a613fc00b5a7679c26" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-linux.jar_ef309d9a0c5ec4a613fc00b5a7679c26/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-linux.jar_ef309d9a0c5ec4a613fc00b5a7679c26/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-win.jar_021bbd5f351c8f5035a94e350b522936" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12-win.jar_021bbd5f351c8f5035a94e350b522936/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javafx-graphics-12.jar_d444eb5cb3edc6e1982be450781ae615/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/com" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/javax" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/META-INF" />
+    <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/postgresql-9.1-901-1.jdbc4.jar_73190be59291ccc99767efb898d4ad81/org" />
     <content url="file://$MODULE_DIR$/../../src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
     </content>
@@ -213,11 +280,16 @@
     <orderEntry type="library" name="Gradle: com.sun.mail:javax.mail:1.5.3" level="project" />
     <orderEntry type="library" name="Gradle: javax.activation:activation:1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:linux:11" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:linux:11" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:11" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:linux:11" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:11" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-fxml:win:12" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:linux:12" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:win:12" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:12" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:linux:12" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:win:12" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:12" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:linux:12" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:win:12" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:12" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" level="project" />
   </component>
 </module>
