@@ -18,8 +18,8 @@ public class EmailSender
 
         //In order to send a mail using your application - need to configure minimum 4 fields
         Session sess;
-        String myAccountEmail = "krithika.balaji18@gmail.com";
-        String password = "!gr@du@t3d!!";
+        String myAccountEmail = "dbale123123@gmail.com";
+        String password = "DbA1e@@@";
         sess = doPasswordAuthentication(myAccountEmail, password);
         System.out.println(sess);
         Message message = prepareMessage(sess, myAccountEmail, recipient, recipient_name, patientName);

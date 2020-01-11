@@ -46,7 +46,6 @@ public class JavaMail {
         }
 
         return hasSent;
-
     }
 
     public static List<Double> extractGlucoseList(String str) throws SQLException {

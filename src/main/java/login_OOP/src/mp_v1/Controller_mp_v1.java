@@ -28,6 +28,7 @@ import java.util.List;
         public TextField passwordField;
         @FXML
         public Button login;
+
         public static String email1;
 
         public static boolean Register = false;
@@ -38,62 +39,47 @@ import java.util.List;
         public void handle(ActionEvent actionEvent) throws IOException, SQLException {
             String email = emailField.getText();
             String passw = passwordField.getText();
-            System.out.println(email);
-            System.out.println(passw);
-            int filled=1;
-
             email1 = email;
-
-
-            // List with strings
             List<String> loginDetails = new ArrayList<String>();
-            loginDetails.add(email);
-            loginDetails.add(passw);
-            System.out.println(loginDetails);
+            loginDetails = MakeList(email, passw);
+            int filled=1;
 
             // Check empty text fields and warning error
             for(int i=0; i<loginDetails.size();i++) {
                 if (loginDetails.get(i).isEmpty()) {
                     System.out.println("Please fill in all values and submit again");
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Warning Dialog");
-                    alert.setHeaderText("Unfilled textfields");
-                    alert.setContentText("Please fill in all values and submit again");
+                    String header = "Unfilled textfields";
+                    String content = "Please fill in all values and submit again";
+                    showAlert(header, content);
                     filled = 0;
-                    alert.showAndWait();
-
                 }
             }
 
-                if(filled==1)
-                {
-                        Login.checkLogin(loginDetails);
-                        objectToJson.objectToJson(verificationDAO.getDetailsForEmail(email));
-                        System.out.println("JSONised data: COMPLETE :D");
+            if(filled==1)
+            {
+                Login.checkLogin(loginDetails);
+                objectToJson.objectToJson(verificationDAO.getDetailsForEmail(email));
+                System.out.println("JSONised data: COMPLETE :D");
 
+                try {
+                    if (login_OOP.src.mp_v1.Login.getLogin()){
+                        System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
+                        URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
+                        Parent root2 = FXMLLoader.load(url2);
+                        Stage window2 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+                        window2.setTitle("Logbook Page");
+                        window2.setScene(new Scene(root2, 800, 600));
+                        window2.show();
+                    }
 
-
-                        try {
-                            if (login_OOP.src.mp_v1.Login.getLogin()){
-                                System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
-                                URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
-                                Parent root2 = FXMLLoader.load(url2);
-                                Stage window2 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-                                window2.setTitle("Logbook Page");
-                                window2.setScene(new Scene(root2, 800, 600));
-                                window2.show();
-
-                            }
-
-                        }catch(Exception e){
-                            e.printStackTrace();
-                            //System.out.println("JUPP NOT VORWKKING");    // prints standard error
-                        }
-
-
-                        }else System.out.println("You have a problem :(");
-
+                }catch(Exception e){
+                    e.printStackTrace();
                 }
+
+
+                }else System.out.println("You have a problem :(");
+
+            }
 
         public void regButton(ActionEvent actionEvent) throws Exception{
             Register = true;
@@ -116,6 +102,25 @@ import java.util.List;
             return Register;
         }
 
+        private List<String> MakeList(String email, String passw)
+        {
+            // List with strings
+            List<String> loginDetails = new ArrayList<String>();
+            loginDetails.add(email);
+            loginDetails.add(passw);
+            System.out.println(loginDetails);
+            return loginDetails;
+        }
+
+        //This function creates alerts and pop-up windows
+        private static void showAlert(String header, String content)
+        {
+            Alert alert1 = new Alert(Alert.AlertType.WARNING);
+            alert1.setTitle("Warning Dialog");
+            alert1.setHeaderText(header);
+            alert1.setContentText(content);
+            alert1.showAndWait();
+        }
     }
 
 
