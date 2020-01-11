@@ -1,10 +1,11 @@
 package alertsystem;
 
-import alertsystem.ConnectionFactory;
-import alertsystem.EmailSender;
 import javafx.scene.control.Alert;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +63,7 @@ public class JavaMail {
         double tempglu;
         while(rs.next())
         {
-            tempglu = Double.valueOf(rs.getString(1));
+            tempglu = Double.valueOf(rs.getInt("glucose"));
             postglucose.add(tempglu); //This is glucose
         }
 
