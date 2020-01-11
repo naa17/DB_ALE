@@ -3,21 +3,26 @@ package simple_logbook.src.sample;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.Stage;
 import login_OOP.src.mp_v1.Controller_mp_v1;
 
+import java.io.File;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller_lb_v1_2 implements Initializable {
@@ -67,7 +72,7 @@ public class Controller_lb_v1_2 implements Initializable {
 
         try {
 
-            conn = sample.ConnectionFactory.getConnection();
+            conn = ConnectionFactory_s.getConnection();
             //stmt = conn.createStatement();
 
             System.out.println("YOU in try catch");
@@ -100,7 +105,7 @@ public class Controller_lb_v1_2 implements Initializable {
 
     public void buildData() {
         //ConnectionFactory objDbClass = new ConnectionFactory();
-        Connection con = sample.ConnectionFactory.getConnection();
+        Connection con = ConnectionFactory_s.getConnection();
         ObservableList<Today_v1_2> data1 =table.getItems();
         try {
             String login_email = Controller_mp_v1.email1;
@@ -112,7 +117,7 @@ public class Controller_lb_v1_2 implements Initializable {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
             while (rs.next()) {
-                sample.Usermaster cm = new sample.Usermaster();
+                Usermaster cm = new Usermaster();
                 cm.gluc.set(rs.getInt("glucose"));
                 cm.carbs.set(rs.getInt("carbs"));
                 cm.time.set(rs.getString("timesofday"));
@@ -245,11 +250,19 @@ public void btnAdd(ActionEvent actionEvent) {
 
     }
 
-    public void accessProfile(ActionEvent actionEvent)
+    public void accessProfile(ActionEvent actionEvent) throws Exception
     {
-        System.out.println("Access profile");
-    }
+        System.out.println("YOU going to profile");
+        URL urlp = new File("profile.fxml").toURI().toURL();
+        Parent root1 = FXMLLoader.load((urlp));
+        System.out.println("YEAH YOU HERE");
+        Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window1.setTitle("Profile Page");
+        window1.setScene(new Scene(root1, 800, 800));
+        window1.show();
 
+
+    }
 
 }
 

@@ -12,9 +12,9 @@
       <entry name="!?*.clj" />
     </wildcardResourcePatterns>
     <bytecodeTargetLevel>
-      <module name="DB_ALE.main" target="1.8" />
-      <module name="DB_ALE.test" target="1.8" />
-      <module name="prg3_verFri.DB_ALE.main" target="1.8" />
+      <module name="DB_ALE.main" target="11" />
+      <module name="DB_ALE.test" target="11" />
+      <module name="prg3_verFri.DB_ALE.main" target="11" />
       <module name="Programming 3.DB_ALE.main" target="1.8" />
     </bytecodeTargetLevel>
   </component>
