@@ -1,5 +1,5 @@
 language: java
-jdk: openjdk8
+jdk: openjdk11
 before_install:
   - chmod +x gradlew
 script:
@@ -17,7 +17,7 @@ deploy:
   provider: heroku
   api_key:
     secure: 53b13f11-419c-464d-8071-86b9792f2aac
-  app: DB_Ale
-  skip_cleanup: false
+  app: secure-forest-32338
+  skip_cleanup: true
   on:
     tags: true

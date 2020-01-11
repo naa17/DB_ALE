@@ -2,6 +2,7 @@ package alertsystem;
 
 import alertsystem.ConnectionFactory;
 import alertsystem.EmailSender;
+import javafx.scene.control.Alert;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -27,10 +28,12 @@ public class JavaMail {
         doc = (ArrayList<String>) extractDoctor(getDoc);
         glucoseList = (ArrayList<Double>) extractGlucoseList(getGlu);
         boolean sent = sendEmail(doc.get(0), doc.get(1), glucoseList, names.get(0));
-        String str;
+        String content, header;
         if(sent == true) {
-            str = "Your glucose values are out of bounds - email has been sent to your doctor successfully!";
-            System.out.println(str);
+            header = "Doctor alerted!";
+            content = "Your glucose values are out of bounds - your doctor has been alerted.";
+            showAlert(header, content);
+            System.out.println(content);
         }
     }
 
@@ -108,5 +111,14 @@ public class JavaMail {
             value = true;
         }
         return value;
+    }
+    //This function creates alerts and pop-up windows
+    private static void showAlert(String header, String content)
+    {
+        Alert alert1 = new Alert(Alert.AlertType.WARNING);
+        alert1.setTitle("Warning Dialog");
+        alert1.setHeaderText(header);
+        alert1.setContentText(content);
+        alert1.showAndWait();
     }
 }

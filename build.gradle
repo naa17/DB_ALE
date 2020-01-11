@@ -1,9 +1,9 @@
 plugins {
-    // Apply the java plugin to add support for Java
     id 'java'
     id 'application'
     id 'war'
 }
+
 version '1.0-SNAPSHOT'
 
 dependencies {
@@ -19,6 +19,7 @@ dependencies {
     compile group: 'org.openjfx', name: 'javafx-controls', version: '11', classifier: 'linux'
     compile group: 'org.openjfx', name: 'javafx-base', version: '11', classifier: 'linux'
     compile group: 'org.openjfx', name: 'javafx-graphics', version: '11', classifier: 'linux'
+
 }
 
 repositories {
@@ -30,6 +31,7 @@ application {
     // Define the main class for the application
     mainClassName = 'DB_ALE.Main'
 }
+
 war {
     from {
         // all of the library jar files used are to be zipped into the war file
