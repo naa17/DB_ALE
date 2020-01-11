@@ -25,6 +25,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -121,7 +123,7 @@ public class Controller_ins implements Initializable {
             String login_email = Controller_mp_v1.email1;
             ArrayList<String> login_names = findTable(login_email);
             String name = login_names.get(1);
-            String SQL = "Select * from " +name;
+            String SQL = "Select * from " +name +" where date like '"+getDate()+"'";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
             while (rs.next()) {
@@ -141,7 +143,7 @@ public class Controller_ins implements Initializable {
                 String ketones = String.valueOf(cm.getKetones());
                 String time = cm.getTime();
                 // class today instantiated with strings from database
-                Today today = new Today(gluc, CHO_Grams, CHO_bolus, hi_bolus, basal_rate, ketones, time);
+                Today today = new Today(gluc, CHO_Grams, CHO_bolus, hi_bolus, basal_rate, ketones, time, getDate());
                 data1.add(today);
             }
             // add list of today class to table
@@ -153,6 +155,15 @@ public class Controller_ins implements Initializable {
 
     }
 
+    // Function from https://dzone.com/articles/getting-current-date-time-in-java
+    public static String getDate(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        LocalDate today = LocalDate.now();
+
+        return (formatter.format(today));
+    }
+    // end of reference
     // add new values to the table
     public void btnAdd(ActionEvent actionEvent) {
         System.out.println("YES");
@@ -238,12 +249,12 @@ public class Controller_ins implements Initializable {
         {
             time="11 PM";
         }
-        Today newToday= new Today(Gluctxt.getText(), CHOgtxt.getText(), CHObtxt.getText(), hitxt.getText(), basaltxt.getText(), ketonestxt.getText(), time);
+        Today newToday= new Today(Gluctxt.getText(), CHOgtxt.getText(), CHObtxt.getText(), hitxt.getText(), basaltxt.getText(), ketonestxt.getText(), time, getDate());
         table.getItems().add(newToday);
 
         String login_email = Controller_mp_v1.email1;
         ArrayList<String> login_names = findTable(login_email);
-        IntBackend.insertToDB(newToday, login_names);
+        IntBackend.insertToDB(newToday, login_names, login_email);
     }
 
 // editing table values

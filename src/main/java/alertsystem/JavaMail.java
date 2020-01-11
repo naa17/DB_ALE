@@ -14,13 +14,20 @@ public class JavaMail {
     public static EmailSender emailsender = new EmailSender();
 
     //This is the main function that is run
-    public static void mainEmail(String login_email, ArrayList<String> names) throws Exception
+    public static void mainEmail(String login_email, ArrayList<String> names, int logbookType) throws Exception
     {
         //names.get(0) is name with spaces
         //names.get(1) is name without spaces
 
         //Initialize string statements for database
-        String getGlu = "SELECT glucose from " + names.get(1) + " WHERE timesofday LIKE 'po%'";
+        String getGlu;
+        if(logbookType != 3)
+        {
+             getGlu = "SELECT glucose from " + names.get(1) + " WHERE timesofday LIKE 'po%'";
+        }else{
+            getGlu = "SELECT glucose from " + names.get(1);
+        }
+
         String getDoc = "SELECT doctorcontact, doctorname from patientsfulldetails WHERE email like '" + login_email +"'";
 
         //Initialize arrays

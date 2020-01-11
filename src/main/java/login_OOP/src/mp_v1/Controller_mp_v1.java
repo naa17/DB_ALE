@@ -61,48 +61,48 @@ import java.util.List;
             if(filled==1)
             {
                 Login.checkLogin(loginDetails);
+
                 objectToJson.objectToJson(verificationDAO.getDetailsForEmail(email));
                 System.out.println("JSONised data: COMPLETE :D");
 
-                try {
-                    Patient p = PatientDAO.getDetailsForEmail(email1);
+                if(Login.getLogin()) {
+                    try {
+                        Patient p = PatientDAO.getDetailsForEmail(email1);
 
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    System.out.println(p.getInsulinAdmin());
-                    System.out.println(p.getInsulinType());
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    System.out.println(registrationBackend.logbookType(p));
-                    if (registrationBackend.logbookType(p).equals("simple")) {
-                        System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
-                        URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
-                        Parent root2 = FXMLLoader.load(url2);
-                        Stage window2 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-                        window2.setTitle("Simple Logbook Page");
-                        window2.setScene(new Scene(root2, 800, 600));
-                        window2.show();
-                    }
-                    else if (registrationBackend.logbookType(p).equals("comprehensive")){
-                        System.out.println("comprehensive");
-                        URL url2 = new File("lb_v2.fxml").toURI().toURL();
-                        Parent root3 = FXMLLoader.load(url2);
-                        Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                        window3.setTitle("Comprehensive Logbook Page");
-                        window3.setScene(new Scene(root3, 800, 600));
-                        window3.show();
-                    }
+                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        System.out.println(p.getInsulinAdmin());
+                        System.out.println(p.getInsulinType());
+                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        System.out.println(registrationBackend.logbookType(p));
+                        if (registrationBackend.logbookType(p).equals("simple")) {
+                            System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
+                            URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
+                            Parent root2 = FXMLLoader.load(url2);
+                            Stage window2 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                            window2.setTitle("Simple Logbook Page");
+                            window2.setScene(new Scene(root2, 800, 600));
+                            window2.show();
+                        } else if (registrationBackend.logbookType(p).equals("comprehensive")) {
+                            System.out.println("comprehensive");
+                            URL url2 = new File("lb_v2.fxml").toURI().toURL();
+                            Parent root3 = FXMLLoader.load(url2);
+                            Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                            window3.setTitle("Comprehensive Logbook Page");
+                            window3.setScene(new Scene(root3, 800, 600));
+                            window3.show();
+                        } else if (registrationBackend.logbookType(p).equals("intensive")) {
+                            System.out.println("intensive");
+                            URL url2 = new File("lb_v3.fxml").toURI().toURL();
+                            Parent root3 = FXMLLoader.load(url2);
+                            Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                            window3.setTitle("Intensive Logbook Page");
+                            window3.setScene(new Scene(root3, 1000, 1200));
+                            window3.show();
+                        }
 
-                    else if (registrationBackend.logbookType(p).equals("intensive")){
-                        System.out.println("intensive");
-                        URL url2 = new File("lb_v3.fxml").toURI().toURL();
-                        Parent root3 = FXMLLoader.load(url2);
-                        Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                        window3.setTitle("Intensive Logbook Page");
-                        window3.setScene(new Scene(root3, 1000, 1200));
-                        window3.show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-
-                }catch(Exception e){
-                    e.printStackTrace();
                 }
 
                 }else System.out.println("You have a problem :(");
