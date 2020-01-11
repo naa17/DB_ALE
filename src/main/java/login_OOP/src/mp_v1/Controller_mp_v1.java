@@ -1,6 +1,7 @@
 package login_OOP.src.mp_v1;
 
 //import com.sun.deploy.security.SelectableSecurityManager;
+import comprehensive_logbook.src.sample.PatientDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import registrationFX.src.sample.Patient;
+import registrationFX.src.sample.registrationBackend;
 
 import java.io.File;
 import java.io.IOException;
@@ -62,20 +65,45 @@ import java.util.List;
                 System.out.println("JSONised data: COMPLETE :D");
 
                 try {
-                    if (login_OOP.src.mp_v1.Login.getLogin()){
+                    Patient p = PatientDAO.getDetailsForEmail(email1);
+
+                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    System.out.println(p.getInsulinAdmin());
+                    System.out.println(p.getInsulinType());
+                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    System.out.println(registrationBackend.logbookType(p));
+                    if (registrationBackend.logbookType(p).equals("simple")) {
                         System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
                         URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
                         Parent root2 = FXMLLoader.load(url2);
                         Stage window2 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-                        window2.setTitle("Logbook Page");
+                        window2.setTitle("Simple Logbook Page");
                         window2.setScene(new Scene(root2, 800, 600));
                         window2.show();
+                    }
+                    else if (registrationBackend.logbookType(p).equals("comprehensive")){
+                        System.out.println("comprehensive");
+                        URL url2 = new File("lb_v2.fxml").toURI().toURL();
+                        Parent root3 = FXMLLoader.load(url2);
+                        Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                        window3.setTitle("Comprehensive Logbook Page");
+                        window3.setScene(new Scene(root3, 800, 600));
+                        window3.show();
+                    }
+
+                    else if (registrationBackend.logbookType(p).equals("intensive")){
+                        System.out.println("intensive");
+                        URL url2 = new File("lb_v3.fxml").toURI().toURL();
+                        Parent root3 = FXMLLoader.load(url2);
+                        Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                        window3.setTitle("Intensive Logbook Page");
+                        window3.setScene(new Scene(root3, 1000, 1200));
+                        window3.show();
                     }
 
                 }catch(Exception e){
                     e.printStackTrace();
                 }
-
 
                 }else System.out.println("You have a problem :(");
 
@@ -84,7 +112,6 @@ import java.util.List;
         public void regButton(ActionEvent actionEvent) throws Exception{
             Register = true;
             System.out.println(Register);
-            //System.exit(0);
 
             if (getRegister()) {
                 System.out.println("YOU IN REGISTER");
@@ -103,8 +130,7 @@ import java.util.List;
         }
 
         private List<String> MakeList(String email, String passw)
-        {
-            // List with strings
+        {   // List with strings
             List<String> loginDetails = new ArrayList<String>();
             loginDetails.add(email);
             loginDetails.add(passw);

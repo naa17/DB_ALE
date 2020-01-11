@@ -1,11 +1,19 @@
 package registrationFX.src.sample;
+import comprehensive_logbook.src.sample.PatientDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,33 +97,50 @@ public class Registration_Controller {
                 registrationBackend.createLogbook(p);
                 registrationBackend.registerPatient(p);
                 System.out.println("we rollinnn");
+
+                try {
+                    Patient p1 = PatientDAO.getDetailsForEmail(patient_Email);
+                    if (registrationBackend.logbookType(p1).equals("simple")) {
+                        System.out.println("simple");
+                        URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
+                        Parent root2 = FXMLLoader.load(url2);
+                        Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        window2.setTitle("Simple Logbook Page");
+                        window2.setScene(new Scene(root2, 800, 600));
+                        window2.show();
+                    }
+                    if (registrationBackend.logbookType(p).equals("comprehensive")){
+                        System.out.println("comprehensive");
+                        URL url2 = new File("lb_v2.fxml").toURI().toURL();
+                        Parent root3 = FXMLLoader.load(url2);
+                        Stage window3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        window3.setTitle("Comprehensive Logbook Page");
+                        window3.setScene(new Scene(root3, 800, 600));
+                        window3.show();
+                    }
+
+                    if (registrationBackend.logbookType(p).equals("intensive")){
+                        System.out.println("intensive");
+                        URL url2 = new File("lb_v3.fxml").toURI().toURL();
+                        Parent root3 = FXMLLoader.load(url2);
+                        Stage window3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        window3.setTitle("Intensive Logbook Page");
+                        window3.setScene(new Scene(root3, 1000, 1200));
+                        window3.show();
+                    }
+
+                }catch(Exception e){
+                    e.printStackTrace();
+                    //System.out.println("JUPP NOT VORWKKING");    // prints standard error
+                }
             }
-
-
-            //File file = new File("RegistrationDetails.csv");
-            //if (file.createNewFile()) {
-            //System.out.println("Done");
-
-            //FileWriter csvWriter = new FileWriter("RegistrationDetails.csv");
-            //for (int j = 0; j < patientDetails.size(); j++) {
-            //csvWriter.append(String.join(",", patientDetails.get(j)));
-            //csvWriter.append("\n");
-            //}
-            //csvWriter.flush();
-            //csvWriter.close();
-
-            // List<String> registration = CSVreader_mp.readCSV("RegistrationDetails.csv");
-
-
-            //Patient patient= new Patient(patient_Name, patient_Contact, patient_Email, patient_Password,
-            //doctor_Name, doctor_Contact, diabetes_Type, insulin_Type, insulin_Admin);
+;
 
 
         } else if(!isValidEmailAddress(patient_Email)|| !isValidEmailAddress(doctor_Contact)){
             showAlert("Invalid email address","The email you entered is not a valid email");
 
         }
-
     }
 
     //This function checks to see if the recipient's email address is valid or not
@@ -137,10 +162,3 @@ public class Registration_Controller {
     }
 
 }
-
-
-
-
-
-
-

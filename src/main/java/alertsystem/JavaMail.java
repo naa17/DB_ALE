@@ -1,14 +1,17 @@
 package alertsystem;
 
-import alertsystem.ConnectionFactory;
-import alertsystem.EmailSender;
 import javafx.scene.control.Alert;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JavaMail {
+
+    public static EmailSender emailsender = new EmailSender();
 
     //This is the main function that is run
     public static void mainEmail(String login_email, ArrayList<String> names) throws Exception
@@ -42,10 +45,10 @@ public class JavaMail {
     public static boolean sendEmail(String recipient, String recipient_name, ArrayList<Double> glucose, String patientName) throws Exception
     {
         boolean hasSent = false;
-
+        emailsender = new EmailSender();
         //Function checks to see if any values from the logbook are out of bounds
         if (checkValues(glucose)) {
-            hasSent = EmailSender.sendMail(recipient, recipient_name, patientName);
+            hasSent = emailsender.sendMail(recipient, recipient_name, patientName);
         }
 
         return hasSent;
@@ -62,14 +65,14 @@ public class JavaMail {
         double tempglu;
         while(rs.next())
         {
-            tempglu = Double.valueOf(rs.getString(1));
+            tempglu = Double.valueOf(rs.getInt("glucose"));
             postglucose.add(tempglu); //This is glucose
         }
-
+        System.out.println("postglucose values: " + postglucose);
         return postglucose;
     }
 
-    public static List<String> extractDoctor(String str) throws SQLException {
+    public static ArrayList<String> extractDoctor(String str) throws SQLException {
         Connection conn = ConnectionFactory.getConnection();
         //Create the sql string selecting the post breakfast, lunch and dinner BGC for the last entry
 
@@ -83,7 +86,7 @@ public class JavaMail {
             doctor.add(rs.getString(1)); //This is email doctor
             doctor.add(rs.getString(2)); //This is name doctor
         }
-
+        System.out.println("doctor list: " + doctor);
         return doctor;
     }
 
@@ -110,6 +113,7 @@ public class JavaMail {
         {
             value = true;
         }
+
         return value;
     }
     //This function creates alerts and pop-up windows

@@ -20,7 +20,7 @@ public class logbookBackend {
 
         try {
 
-            conn = sample.ConnectionFactory.getConnection();
+            conn =  ConnectionFactory_s.getConnection();
             stmt = conn.createStatement();
 
             stmt.executeUpdate(CREATE_TABLE_SQL);

@@ -10,27 +10,29 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/DB_ALE-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="DB_ALE.main/web/Web Gradle : DB_ALE-1.0-SNAPSHOT.war" />
+      <element id="javaee-facet-resources" facet="prg3_verFri.DB_ALE.main/web/Web Gradle : DB_ALE-1.0-SNAPSHOT.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="DB_ALE.main" />
-          <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
+          <element id="module-output" name="prg3_verFri.DB_ALE.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: javax.mail:javax.mail-api:1.5.3" />
           <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.5.3" />
-          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.7" />
-          <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:win:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:linux:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:win:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:12" />
+          <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:win:12" />
+          <element id="library" level="project" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" />
+          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:linux:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:win:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:linux:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:win:12" />
           <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:12" />
+<<<<<<< HEAD
           <element id="library" level="project" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" />
           <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jsimone/webapp-runner/8.5.11.3/16054a160c454e65c65c2236a18a202451a37085/webapp-runner-8.5.11.3.jar" />
           <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-jasper/8.5.11/2b53bb3995fee912b4466bd03cd1040e2d7e4897/tomcat-embed-jasper-8.5.11.jar" />
@@ -50,6 +52,8 @@
           <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-util/8.5.11/15bb54a0e015cc3abe981afb4ce66b518787c55a/tomcat-util-8.5.11.jar" />
           <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-juli/8.5.11/fa0b261ce002175b65ebb6ae8eb4345cb7e57da3/tomcat-juli-8.5.11.jar" />
           <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-el-api/8.5.11/852cbcf336417dc85bbd41564f6c73d2dee1a402/tomcat-el-api-8.5.11.jar" />
+=======
+>>>>>>> e8ce0952a65672d1ca89fe825b9b3c0f0020168d
         </element>
       </element>
     </root>
