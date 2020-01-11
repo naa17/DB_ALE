@@ -5,6 +5,8 @@ import alertsystem.JavaMail;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class IntBackend {
@@ -18,7 +20,7 @@ public class IntBackend {
         Statement stmt = null;
         String name = names.get(1);
         System.out.println(name);
-        final String CREATE_TABLE_SQL="insert into "+ name+" (hours, glucose, cho_grams, cho_bolus, hi_bg_bolus, basalrate, ketones_exercise) VALUES ('" +today.getTime()+"',"+today.getGluc()+","+today.getCHO_grams() +"," +today.getCHO_bolus()+"," +today.getHi_bolus()+","+today.getBasal_rate()+","+today.getKetones()+");";
+        final String CREATE_TABLE_SQL="insert into "+ name+" (hours, glucose, cho_grams, cho_bolus, hi_bg_bolus, basalrate, ketones_exercise, date) VALUES ('" +today.getTime()+"',"+today.getGluc()+","+today.getCHO_grams() +"," +today.getCHO_bolus()+"," +today.getHi_bolus()+","+today.getBasal_rate()+","+today.getKetones()+ ",'"+getDate()+ "');";
         System.out.println("~~~~~~~~~~~~~~~~");
         System.out.println(CREATE_TABLE_SQL);
         try {
@@ -53,5 +55,15 @@ public class IntBackend {
             }
         }
     }
+
+    // Function from https://dzone.com/articles/getting-current-date-time-in-java
+    public static String getDate(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        LocalDate today = LocalDate.now();
+
+        return (formatter.format(today));
+    }
+// end of reference
 }
 

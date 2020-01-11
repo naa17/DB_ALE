@@ -11,9 +11,10 @@ public class Today {
     public SimpleStringProperty basal_rate;
     public SimpleStringProperty ketones;
     public SimpleStringProperty Time;
+    public  SimpleStringProperty Date;
 
 
-    public Today(String Gluc, String CHO_grams, String CHO_bolus, String hi_bolus, String basal_rate, String ketones, String Time)
+    public Today(String Gluc, String CHO_grams, String CHO_bolus, String hi_bolus, String basal_rate, String ketones, String Time, String Date)
     {
         this.Gluc = new SimpleStringProperty(Gluc);
         this.CHO_grams = new SimpleStringProperty(CHO_grams);
@@ -22,7 +23,19 @@ public class Today {
         this.basal_rate = new SimpleStringProperty(basal_rate);
         this.ketones = new SimpleStringProperty(ketones);
         this.Time = new SimpleStringProperty(Time);
+        this.Date=new SimpleStringProperty(Date);
     }
+
+    public String getDate()
+    {
+        return Date.get();
+    }
+
+    public void setDate(String date)
+    {
+        this.Date.set(date);
+    }
+
 
     public String getGluc()
     {

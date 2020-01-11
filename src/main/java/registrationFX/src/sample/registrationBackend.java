@@ -54,6 +54,7 @@ public class registrationBackend implements DAO {
         if (logbookType(p).equals("simple")) {
             final String CREATE_TABLE_SQL = "CREATE TABLE " + name + " ("
 
+                    + "date VARCHAR(255),"
                     + "timesofday VARCHAR(255),"
                     + "glucose numeric,"
                     + "carbs numeric)";
@@ -64,6 +65,7 @@ public class registrationBackend implements DAO {
         if (logbookType(p).equals("comprehensive")) {
             final String CREATE_TABLE_SQL = "CREATE TABLE " + name + " ("
 
+                    + "date VARCHAR(255),"
                     + "timesofday VARCHAR(255),"
                     + "glucose numeric,"
                     + "carbs numeric,"
@@ -76,6 +78,7 @@ public class registrationBackend implements DAO {
         if (logbookType(p).equals("intensive")) {
             final String CREATE_TABLE_SQL = "CREATE TABLE " + name + " ("
 
+                    + "date VARCHAR(255),"
                     + "hours VARCHAR(255),"
                     + "glucose numeric,"
                     + "cho_grams numeric,"
@@ -176,6 +179,7 @@ public class registrationBackend implements DAO {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
 }
 //    //Input: Object from Patient class
 //    //Void method: no output.

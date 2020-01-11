@@ -25,6 +25,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -112,7 +114,8 @@ public class Controller_lb2 implements Initializable {
             String login_email = Controller_mp_v1.email1;
             ArrayList<String> login_names = findTable(login_email);
             String name = login_names.get(1);
-            String SQL = "Select * from " + name;
+            String date = getDate();
+            String SQL = "Select * from " + name + " where date like '"+date+"'";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
             while (rs.next()) {
@@ -126,7 +129,7 @@ public class Controller_lb2 implements Initializable {
                 String time = cm.getTime();
                 String ins = String.valueOf(cm.getIns());
                 // class today instantiated with strings from database
-                Today_ins today = new Today_ins(gluc, carbs, ins, time);
+                Today_ins today = new Today_ins(gluc, carbs, ins, time, getDate());
                 data1.add(today);
             }
             // add list of today class to table
@@ -137,6 +140,16 @@ public class Controller_lb2 implements Initializable {
         }
 
     }
+
+    // Function from https://dzone.com/articles/getting-current-date-time-in-java
+    public String getDate(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        LocalDate today = LocalDate.now();
+
+        return (formatter.format(today));
+    }
+// end of reference
 
     // add new values to the table
     public void btnAdd(ActionEvent actionEvent) {
@@ -186,7 +199,7 @@ public class Controller_lb2 implements Initializable {
             time="bedtime";
         }
 
-        Today_ins newToday= new Today_ins(Gluctxt.getText(), Carbtxt.getText(), Instxt.getText(), time);
+        Today_ins newToday= new Today_ins(Gluctxt.getText(), Carbtxt.getText(), Instxt.getText(), time, getDate());
         table.getItems().add(newToday);
 
         String login_email = Controller_mp_v1.email1;
@@ -195,6 +208,8 @@ public class Controller_lb2 implements Initializable {
         System.out.println("entering insert to db");
         compBackend.insertToDB(newToday, login_names, login_email);
     }
+
+
 
 // editing table values
 

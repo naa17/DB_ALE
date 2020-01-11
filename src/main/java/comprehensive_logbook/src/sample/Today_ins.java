@@ -6,8 +6,8 @@ public class Today_ins extends Today {
 
     public SimpleStringProperty Ins;
 
-    public Today_ins(String Gluc, String Carb, String Ins, String Time) {
-        super(Gluc, Carb, Ins, Time);
+    public Today_ins(String Gluc, String Carb, String Ins, String Time, String Date) {
+        super(Gluc, Carb, Ins, Time, Date);
         this.Ins= new SimpleStringProperty(Ins);
     }
 

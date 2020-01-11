@@ -9,6 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="DB_ALE.main" />
     <orderEntry type="library" name="Gradle: javax.mail:javax.mail-api:1.5.3" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.mail:javax.mail:1.5.3" level="project" />
     <orderEntry type="library" name="Gradle: javax.activation:activation:1.1.1" level="project" />
@@ -23,13 +24,14 @@
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:linux:12" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:win:12" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:12" level="project" />
+    <orderEntry type="library" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: javax.websocket:javax.websocket-api:1.0" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: org.jmockit:jmockit:1.49" level="project" />
     <orderEntry type="library" name="Gradle: org.mockito:mockito-all:2.0.2-beta" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
-    <orderEntry type="module" module-name="prg3_verFri.DB_ALE.main" scope="TEST" />
   </component>
   <component name="TestModuleProperties" production-module="DB_ALE.main" />
 </module>
