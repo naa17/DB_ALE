@@ -22,6 +22,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -112,7 +114,8 @@ public class Controller_lb_v1_2 implements Initializable {
             System.out.println(login_email);
             ArrayList<String> login_names = findTable(login_email);
             String login_name = login_names.get(1);
-            String SQL = "Select * from " + login_name  ;
+            String today_Date = getDate();
+            String SQL = "Select * from " + login_name +" WHERE date like '"+ today_Date +"'";
 
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
@@ -121,11 +124,10 @@ public class Controller_lb_v1_2 implements Initializable {
                 cm.gluc.set(rs.getInt("glucose"));
                 cm.carbs.set(rs.getInt("carbs"));
                 cm.time.set(rs.getString("timesofday"));
-                String gluc = String.valueOf(cm.getGluc());
-                String carbs = String.valueOf(cm.getCarbs());
-                String time = cm.getTime();
+
+                Today_v1_2 today = new Today_v1_2(String.valueOf(cm.getGluc()), String.valueOf(cm.getCarbs()),cm.getTime(), getDate());
+
                 // class today instantiated with strings from database
-                Today_v1_2 today = new Today_v1_2(gluc, carbs, time);
                 data1.add(today);
             }
             // add list of today class to table
@@ -136,6 +138,15 @@ public class Controller_lb_v1_2 implements Initializable {
         }
 
     }
+// Function from https://dzone.com/articles/getting-current-date-time-in-java
+    public String getDate(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        LocalDate today = LocalDate.now();
+
+        return (formatter.format(today));
+    }
+// end of reference
 
 // add new values to the table
 public void btnAdd(ActionEvent actionEvent) {
@@ -186,7 +197,7 @@ public void btnAdd(ActionEvent actionEvent) {
         time="bedtime";
     }
 
-    Today_v1_2 newToday = new Today_v1_2(Gluctxt.getText(), Carbtxt.getText(), time);
+    Today_v1_2 newToday = new Today_v1_2(Gluctxt.getText(), Carbtxt.getText(), time, getDate());
     table.getItems().add(newToday);
 
     String login_email = Controller_mp_v1.email1;

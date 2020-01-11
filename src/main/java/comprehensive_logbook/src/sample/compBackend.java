@@ -3,6 +3,8 @@ package comprehensive_logbook.src.sample;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class compBackend {
@@ -20,7 +22,8 @@ public class compBackend {
         Connection conn = null;
         Statement stmt = null;
         String name = names.get(1);
-        final String CREATE_TABLE_SQL="insert into "+ name+" (glucose, carbs, insulin, timesofday) VALUES ("+today.getGluc()+","+today.getCarb() +"," +today.getIns()+",'" +today.getTime()+"');";
+        String date = getDate();
+        final String CREATE_TABLE_SQL="insert into "+ name+" (glucose, carbs, insulin, timesofday, date) VALUES ("+today.getGluc()+","+today.getCarb() +"," +today.getIns()+",'" +today.getTime()+"','"+getDate()+"');";
         System.out.println("~~~~~~~~~~~~~~~~");
         System.out.println(CREATE_TABLE_SQL);
         try {
@@ -48,4 +51,13 @@ public class compBackend {
             }
         }
     }
+    // Function from https://dzone.com/articles/getting-current-date-time-in-java
+    public static String getDate(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        LocalDate today = LocalDate.now();
+
+        return (formatter.format(today));
+    }
+    // end of reference
 }
