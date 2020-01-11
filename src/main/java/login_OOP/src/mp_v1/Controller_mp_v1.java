@@ -76,7 +76,7 @@ import java.util.List;
                         System.out.println(registrationBackend.logbookType(p));
                         if (registrationBackend.logbookType(p).equals("simple")) {
                             System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
-                            URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
+                            URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                             Parent root2 = FXMLLoader.load(url2);
                             Stage window2 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                             window2.setTitle("Simple Logbook Page");
@@ -84,15 +84,15 @@ import java.util.List;
                             window2.show();
                         } else if (registrationBackend.logbookType(p).equals("comprehensive")) {
                             System.out.println("comprehensive");
-                            URL url2 = new File("lb_v2.fxml").toURI().toURL();
+                            URL url2 = new File("src\\main\\java\\lb_v2.fxml").toURI().toURL();
                             Parent root3 = FXMLLoader.load(url2);
                             Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                            window3.setTitle("Comprehensive Logbook Page");
+                            window3.setTitle("scr\\main\\java\\Comprehensive Logbook Page");
                             window3.setScene(new Scene(root3, 800, 600));
                             window3.show();
                         } else if (registrationBackend.logbookType(p).equals("intensive")) {
                             System.out.println("intensive");
-                            URL url2 = new File("lb_v3.fxml").toURI().toURL();
+                            URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
                             Parent root3 = FXMLLoader.load(url2);
                             Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                             window3.setTitle("Intensive Logbook Page");
@@ -115,7 +115,7 @@ import java.util.List;
 
             if (getRegister()) {
                 System.out.println("YOU IN REGISTER");
-                URL url1 = new File("registration.fxml").toURI().toURL();
+                URL url1 = new File("src\\main\\java\\registration.fxml").toURI().toURL();
                 Parent root1 = FXMLLoader.load((url1));
                 System.out.println("YEAH YOU HERE");
                 Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

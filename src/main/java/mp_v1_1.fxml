@@ -19,7 +19,7 @@
             <Reflection />
         </effect>
         <image>
-            <Image url="@src/main/java/login_OOP/src/Images/Logo1.png" />
+            <Image url="@java/login_OOP/src/Images/Logo1.png" />
         </image>
     </ImageView>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fefeff" height="289.0" layoutX="340.0" layoutY="52.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />

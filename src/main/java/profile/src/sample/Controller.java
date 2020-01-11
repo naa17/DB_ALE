@@ -113,7 +113,7 @@ public class Controller implements Initializable {
                 registrationFX.src.sample.Patient p = PatientDAO.getDetailsForEmail(login_email);
                 if (registrationBackend.logbookType(p).equals("simple")) {
                     System.out.println("simple");
-                    URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
+                    URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                     Parent root2 = FXMLLoader.load(url2);
                     Stage window2 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                     window2.setTitle("Simple Logbook Page");
@@ -122,7 +122,7 @@ public class Controller implements Initializable {
                 }
                 else if (registrationBackend.logbookType(p).equals("comprehensive")){
                     System.out.println("comprehensive");
-                    URL url2 = new File("lb_v2.fxml").toURI().toURL();
+                    URL url2 = new File("src\\main\\java\\lb_v2.fxml").toURI().toURL();
                     Parent root3 = FXMLLoader.load(url2);
                     Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                     window3.setTitle("Comprehensive Logbook Page");
@@ -132,7 +132,7 @@ public class Controller implements Initializable {
 
                 else if (registrationBackend.logbookType(p).equals("intensive")){
                     System.out.println("intensive");
-                    URL url2 = new File("lb_v3.fxml").toURI().toURL();
+                    URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
                     Parent root3 = FXMLLoader.load(url2);
                     Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                     window3.setTitle("Intensive Logbook Page");
