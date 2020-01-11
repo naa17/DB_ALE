@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DB_ALE.iml" filepath="$PROJECT_DIR$/.idea/modules/DB_ALE.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DB_ALE.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DB_ALE.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DB_ALE.test.iml" filepath="$PROJECT_DIR$/.idea/modules/DB_ALE.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reOrdered.DB_ALE.main.iml" filepath="$PROJECT_DIR$/.idea/modules/reOrdered.DB_ALE.main.iml" />
     </modules>
   </component>
 </project>

@@ -45,28 +45,10 @@ public class Registration_Controller {
     @FXML
     private void SubmitDetails(ActionEvent event) throws IOException, SQLException {
         event.consume();
-        String patient_Name = PatientName.getText();
-        String patient_Contact = PatientContact.getText();
-        String patient_Email = email.getText();
-        String patient_Password = password.getText();
-        String doctor_Name = doctorName.getText();
-        String doctor_Contact = doctorContact.getText();
-        String diabetes_Type = diabType.getValue().toString();
-        String insulin_Type = insType.getValue().toString();
-        String insulin_Admin = insAdmin.getValue().toString();
-        int filled = 1;
 
         List<String> patientDetails = new ArrayList<String>();
-        patientDetails.add(patient_Name);
-        patientDetails.add(patient_Contact);
-        patientDetails.add(patient_Email);
-        patientDetails.add(patient_Password);
-        patientDetails.add(doctor_Name);
-        patientDetails.add(doctor_Contact);
-        patientDetails.add(diabetes_Type);
-        patientDetails.add(insulin_Type);
-        patientDetails.add(insulin_Admin);
-
+        patientDetails = getPatientDetails();
+        int filled = 1;
 
         Patient p = new Patient(patientDetails.get(0), patientDetails.get(1), patientDetails.get(2), patientDetails.get(3),
                 patientDetails.get(4), patientDetails.get(5), patientDetails.get(6), patientDetails.get(7), patientDetails.get(8));
@@ -91,7 +73,7 @@ public class Registration_Controller {
         }
 
 
-        if (filled == 1 && isValidEmailAddress(patient_Email) && isValidEmailAddress(doctor_Contact)) {
+        if (filled == 1 && isValidEmailAddress(email.getText()) && isValidEmailAddress(doctorContact.getText())) {
             System.out.println("ready to get rollinnn");
             //String name_no_spaces = patient_Name.replaceAll("\\s+", "");
             //System.out.println(name_no_spaces);
@@ -101,7 +83,7 @@ public class Registration_Controller {
                 System.out.println("we rollinnn");
 
                 try {
-                    Patient p1 = PatientDAO.getDetailsForEmail(patient_Email);
+                    Patient p1 = PatientDAO.getDetailsForEmail(email.getText());
                     if (registrationBackend.logbookType(p1).equals("simple")) {
                         System.out.println("simple");
                         URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
@@ -139,10 +121,24 @@ public class Registration_Controller {
 ;
 
 
-        } else if(!isValidEmailAddress(patient_Email)|| !isValidEmailAddress(doctor_Contact)){
+        } else if(!isValidEmailAddress(email.getText())|| !isValidEmailAddress(doctorContact.getText())){
             showAlert("Invalid email address","The email you entered is not a valid email");
 
         }
+    }
+
+    private List<String> getPatientDetails() {
+        List<String> patientDetails = new ArrayList<String>();
+        patientDetails.add(PatientName.getText());
+        patientDetails.add(PatientContact.getText());
+        patientDetails.add(email.getText());
+        patientDetails.add(password.getText());
+        patientDetails.add(doctorName.getText());
+        patientDetails.add(doctorContact.getText());
+        patientDetails.add(diabType.getValue().toString());
+        patientDetails.add(insType.getValue().toString());
+        patientDetails.add(insAdmin.getValue().toString());
+        return patientDetails;
     }
 
     //This function checks to see if the recipient's email address is valid or not

@@ -31,7 +31,7 @@ public class logbookBackend {
             JavaMail mail = new JavaMail();
 
             if (today.getTime().substring(0,2).equals("po")){
-                mail.mainEmail(login_email, names);
+                mail.mainEmail(login_email, names, 1);
             }
 
 
