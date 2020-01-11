@@ -40,6 +40,7 @@ public class Registration_Controller {
     @FXML
     private ChoiceBox insAdmin;
 
+    public static String emailReg;
 
     @FXML
     private void SubmitDetails(ActionEvent event) throws IOException, SQLException {
@@ -70,6 +71,7 @@ public class Registration_Controller {
         Patient p = new Patient(patientDetails.get(0), patientDetails.get(1), patientDetails.get(2), patientDetails.get(3),
                 patientDetails.get(4), patientDetails.get(5), patientDetails.get(6), patientDetails.get(7), patientDetails.get(8));
 
+        emailReg = p.getEmail();
 
         for (int i = 0; i < patientDetails.size(); i++) {
             System.out.println(patientDetails.get(i));

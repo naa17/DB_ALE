@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import login_OOP.src.mp_v1.Controller_mp_v1;
+import registrationFX.src.sample.Registration_Controller;
 
 import java.io.File;
 import java.net.URL;
@@ -84,6 +85,9 @@ public class Controller_lb_v1_2 implements Initializable {
             ResultSet rs = stmt.executeQuery(sql);
             System.out.println("uhm");
             ArrayList<String> names = new ArrayList<String>();
+
+            System.out.println("~~~~BURNA BOYYYY~~~~~");
+            System.out.println(sql);
             while (rs.next()) {
                 System.out.println(rs.getString("name"));
                 //String name = rs.getString("name").replaceAll("\\s+", "");
@@ -91,8 +95,6 @@ public class Controller_lb_v1_2 implements Initializable {
                 names.add(rs.getString("name").replaceAll("\\s+", ""));
                 System.out.println(names);
                 return names;
-
-
             }
             rs.close();
             conn.close();
@@ -149,7 +151,7 @@ public class Controller_lb_v1_2 implements Initializable {
 // end of reference
 
 // add new values to the table
-public void btnAdd(ActionEvent actionEvent) {
+public void btnAdd(ActionEvent actionEvent) throws Exception {
     System.out.println("YES");
 
     // If 1st row is empty new day - prebreakfast class
@@ -201,12 +203,21 @@ public void btnAdd(ActionEvent actionEvent) {
     table.getItems().add(newToday);
 
     String login_email = Controller_mp_v1.email1;
+    if (isNullOrEmpty((login_email))){
+        login_email = Registration_Controller.emailReg;
+    }
+
     ArrayList<String> login_names = findTable(login_email);
     logbookBackend.insertToDB(newToday, login_names, login_email);
 
 
 
-}                 
+}
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.isEmpty())
+            return false;
+        return true;
+    }
 
 // editing table values
     public void EditValue(TableColumn.CellEditEvent<Today_v1_2, String> TodayStringCellEditEvent) {

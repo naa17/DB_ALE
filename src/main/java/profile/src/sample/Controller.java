@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import login_OOP.src.mp_v1.Controller_mp_v1;
+import registrationFX.src.sample.Registration_Controller;
 import registrationFX.src.sample.registrationBackend;
 
 import java.io.File;
@@ -76,11 +77,20 @@ public class Controller implements Initializable {
     }
 
 
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.isEmpty())
+            return false;
+        return true;
+    }
+
     public void buildData() {
         //ConnectionFactory objDbClass = new ConnectionFactory();
         Connection con = ConnectionFactory.getConnection();
         try {
             String login_email = Controller_mp_v1.email1;
+            if (isNullOrEmpty((login_email))){
+                login_email = Registration_Controller.emailReg;
+            }
             String SQL = "Select * from patientsfulldetails  WHERE email LIKE '"+ login_email+"'";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
@@ -110,6 +120,10 @@ public class Controller implements Initializable {
 
         try {
                 String login_email = Controller_mp_v1.email1;
+
+                if (isNullOrEmpty((login_email))){
+                    login_email = Registration_Controller.emailReg;
+                }
                 registrationFX.src.sample.Patient p = PatientDAO.getDetailsForEmail(login_email);
                 if (registrationBackend.logbookType(p).equals("simple")) {
                     System.out.println("simple");
