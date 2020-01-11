@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.jsimone:webapp-runner:8.5.11.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jsimone/webapp-runner/8.5.11.3/16054a160c454e65c65c2236a18a202451a37085/webapp-runner-8.5.11.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jsimone/webapp-runner/8.5.11.3/f4b847b03ee05e6dcfdff88c278ad44fcbadfa24/webapp-runner-8.5.11.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
