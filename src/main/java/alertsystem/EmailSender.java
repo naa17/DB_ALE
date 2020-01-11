@@ -12,7 +12,7 @@ import java.util.Properties;
 
 public class EmailSender
 {
-    public static boolean sendMail(String recipient, String recipient_name, String patientName) throws Exception {
+    public static boolean sendMail(String recipient, String recipient_name, String patientName) {
         System.out.println("Preparing to send email...");
         boolean hasSent;
 
@@ -27,11 +27,13 @@ public class EmailSender
         try{
             Transport.send(message);
             hasSent = true;
+            System.out.println("Message sent successfully!");
+
         } catch(MessagingException e){
             hasSent = false;
+            System.out.println("Error yo");
         }
 
-        System.out.println("Message sent successfully!");
         return hasSent;
     }
 
