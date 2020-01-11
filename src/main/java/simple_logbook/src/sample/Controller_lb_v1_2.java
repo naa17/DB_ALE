@@ -275,7 +275,7 @@ public void btnAdd(ActionEvent actionEvent) throws Exception {
     public void accessProfile(ActionEvent actionEvent) throws Exception
     {
         System.out.println("YOU going to profile");
-        URL urlp = new File("profile.fxml").toURI().toURL();
+        URL urlp = new File("src\\main\\java\\profile.fxml").toURI().toURL();
         Parent root1 = FXMLLoader.load((urlp));
         System.out.println("YEAH YOU HERE");
         Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

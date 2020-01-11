@@ -86,7 +86,7 @@ public class Registration_Controller {
                     Patient p1 = PatientDAO.getDetailsForEmail(email.getText());
                     if (registrationBackend.logbookType(p1).equals("simple")) {
                         System.out.println("simple");
-                        URL url2 = new File("lb_v1_2.fxml").toURI().toURL();
+                        URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                         Parent root2 = FXMLLoader.load(url2);
                         Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         window2.setTitle("Simple Logbook Page");
@@ -95,7 +95,7 @@ public class Registration_Controller {
                     }
                     if (registrationBackend.logbookType(p).equals("comprehensive")){
                         System.out.println("comprehensive");
-                        URL url2 = new File("lb_v2.fxml").toURI().toURL();
+                        URL url2 = new File("src\\main\\java\\lb_v2.fxml").toURI().toURL();
                         Parent root3 = FXMLLoader.load(url2);
                         Stage window3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         window3.setTitle("Comprehensive Logbook Page");
@@ -105,7 +105,7 @@ public class Registration_Controller {
 
                     if (registrationBackend.logbookType(p).equals("intensive")){
                         System.out.println("intensive");
-                        URL url2 = new File("lb_v3.fxml").toURI().toURL();
+                        URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
                         Parent root3 = FXMLLoader.load(url2);
                         Stage window3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         window3.setTitle("Intensive Logbook Page");
