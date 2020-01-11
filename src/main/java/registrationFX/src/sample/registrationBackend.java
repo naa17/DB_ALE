@@ -91,7 +91,7 @@ public class registrationBackend implements DAO {
 
         String INSERT_USER_SQL = "INSERT INTO patientsfulldetails" +
                 "  (name, contact, email, password, doctorName, doctorContact, diabetesType, insulinType, insulinAdmin) VALUES " +
-                " (?, ?, ?, ?, ?,?,?,?,?,?);";
+                " (?, ?, ?, ?, ?,?,?,?,?);";
 
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -108,7 +108,6 @@ public class registrationBackend implements DAO {
             preparedStatement.setString(7, p.getDiabetesType());
             preparedStatement.setString(8, p.getInsulinType());
             preparedStatement.setString(9, p.getInsulinAdmin());
-            preparedStatement.setString(10, p.getLogbookType());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

@@ -6,63 +6,43 @@ import java.sql.*;
 import java.util.*;
 
 public class Login {
-    public Login() {
-    }
-    public static boolean login = false;
+    public Login()
+    {
 
-    public static void checkLogin(List<String> list) throws SQLException {
+    }
+    public static boolean passwordExist = false;
+
+    public static void checkLogin(List<String> list) throws SQLException
+    {
         String email1 = list.get(0);
         String password = list.get(1);
+        ResultSet rs = makeConnection(email1);
 
-        Connection conn = ConnectionFactory.getConnection();
-
-        String sql = "SELECT email, password FROM patientsfulldetails WHERE email = ?";
-
-        PreparedStatement ps =conn.prepareStatement(sql);
-        ps.setString (1, email1);
-
-        ResultSet rs = ps.executeQuery();
         try {
             System.out.println("TRYYY");
 
-
             if(rs.next()) {
-                System.out.println("NEXTTTTT");
-                String dbEmail = rs.getString("email"); //from table
-
-                if (email1.equals(dbEmail)) {
-                    //all good
-                    System.out.println("email exists");
-                }
 
                 //Checking for password
                 String dbPwd = rs.getString("password"); //from table
                 if (password.equals(dbPwd)) {
                     //Redirect to next page
                     System.out.println("User credentials match.");
-                    login = true;
-
+                    passwordExist = true;
                 } else {
                     //Print out "Invalid password!"
-                    System.out.println("Email and password do not match.");
-                    System.out.println("Please fill in all values and submit again");
-                    Alert alert1 = new Alert(Alert.AlertType.WARNING);
-                    alert1.setTitle("Warning Dialog");
-                    alert1.setHeaderText("Invalid password");
-                    alert1.setContentText("Please fill in the correct password and submit again");
-                    alert1.showAndWait();
+                    String header = "Invalid password";
+                    String content = "Please fill in the correct password and submit again";
+                    showAlert(header, content);
                 }
 
 
             }else {
                 //Print out
-                System.out.println("Invalid email - Register?");
-                System.out.println("Please fill in all values and submit again");
-                Alert alert1 = new Alert(Alert.AlertType.WARNING);
-                alert1.setTitle("Warning Dialog");
-                alert1.setHeaderText("Invalid email");
-                alert1.setContentText("Please fill in a different email and submit again");
-                alert1.showAndWait();
+                //Print out different email
+                String header = "Invalid email";
+                String content = "Please fill in a different email and submit again";
+                showAlert(header, content);
             }
 
 
@@ -72,8 +52,42 @@ public class Login {
 
 
 
+    }
+
+    //Making the connection
+    public static ResultSet makeConnection(String email1) throws SQLException {
+        Connection conn = ConnectionFactory.getConnection();
+
+        String sql = "SELECT email, password FROM patientsfulldetails WHERE email = ?";
+
+        PreparedStatement ps =conn.prepareStatement(sql);
+        ps.setString (1, email1);
+
+        return ps.executeQuery();
+    }
+
+    //Check the password
+    private static boolean checkPassword(ResultSet rs, String password) throws SQLException {
+        String dbPwd = rs.getString("password"); //from table
+        if (password.equals(dbPwd))
+        {
+            //Redirect to next page
+            System.out.println("User credentials match.");
+            passwordExist = true;
+        }
+        return passwordExist;
+    }
+
+    //This function creates alerts and pop-up windows
+    private static void showAlert(String header, String content)
+    {
+        Alert alert1 = new Alert(Alert.AlertType.WARNING);
+        alert1.setTitle("Warning Dialog");
+        alert1.setHeaderText(header);
+        alert1.setContentText(content);
+        alert1.showAndWait();
+    }
+
+    public static boolean getLogin(){return passwordExist;}
 }
 
-
-    public static boolean getLogin(){return login;}
-}
