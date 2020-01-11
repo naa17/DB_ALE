@@ -193,7 +193,7 @@ public class Controller_lb2 implements Initializable {
         ArrayList<String> login_names = findTable(login_email);
         System.out.println("~~~~~~~~~~~~~~~~");
         System.out.println("entering insert to db");
-        compBackend.insertToDB(newToday, login_names);
+        compBackend.insertToDB(newToday, login_names, login_email);
     }
 
 // editing table values

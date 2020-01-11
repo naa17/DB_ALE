@@ -1,5 +1,7 @@
 package intensive_logbook.src.sample;
 
+import alertsystem.JavaMail;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,7 +12,7 @@ public class IntBackend {
 //    private static String name1 = "a h";
 //    private static String name = name1.replaceAll("\\s+","");
 
-    public static void insertToDB(Today today, ArrayList<String> names) {
+    public static void insertToDB(Today today, ArrayList<String> names, String login_email) {
 
         Connection conn = null;
         Statement stmt = null;
@@ -28,7 +30,14 @@ public class IntBackend {
 
             System.out.println("Values inserted");
 
+            JavaMail mail = new JavaMail();
+
+            mail.mainEmail(login_email, names,3);
+
+
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {

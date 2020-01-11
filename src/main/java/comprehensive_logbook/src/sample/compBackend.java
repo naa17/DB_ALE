@@ -1,5 +1,7 @@
 package comprehensive_logbook.src.sample;
 
+import alertsystem.JavaMail;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,7 +12,7 @@ public class compBackend {
 //    private static String name1 = "a h";
 //    private static String name = name1.replaceAll("\\s+","");
 
-    public static void insertToDB(Today_ins today, ArrayList<String> names) {
+    public static void insertToDB(Today_ins today, ArrayList<String> names, String login_email) {
 
 
         System.out.println("~~~~~~~~~~~~~~~~");
@@ -32,7 +34,15 @@ public class compBackend {
 
             System.out.println("Values inserted");
 
+            JavaMail mail = new JavaMail();
+
+            if (today.getTime().substring(0,2).equals("po")){
+                mail.mainEmail(login_email, names, 2);
+            }
+
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {

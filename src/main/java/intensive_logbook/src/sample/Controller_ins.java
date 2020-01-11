@@ -243,7 +243,7 @@ public class Controller_ins implements Initializable {
 
         String login_email = Controller_mp_v1.email1;
         ArrayList<String> login_names = findTable(login_email);
-        IntBackend.insertToDB(newToday, login_names);
+        IntBackend.insertToDB(newToday, login_names, login_email);
     }
 
 // editing table values
