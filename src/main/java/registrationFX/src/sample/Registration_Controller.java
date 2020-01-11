@@ -162,10 +162,3 @@ public class Registration_Controller {
     }
 
 }
-
-
-
-
-
-
-
