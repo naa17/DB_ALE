@@ -18,7 +18,7 @@
     <facet type="web" name="Web Gradle : DB_ALE-1.0-SNAPSHOT.war">
       <configuration>
         <webroots>
-          <root url="file://C:\Users\Sarah\Documents\Year_3\Programming_3\DB_ALE\src\main\webapp" relative="/" />
+          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/META-INF" relative="/META-INF" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-api-1.5.3.jar_c0d49c6af1442fca8f8ccb99e4e506cc/javax" relative="/javax" />
           <root url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/javax.mail-1.5.3.jar_7ff82585098f5d927a9afe3ead85c97d/META-INF" relative="/META-INF" />
@@ -56,7 +56,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
-    <output url="file://$MODULE_DIR$/../../out/production/classes" />
+    <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/META-INF" />
     <content url="file://$MODULE_DIR$/../../build/tmp/expandedArchives/activation-1.1.1.jar_0f8d7c90bfda7aedfc5ae2299a5faa00/com" />

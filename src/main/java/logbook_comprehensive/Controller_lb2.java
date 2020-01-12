@@ -35,10 +35,10 @@ import java.util.ResourceBundle;
 public class Controller_lb2 implements Initializable {
 
     @FXML
-    public TableView<Today_ins> table;
-    public TableColumn<Today_ins, String> Gluc;
-    public TableColumn<Today_ins, String> Carb;
-    public TableColumn<Today_ins, String> Ins;
+    public TableView<Today_comp> table;
+    public TableColumn<Today_comp, String> Gluc;
+    public TableColumn<Today_comp, String> Carb;
+    public TableColumn<Today_comp, String> Ins;
     public TextField Gluctxt;
     public TextField Carbtxt;
     public TextField Instxt;
@@ -51,9 +51,9 @@ public class Controller_lb2 implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Gluc.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("Gluc"));
-        Carb.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("Carb"));
-        Ins.setCellValueFactory(new PropertyValueFactory<Today_ins, String>("Ins"));
+        Gluc.setCellValueFactory(new PropertyValueFactory<Today_comp,String>("Gluc"));
+        Carb.setCellValueFactory(new PropertyValueFactory<Today_comp,String>("Carb"));
+        Ins.setCellValueFactory(new PropertyValueFactory<Today_comp, String>("Ins"));
         table.setEditable(true);
 
 
@@ -110,9 +110,13 @@ public class Controller_lb2 implements Initializable {
     public void buildData() {
         //DB_ALE.ConnectionFactory objDbClass = new DB_ALE.ConnectionFactory();
         Connection con = DB_ALE.ConnectionFactory.getConnection();
-        ObservableList<Today_ins> data1 =table.getItems();
+        ObservableList<Today_comp> data1 =table.getItems();
+
         try {
             String login_email = Controller_mp_v1.email1;
+            if (isNullOrEmpty((login_email))){
+                login_email = Registration_Controller.emailReg;
+            }
             ArrayList<String> login_names = findTable(login_email);
             String name = login_names.get(1);
             String date = getDate();
@@ -130,7 +134,7 @@ public class Controller_lb2 implements Initializable {
                 String time = cm.getTime();
                 String ins = String.valueOf(cm.getIns());
                 // class today instantiated with strings from database
-                Today_ins today = new Today_ins(gluc, carbs, ins, time, getDate());
+                Today_comp today = new Today_comp(gluc, carbs, ins, time, getDate());
                 data1.add(today);
             }
             // add list of today class to table
@@ -160,7 +164,7 @@ public class Controller_lb2 implements Initializable {
         // If 2nd row - postbreakfast
         // etc
 
-        ObservableList<Today_ins> items = table.getItems();
+        ObservableList<Today_comp> items = table.getItems();
 
         // add a different time of day value depending on cells filled in table
         String time="";
@@ -200,7 +204,7 @@ public class Controller_lb2 implements Initializable {
             time="bedtime";
         }
 
-        Today_ins newToday= new Today_ins(Gluctxt.getText(), Carbtxt.getText(), Instxt.getText(), time, getDate());
+        Today_comp newToday= new Today_comp(Gluctxt.getText(), Carbtxt.getText(), Instxt.getText(), time, getDate());
         table.getItems().add(newToday);
 
         String login_email = Controller_mp_v1.email1;
@@ -222,9 +226,9 @@ public class Controller_lb2 implements Initializable {
 
 // editing table values
 
-    public void EditValue(TableColumn.CellEditEvent<Today_ins, String> TodayStringCellEditEvent) {
+    public void EditValue(TableColumn.CellEditEvent<Today_comp, String> TodayStringCellEditEvent) {
 
-        Today_ins Today = table.getSelectionModel().getSelectedItem();
+        Today_comp Today = table.getSelectionModel().getSelectedItem();
         Today.setGluc(TodayStringCellEditEvent.getNewValue());
         Today.setCarb(TodayStringCellEditEvent.getNewValue());
         Today.setIns(TodayStringCellEditEvent.getNewValue());
@@ -242,7 +246,7 @@ public class Controller_lb2 implements Initializable {
         series1.setName("Recommended values");
         series.setName("Today values");
 
-        ObservableList<Today_ins> items = table.getItems();
+        ObservableList<Today_comp> items = table.getItems();
         series1.getData().add(new XYChart.Data<>("8 am",90));
         series1.getData().add(new XYChart.Data<>("9 am",180));
         series1.getData().add(new XYChart.Data<>("12 am",100));
@@ -281,6 +285,18 @@ public class Controller_lb2 implements Initializable {
         System.out.println("YEAH YOU HERE");
         Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window1.setTitle("Profile Page");
+        window1.setScene(new Scene(root1, 800, 800));
+        window1.show();
+    }
+
+    public void goCalendar(ActionEvent actionEvent) throws Exception
+    {
+        System.out.println("YOU going to past entries");
+        URL urlp = new File("src\\main\\java\\calendar_c.fxml").toURI().toURL();
+        Parent root1 = FXMLLoader.load((urlp));
+        System.out.println("YEAH YOU HERE");
+        Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window1.setTitle("Past entries");
         window1.setScene(new Scene(root1, 800, 800));
         window1.show();
     }

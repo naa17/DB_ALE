@@ -158,5 +158,4 @@ public class Registration_Controller {
         alert1.setContentText(content);
         alert1.showAndWait();
     }
-
 }

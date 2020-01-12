@@ -1,3 +1,4 @@
+//Main class. Redirects to the login fxml
 package DB_ALE;
 //import java.login.*;
 

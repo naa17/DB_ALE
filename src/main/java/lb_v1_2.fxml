@@ -23,7 +23,7 @@
         </TableView>
         <TextField fx:id="Gluctxt" layoutX="400.0" layoutY="82.0" prefHeight="27.0" prefWidth="105.0" promptText="Blood Glucose" />
         <TextField fx:id="Carbtxt" layoutX="400.0" layoutY="116.0" prefHeight="27.0" prefWidth="105.0" promptText="Carbs Eaten" />
-        <Button fx:id="btn" layoutX="400.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnAdd" text="Add" />
+        <Button fx:id="btn" layoutX="401.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnAdd" text="Add" />
         <TextArea layoutX="39.0" layoutY="43.0" prefHeight="178.0" prefWidth="128.0" />
         <Text layoutX="39.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Pre Breakfast       " wrappingWidth="128.0" />
         <Line endX="100.0" layoutX="140.0" layoutY="69.0" startX="-100.0" stroke="#979696" strokeWidth="0.5" />
@@ -38,9 +38,9 @@
         <Line endX="25.0" layoutX="140.0" layoutY="194.0" opacity="0.28" startX="-100.0" />
         <Text layoutX="40.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Post Dinner" />
       <Button id="load" fx:id="load" layoutX="400.0" layoutY="43.0" mnemonicParsing="false" onAction="#loadAdd" prefHeight="25.0" prefWidth="105.0" text="Load  Values " />
-      <Button fx:id="plot_today" layoutX="446.0" layoutY="161.0" mnemonicParsing="false" onAction="#plotToday" prefHeight="25.0" prefWidth="56.0" text="Plot" />
-      <Button fx:id="profile" layoutX="399.0" layoutY="194.0" mnemonicParsing="false" onAction="#accessProfile" prefHeight="25.0" prefWidth="105.0" text="Access Profile" />
-      <LineChart fx:id="lineChart" layoutX="39.0" layoutY="231.0" prefHeight="288.0" prefWidth="465.0">
+      <Button fx:id="plot_today" layoutX="447.0" layoutY="152.0" mnemonicParsing="false" onAction="#plotToday" prefHeight="25.0" prefWidth="56.0" text="Plot" />
+      <Button fx:id="profile" layoutX="400.0" layoutY="185.0" mnemonicParsing="false" onAction="#accessProfile" prefHeight="25.0" prefWidth="105.0" text="Access Profile" />
+      <LineChart fx:id="lineChart" layoutX="39.0" layoutY="239.0" prefHeight="288.0" prefWidth="465.0">
         <xAxis>
           <CategoryAxis animated="false" label="Time of day" side="BOTTOM" />
         </xAxis>
@@ -48,6 +48,7 @@
           <NumberAxis label="Blood Glucose (mg/dL)" side="LEFT" />
         </yAxis>
       </LineChart>
+      <Button fx:id="pastBtn" layoutX="401.0" layoutY="218.0" mnemonicParsing="false" onAction="#goCalendar" prefHeight="25.0" prefWidth="105.0" text="Past entries" />
     </children>
     <opaqueInsets>
         <Insets top="100.0" />

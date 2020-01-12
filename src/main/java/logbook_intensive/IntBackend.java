@@ -14,7 +14,7 @@ public class IntBackend {
 //    private static String name1 = "a h";
 //    private static String name = name1.replaceAll("\\s+","");
 
-    public static void insertToDB(Today today, ArrayList<String> names, String login_email) {
+    public static void insertToDB(Today_ins today, ArrayList<String> names, String login_email) {
 
         Connection conn = null;
         Statement stmt = null;

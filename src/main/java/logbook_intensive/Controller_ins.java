@@ -34,13 +34,13 @@ import java.util.ResourceBundle;
 public class Controller_ins implements Initializable {
 
     @FXML
-    public TableView<Today> table;
-    public TableColumn<Today, String> Gluc;
-    public TableColumn<Today, String> CHO_grams;
-    public TableColumn<Today, String> CHO_bolus;
-    public TableColumn<Today, String> hi_bolus;
-    public TableColumn<Today, String> basal_rate;
-    public TableColumn<Today, String> ketones;
+    public TableView<Today_ins> table;
+    public TableColumn<Today_ins, String> Gluc;
+    public TableColumn<Today_ins, String> CHO_grams;
+    public TableColumn<Today_ins, String> CHO_bolus;
+    public TableColumn<Today_ins, String> hi_bolus;
+    public TableColumn<Today_ins, String> basal_rate;
+    public TableColumn<Today_ins, String> ketones;
     public TextField Gluctxt;
     public TextField CHOgtxt;
     public TextField CHObtxt;
@@ -56,12 +56,12 @@ public class Controller_ins implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Gluc.setCellValueFactory(new PropertyValueFactory<Today,String>("Gluc"));
-        CHO_grams.setCellValueFactory(new PropertyValueFactory<Today,String>("CHO_grams"));
-        CHO_bolus.setCellValueFactory(new PropertyValueFactory<Today,String>("CHO_bolus"));
-        hi_bolus.setCellValueFactory(new PropertyValueFactory<Today,String>("hi_bolus"));
-        basal_rate.setCellValueFactory(new PropertyValueFactory<Today,String>("basal_rate"));
-        ketones.setCellValueFactory(new PropertyValueFactory<Today,String>("Ketones"));
+        Gluc.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("Gluc"));
+        CHO_grams.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("CHO_grams"));
+        CHO_bolus.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("CHO_bolus"));
+        hi_bolus.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("hi_bolus"));
+        basal_rate.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("basal_rate"));
+        ketones.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("Ketones"));
          //inputTable.setItems(data);
         table.setEditable(true);
         Gluc.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -119,9 +119,12 @@ public class Controller_ins implements Initializable {
     public void buildData() {
         //DB_ALE.ConnectionFactory objDbClass = new DB_ALE.ConnectionFactory();
         Connection con = DB_ALE.ConnectionFactory.getConnection();
-        ObservableList<Today> data1 =table.getItems();
+        ObservableList<Today_ins> data1 =table.getItems();
         try {
             String login_email = Controller_mp_v1.email1;
+            if (isNullOrEmpty((login_email))){
+                login_email = Registration_Controller.emailReg;
+            }
             ArrayList<String> login_names = findTable(login_email);
             String name = login_names.get(1);
             String SQL = "Select * from " +name +" where date like '"+getDate()+"'";
@@ -144,7 +147,7 @@ public class Controller_ins implements Initializable {
                 String ketones = String.valueOf(cm.getKetones());
                 String time = cm.getTime();
                 // class today instantiated with strings from database
-                Today today = new Today(gluc, CHO_Grams, CHO_bolus, hi_bolus, basal_rate, ketones, time, getDate());
+                Today_ins today = new Today_ins(gluc, CHO_Grams, CHO_bolus, hi_bolus, basal_rate, ketones, time, getDate());
                 data1.add(today);
             }
             // add list of today class to table
@@ -173,7 +176,7 @@ public class Controller_ins implements Initializable {
         // If 2nd row - postbreakfast
         // etc
 
-        ObservableList<Today> items = table.getItems();
+        ObservableList<Today_ins> items = table.getItems();
         // add a different time of day value depending on cells filled in table
 
         String time="";
@@ -250,7 +253,7 @@ public class Controller_ins implements Initializable {
         {
             time="11 PM";
         }
-        Today newToday= new Today(Gluctxt.getText(), CHOgtxt.getText(), CHObtxt.getText(), hitxt.getText(), basaltxt.getText(), ketonestxt.getText(), time, getDate());
+        Today_ins newToday= new Today_ins(Gluctxt.getText(), CHOgtxt.getText(), CHObtxt.getText(), hitxt.getText(), basaltxt.getText(), ketonestxt.getText(), time, getDate());
         table.getItems().add(newToday);
 
         String login_email = Controller_mp_v1.email1;
@@ -268,9 +271,9 @@ public class Controller_ins implements Initializable {
 
 // editing table values
 
-    public void EditValue(TableColumn.CellEditEvent<Today, String> TodayStringCellEditEvent) {
+    public void EditValue(TableColumn.CellEditEvent<Today_ins, String> TodayStringCellEditEvent) {
 
-        Today Today = table.getSelectionModel().getSelectedItem();
+        Today_ins Today = table.getSelectionModel().getSelectedItem();
         Today.setGluc(TodayStringCellEditEvent.getNewValue());
         Today.setCHO_grams(TodayStringCellEditEvent.getNewValue());
         Today.setCHO_bolus(TodayStringCellEditEvent.getNewValue());
@@ -291,7 +294,7 @@ public class Controller_ins implements Initializable {
         series1.setName("Recommended values");
         series.setName("Today values");
 
-        ObservableList<Today> items = table.getItems();
+        ObservableList<Today_ins> items = table.getItems();
         series1.getData().add(new XYChart.Data<>("6 am",70));
         series1.getData().add(new XYChart.Data<>("7 am",75));
         series1.getData().add(new XYChart.Data<>("8 am",80));
@@ -354,6 +357,18 @@ public class Controller_ins implements Initializable {
         Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window1.setTitle("Profile Page");
         window1.setScene(new Scene(root1, 800, 800));
+        window1.show();
+    }
+
+    public void goCalendar(ActionEvent actionEvent) throws Exception
+    {
+        System.out.println("YOU going to past entries");
+        URL urlp = new File("src\\main\\java\\calendar_i.fxml").toURI().toURL();
+        Parent root1 = FXMLLoader.load((urlp));
+        System.out.println("YEAH YOU HERE");
+        Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window1.setTitle("Past entries");
+        window1.setScene(new Scene(root1, 1000, 1000));
         window1.show();
     }
 

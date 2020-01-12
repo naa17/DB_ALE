@@ -144,7 +144,7 @@ public class Controller implements Initializable {
                     window3.setTitle("Comprehensive Logbook Page");
                     window3.setScene(new Scene(root3, 800, 600));
                     window3.show();
-                    nextPage("lb_v1_2.fxml", actionEvent, "Simple Logbook Page");
+                    //nextPage("lb_v1_2.fxml", actionEvent, "Simple Logbook Page");
                 }
                /* else if (registrationBackend.logbookType(p).equals("comprehensive")){
                     System.out.println("comprehensive");
@@ -159,7 +159,7 @@ public class Controller implements Initializable {
                     window3.setTitle("Intensive Logbook Page");
                     window3.setScene(new Scene(root3, 1000, 1200));
                     window3.show();
-                    nextPage("lb_v3.fxml", actionEvent, "Intensive Logbook Page");
+                    //nextPage("lb_v3.fxml", actionEvent, "Intensive Logbook Page");
                 }
 
 

@@ -10,12 +10,14 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-
 <GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="logbook_intensive.Controller_ins">
+
    <children>
       <AnchorPane prefHeight="769.0" prefWidth="683.0">
          <children>
@@ -47,7 +49,7 @@
             <Text layoutX="50.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11 AM" />
             <Button id="load" fx:id="load" layoutX="596.0" layoutY="41.0" mnemonicParsing="false" onAction="#loadAdd" prefHeight="25.0" prefWidth="80.0" text="Load  " />
             <Button fx:id="plot" layoutX="598.0" layoutY="310.0" mnemonicParsing="false" onAction="#plotToday" prefHeight="25.0" prefWidth="72.0" text="Plot" />
-            <Button fx:id="profile" layoutX="596.0" layoutY="347.0" mnemonicParsing="false" onAction="#accessProfile" prefHeight="25.0" prefWidth="80.0" text="Profile" />
+            <Button fx:id="profile" layoutX="599.0" layoutY="347.0" mnemonicParsing="false" onAction="#accessProfile" prefHeight="25.0" prefWidth="72.0" text="Profile" />
             <LineChart fx:id="lineChart" layoutX="17.0" layoutY="528.0" prefHeight="278.0" prefWidth="649.0">
                <xAxis>
                   <CategoryAxis animated="false" label="Time of day" side="BOTTOM" />
@@ -84,10 +86,17 @@
             <TextField fx:id="hitxt" layoutX="596.0" layoutY="171.0" prefHeight="27.0" prefWidth="80.0" promptText="Hi BG Bolus" />
             <TextField fx:id="basaltxt" layoutX="596.0" layoutY="204.0" prefHeight="27.0" prefWidth="80.0" promptText="Basal rate" />
             <TextField fx:id="ketonestxt" layoutX="595.0" layoutY="237.0" prefHeight="27.0" prefWidth="80.0" promptText="Ketones" />
+            <Button fx:id="pastBtn" layoutX="596.0" layoutY="384.0" mnemonicParsing="false" onAction="#goCalendar" prefHeight="25.0" prefWidth="80.0" text="Past entries" />
          </children>
          <opaqueInsets>
             <Insets top="100.0" />
          </opaqueInsets>
       </AnchorPane>
    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>

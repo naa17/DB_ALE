@@ -14,7 +14,7 @@ public class CompBackend {
 //    private static String name1 = "a h";
 //    private static String name = name1.replaceAll("\\s+","");
 
-    public static void insertToDB(Today_ins today, ArrayList<String> names, String login_email) {
+    public static void insertToDB(Today_comp today, ArrayList<String> names, String login_email) {
 
 
         System.out.println("~~~~~~~~~~~~~~~~");

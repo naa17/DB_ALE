@@ -1,5 +1,7 @@
-package login;//converts input (a list of Verification objects) to Json format. Outputs a json string
+//converts input (a list of Verification objects) to Json format. Outputs a json string.
+//Not used.
 
+package login;
 import DB_ALE.Today;
 
 import java.util.List;
@@ -16,5 +18,3 @@ public class objectToJson {
 
     }
 }
-
-

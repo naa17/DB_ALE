@@ -1,3 +1,5 @@
+//Verification data access object
+
 package login;
 
 import java.sql.*;
