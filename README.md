@@ -48,5 +48,5 @@ We use GitHub for versioning. For the versions available, see the tags and commi
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgment
-* [Mr Martin Holloway]
-* [Mr Filip Paszkiewicz]
+* Mr Martin Holloway
+* Mr Filip Paszkiewicz
