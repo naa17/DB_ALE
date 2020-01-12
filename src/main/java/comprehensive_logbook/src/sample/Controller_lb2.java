@@ -113,6 +113,9 @@ public class Controller_lb2 implements Initializable {
         ObservableList<Today_comp> data1 =table.getItems();
         try {
             String login_email = Controller_mp_v1.email1;
+            if (isNullOrEmpty((login_email))){
+                login_email = Registration_Controller.emailReg;
+            }
             ArrayList<String> login_names = findTable(login_email);
             String name = login_names.get(1);
             String date = getDate();

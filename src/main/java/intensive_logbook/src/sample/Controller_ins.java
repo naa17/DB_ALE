@@ -122,6 +122,9 @@ public class Controller_ins implements Initializable {
         ObservableList<Today> data1 =table.getItems();
         try {
             String login_email = Controller_mp_v1.email1;
+            if (isNullOrEmpty((login_email))){
+                login_email = Registration_Controller.emailReg;
+            }
             ArrayList<String> login_names = findTable(login_email);
             String name = login_names.get(1);
             String SQL = "Select * from " +name +" where date like '"+getDate()+"'";

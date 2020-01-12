@@ -1,16 +1,25 @@
 package simple_logbook.src.sample;
 
+import comprehensive_logbook.src.sample.PatientDAO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import login_OOP.src.mp_v1.Controller_mp_v1;
 import registrationFX.src.sample.Registration_Controller;
+import registrationFX.src.sample.registrationBackend;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.net.URL;
@@ -65,7 +74,7 @@ public class Controller_cs implements  Initializable{
                     Usermaster cm = new Usermaster();
                     cm.gluc.set(rs.getInt("glucose"));
                     cm.carbs.set(rs.getInt("carbs"));
-                    cm.time.set(rs.getString("timeofday"));
+                    cm.time.set(rs.getString("timesofday"));
                     String gluc = String.valueOf(cm.getGluc());
                     String carbs = String.valueOf(cm.getCarbs());
                     String time = cm.getTime();
@@ -170,10 +179,63 @@ public class Controller_cs implements  Initializable{
 
         }
 
-        public void logbook(ActionEvent actionEvent)
-        {
-            System.out.println("going to logbook");
+    public void logbook(javafx.event.ActionEvent actionEvent) throws Exception
+    {
+
+        try {
+            String login_email = Controller_mp_v1.email1;
+
+            if (isNullOrEmpty((login_email))){
+                login_email = Registration_Controller.emailReg;
+            }
+            registrationFX.src.sample.Patient p = PatientDAO.getDetailsForEmail(login_email);
+            if (registrationBackend.logbookType(p).equals("simple")) {
+                System.out.println("simple");
+                URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
+                Parent root2 = FXMLLoader.load(url2);
+                Stage window2 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                window2.setTitle("Simple Logbook Page");
+                window2.setScene(new Scene(root2, 800, 600));
+                window2.show();
+            }
+            else if (registrationBackend.logbookType(p).equals("comprehensive")){
+                System.out.println("comprehensive");
+                URL url2 = new File("src\\main\\java\\lb_v2.fxml").toURI().toURL();
+                Parent root3 = FXMLLoader.load(url2);
+                Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                window3.setTitle("Comprehensive Logbook Page");
+                window3.setScene(new Scene(root3, 800, 600));
+                window3.show();
+                nextPage("lb_v1_2.fxml", actionEvent, "Simple Logbook Page");
+            }
+
+            else if (registrationBackend.logbookType(p).equals("intensive")){
+                System.out.println("intensive");
+                URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
+                Parent root3 = FXMLLoader.load(url2);
+                Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                window3.setTitle("Intensive Logbook Page");
+                window3.setScene(new Scene(root3, 1000, 1200));
+                window3.show();
+                nextPage("lb_v3.fxml", actionEvent, "Intensive Logbook Page");
+            }
+
+
+        }catch(Exception e){
+            e.printStackTrace();
         }
+
+
+    }
+
+    public void nextPage(String fxml, ActionEvent event,String title) throws IOException {
+        URL url2 = new File(fxml).toURI().toURL();
+        Parent root2 = FXMLLoader.load(url2);
+        Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window2.setTitle(title);
+        window2.setScene(new Scene(root2, 800, 600));
+        window2.show();
+    }
 
 
     }
