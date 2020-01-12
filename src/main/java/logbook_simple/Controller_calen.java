@@ -1,4 +1,5 @@
-//Calendar page for Simple logbook
+//Controller for the Calendar page for Simple logbook
+//Specifies what actions to take when buttons are pushed.
 
 package logbook_simple;
 
@@ -52,10 +53,10 @@ public class Controller_calen implements  Initializable {
 
     }
 
+//    Picking a date on the UI calendar
     public void pickDate(ActionEvent actionEvent) {
         LocalDate date = calendar.getValue();
         String chosen_day = String.valueOf(date);
-        System.out.println(chosen_day);
         buildData(chosen_day);
     }
 
@@ -65,15 +66,19 @@ public class Controller_calen implements  Initializable {
         Connection con = ConnectionFactory.getConnection();
         ObservableList<Today> data1 = table.getItems();
         try {
-            //email of the patient, taken from last place where it was saved
-            //if the user is new, and comes from registration, email is taken from the registration controller
-            //else it is taken from the login controller
+//            The row of the user in the database table containing all patients and their details
+//            is retrieved by querying the table from their email.
+//            Their email is retrieved from the last place it was saved which can be one of two options.
+//            If the user is registering from the first time, the place is the registration controller.
+//            In this case Controller_mp_v1.email1 is null.
+//            If they are logging in, the place is the login controller.
             String login_email = Controller_mp_v1.email1;//from login
             if (isNullOrEmpty((login_email))) {
                 login_email = Registration_Controller.emailReg;//from registration
             }
 
             //getting the name of the patient
+            //their logbook table name is their regitered name without spaces
             ArrayList<String> login_names = findTable(login_email);
 
             String SQL = "Select * from " + login_names.get(1) + " where date like '" + day + "'";
@@ -193,7 +198,6 @@ public class Controller_calen implements  Initializable {
                 window2.setScene(new Scene(root2, 800, 600));
                 window2.show();
             } else if (RegistrationBackend.logbookType(p).equals("comprehensive")) {
-                System.out.println("comprehensive");
                 URL url2 = new File("src\\main\\java\\lb_v2.fxml").toURI().toURL();
                 Parent root3 = FXMLLoader.load(url2);
                 Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -202,7 +206,6 @@ public class Controller_calen implements  Initializable {
                 window3.show();
                 nextPage("lb_v1_2.fxml", actionEvent, "Simple Logbook Page");
             } else if (RegistrationBackend.logbookType(p).equals("intensive")) {
-                System.out.println("intensive");
                 URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
                 Parent root3 = FXMLLoader.load(url2);
                 Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -211,15 +214,12 @@ public class Controller_calen implements  Initializable {
                 window3.show();
                 nextPage("lb_v3.fxml", actionEvent, "Intensive Logbook Page");
             }
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
+//    Redirects to corresponding logbook page
     public void nextPage(String fxml, ActionEvent event, String title) throws IOException {
         URL url2 = new File(fxml).toURI().toURL();
         Parent root2 = FXMLLoader.load(url2);

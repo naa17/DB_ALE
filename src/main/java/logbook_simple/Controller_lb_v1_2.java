@@ -1,4 +1,5 @@
-//Simple logbook page
+//Simple logbook page controller
+//Specifies what actions to take when the buttons are pushed
 
 package logbook_simple;
 
@@ -61,7 +62,6 @@ public class Controller_lb_v1_2 implements Initializable {
 
     // load values from database into table - from the same day
     public void loadAdd(ActionEvent actionEvent) {
-        System.out.println("load");
         // load previous values from same day from database
         buildData();
     }
@@ -70,24 +70,26 @@ public class Controller_lb_v1_2 implements Initializable {
 
         Connection conn = null;
         Statement stmt = null;
-        System.out.println("Table is here");
 
         try {
+//            Establishing the database connection
             conn = DB_ALE.ConnectionFactory.getConnection();
-            //stmt = conn.createStatement();
-
+//            Creating the statement
             stmt = conn.createStatement();
+//          SQL string
             String sql = "Select name FROM patientsfulldetails Where email like '" + login_email + "'";
+//            Executing the SQL string
             ResultSet rs = stmt.executeQuery(sql);
             ArrayList<String> names = new ArrayList<String>();
-
+//            Looping through the result set - it returns the name from the patient
             while (rs.next()) {
-                names.add(rs.getString("name"));
-                names.add(rs.getString("name").replaceAll("\\s+", ""));
+                names.add(rs.getString("name")); //original name - entered at registration
+                names.add(rs.getString("name").replaceAll("\\s+", "")); //name wihtout spaces
                 return names;
             }
             rs.close();
             conn.close();
+//            closing the connection and the result set.
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -96,10 +98,15 @@ public class Controller_lb_v1_2 implements Initializable {
 
     //Displaying current date's values into UI
     public void buildData() {
-        //DB_ALE.ConnectionFactory objDbClass = new DB_ALE.ConnectionFactory();
         Connection con = DB_ALE.ConnectionFactory.getConnection();
         ObservableList<Today> data1 =table.getItems();
         try {
+//            The row of the user in the database table containing all patients and their details
+//            is retrieved by querying the table from their email.
+//            Their email is retrieved from the last place it was saved which can be one of two options.
+//            If the user is registering from the first time, the place is the registration controller.
+//            In this case Controller_mp_v1.email1 is null.
+//            If they are logging in, the place is the login controller.
             String login_email = Controller_mp_v1.email1;
             if (isNullOrEmpty((login_email))){
                 login_email = Registration_Controller.emailReg;
@@ -112,6 +119,7 @@ public class Controller_lb_v1_2 implements Initializable {
 
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
+//            Looping through the result set - it returns glucos, carbs and time data from today
             while (rs.next()) {
                 Usermaster cm = new Usermaster();
                 cm.gluc.set(rs.getInt("glucose"));
@@ -149,11 +157,10 @@ public class Controller_lb_v1_2 implements Initializable {
 
         ObservableList<Today> items = table.getItems();
 
-        // add a different time of day value depending on cells filled in table
+        // add a different time of day value depending on last filled cell
         String time="";
         if(items.isEmpty())
         {
-            // pre breakfast
             time="preBreakfast";
         }
 
@@ -187,6 +194,7 @@ public class Controller_lb_v1_2 implements Initializable {
             time="bedtime";
         }
 
+//        Instantiating the today object - contains user inputted values
         Today newToday = new Today(Gluctxt.getText(), Carbtxt.getText(), time, getDate());
         table.getItems().add(newToday);
         String login_email = Controller_mp_v1.email1;
@@ -195,10 +203,11 @@ public class Controller_lb_v1_2 implements Initializable {
         }
 
         ArrayList<String> login_names = findTable(login_email);
+//        Insertig user inputted values into the logbook table in the database
         logbookBackend.insertToDB(newToday, login_names, login_email);
     }
 
-
+//    Checking if a string is null or empty
     public static boolean isNullOrEmpty(String str) {
         if(str != null && !str.isEmpty())
             return false;
@@ -216,10 +225,9 @@ public class Controller_lb_v1_2 implements Initializable {
     
 
 
-// plot
+// plotting today's and recommended values
     public void plotToday(ActionEvent actionEvent)
     {
-        System.out.println("plot");
 
         XYChart.Series<String, Number> series1= new XYChart.Series<>();
         XYChart.Series<String, Number> series= new XYChart.Series<>();

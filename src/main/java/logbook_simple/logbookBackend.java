@@ -1,3 +1,4 @@
+//Simple logbook methods
 package logbook_simple;
 
 import DB_ALE.Today;
@@ -11,31 +12,27 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class logbookBackend {
-//
-//    private static String name1 = "a h";
-//    private static String name = name1.replaceAll("\\s+","");
 
+//    Inserting values into the user's logbook table in the databse
     public static void insertToDB(Today today, ArrayList<String> names, String login_email) {
 
         Connection conn = null;
+//        Creating a statement
         Statement stmt = null;
         final String CREATE_TABLE_SQL="insert into "+ names.get(1)+" (glucose, carbs, timesofday, date) VALUES ("+today.getGluc()+","+today.getCarb() +",'" +today.getTime()+"','"+getDate()+"');";
 
         try {
-
+//          Establishing a connection to the database
             conn =  DB_ALE.ConnectionFactory.getConnection();
             stmt = conn.createStatement();
-
+//
             stmt.executeUpdate(CREATE_TABLE_SQL);
 
-            System.out.println("Values inserted");
             JavaMail mail = new JavaMail();
-
+//          Alert system feature - only checks post meal values
             if (today.getTime().substring(0,2).equals("po")){
                 mail.mainEmail(login_email, names, 1);
             }
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {

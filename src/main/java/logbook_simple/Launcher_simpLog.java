@@ -1,4 +1,5 @@
 //Simple logbook
+//Specifies path of the simple logbook's fxml file
 
 package logbook_simple;
 
