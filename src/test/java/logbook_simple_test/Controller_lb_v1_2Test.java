@@ -1,6 +1,7 @@
-package intensive_logbook.src.sample;
+package logbook_simple_test;
 
 import javafx.event.ActionEvent;
+import logbook_simple.Controller_lb_v1_2;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -10,43 +11,43 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class Controller_insTest {
+public class Controller_lb_v1_2Test {
 
-    Controller_ins ctlbi;
+    Controller_lb_v1_2 ctlbs;
 
     @Mock()
     ActionEvent event;
 
     @Before
     public void setUp() {
-        ctlbi = new Controller_ins();
+        ctlbs = new Controller_lb_v1_2();
         MockitoAnnotations.initMocks(this);
     }
 
     //This should throw a NullPointerException as event isn't properly initialized
     @Test(expected = NullPointerException.class)
     public void testBtnAddExc() throws Exception {
-        ctlbi.btnAdd(event);
+        ctlbs.btnAdd(event);
     }
 
     @Test(expected = NullPointerException.class)
     public void testLoadAddExc(){
-        ctlbi.loadAdd(event);
+        ctlbs.loadAdd(event);
     }
 
     @Test()
     public void testFindTableNull() {
-        assertEquals(null, ctlbi.findTable("riyanama@gmail.com"));
+        assertEquals(null, ctlbs.findTable("riyanama@gmail.com"));
     }
 
     @Test()
     public void testFindTable() {
-        assertEquals(true, ctlbi.findTable("p@gmail.com") instanceof ArrayList);
+        assertEquals(true, ctlbs.findTable("mf@gmail.com") instanceof ArrayList);
     }
 
     @Test(expected = NullPointerException.class)
     public void testplotTodayExc(){
-        ctlbi.plotToday(event);
+        ctlbs.plotToday(event);
     }
 
     /*@Test(expected = ExceptionInInitializerError.class)
@@ -56,12 +57,12 @@ public class Controller_insTest {
 
     @Test()
     public void testisNullOrEmptyTrue() {
-        assertEquals(true, ctlbi.isNullOrEmpty(""));
+        assertEquals(true, ctlbs.isNullOrEmpty(""));
     }
 
     @Test()
     public void testisNullOrEmptyFalse() {
-        assertEquals(false, ctlbi.isNullOrEmpty("gshb"));
+        assertEquals(false, ctlbs.isNullOrEmpty("gshb"));
     }
 
 

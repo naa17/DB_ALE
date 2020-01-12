@@ -21,14 +21,14 @@
           <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.5.3" />
           <element id="library" level="project" name="Gradle: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.7" />
+          <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:win:12" />
+          <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:win:12" />
+          <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:12" />
+          <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:win:12" />
+          <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:12" />
+          <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:win:12" />
+          <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:12" />
           <element id="library" level="project" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/12/4ba85a93963ad9c5264b5773028512b8217255e6/javafx-fxml-12-win.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/12/45d9af154b384e2eb9d787f5d8621b4f54df0d28/javafx-controls-12-win.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/12/94cdaad6a3f02e64207429bcdac788dce8069bc6/javafx-controls-12.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/12/ec4fc19a5d3469da4a7539ce0cc7d2b48bf484d0/javafx-graphics-12-win.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/12/8796b8816a3272d8ee4660e7f4627d61243c4084/javafx-graphics-12.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/12/70354cbca618a7a61d46a10539d079dca345f535/javafx-base-12-win.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/12/3179ee52ad6d4cf3ccd306e48f3d8cbf9078b038/javafx-base-12.jar" />
         </element>
       </element>
     </root>

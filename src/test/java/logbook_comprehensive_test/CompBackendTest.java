@@ -1,4 +1,4 @@
-package logbook_comprehensive;
+package logbook_comprehensive_test;
 
 import logbook_comprehensive.CompBackend;
 import org.junit.Test;
@@ -24,12 +24,10 @@ public class CompBackendTest {
         assertEquals("2020-01-11", cbe.getDate());
     }
 */
-=======
-    public void testGetDateCheck()
+  public void testGetDateCheck()
     {
         assertEquals("2020-01-11", cbe.getDate());
-    }*/
+    }
 
 
->>>>>>> b636f167f3e2a278e233e73b3e1138e2fc6f28a3:src/test/java/comprehensive_logbook/src/sample/compBackendTest.java
 }

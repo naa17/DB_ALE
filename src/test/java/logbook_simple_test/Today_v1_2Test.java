@@ -1,4 +1,4 @@
-package simple_logbook;
+package logbook_simple_test;
 
 import DB_ALE.Today;
 import org.junit.Test;

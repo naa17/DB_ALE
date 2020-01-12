@@ -1,5 +1,6 @@
-package intensive_logbook.src.sample;
+package logbook_intensive_test;
 
+import logbook_intensive.IntBackend;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

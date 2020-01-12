@@ -1,4 +1,4 @@
-package simple_logbook;
+package logbook_simple_test;
 
 import logbook_simple.logbookBackend;
 import org.junit.Test;

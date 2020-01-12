@@ -21,8 +21,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static registration.RegistrationBackend.showAlert;
-
 public class Controller_mp_v1 {
         @FXML
         public TextField emailField;
