@@ -16,10 +16,10 @@ public class compBackendTest {
 
     //This test only runs for the day specified - hence it is commented out - to test this out, uncomment and change date
 
-    @Test
+    /*@Test
     public void testGetDateCheck()
     {
         assertEquals("2020-01-11", cbe.getDate());
-    }
+    }*/
 
 }

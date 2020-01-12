@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -51,10 +50,10 @@ public class Controller_lb2Test {
         ctlb.plotToday(event);
     }
 
-    @Test(expected = ExceptionInInitializerError.class)
+    /*@Test(expected = ExceptionInInitializerError.class)
     public void testaccessProfileExc() throws Exception {
         ctlb.accessProfile(event);
-    }
+    }*/
 
     @Test()
     public void testisNullOrEmptyTrue() {

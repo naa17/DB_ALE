@@ -77,14 +77,6 @@ public class EmailSender
             //Set text message part
             multipart.addBodyPart(messageBodyPart);
 
-            //Working on the attachment
-            messageBodyPart = new MimeBodyPart();
-            String filename = "C:\\prg3_verFri\\DB_ALE\\src\\main\\java\\alertsystem\\lectureDBP.pdf";
-            FileDataSource source = new FileDataSource(filename);
-            messageBodyPart.setDataHandler(new DataHandler(source));
-            messageBodyPart.setFileName(filename);
-            multipart.addBodyPart(messageBodyPart);
-
             //send the completed message parts
             message.setContent(multipart);
             return message;
