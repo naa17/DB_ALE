@@ -5,9 +5,9 @@ DB ALE™ is a java application for diabetic patients allowing them to record th
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-Prerequisites
-•	Java Development Kit 8 (with JavaFX)
-•	IntelliJ IDE
+## Prerequisites
+*	Java Development Kit 8 (with JavaFX)
+*	IntelliJ IDE
 
 ## Running the tests 
 
