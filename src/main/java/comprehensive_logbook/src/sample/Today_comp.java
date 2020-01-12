@@ -2,11 +2,11 @@ package comprehensive_logbook.src.sample;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class Today_ins extends Today {
+public class Today_comp extends Today {
 
     public SimpleStringProperty Ins;
 
-    public Today_ins(String Gluc, String Carb, String Ins, String Time, String Date) {
+    public Today_comp(String Gluc, String Carb, String Ins, String Time, String Date) {
         super(Gluc, Carb, Ins, Time, Date);
         this.Ins= new SimpleStringProperty(Ins);
     }

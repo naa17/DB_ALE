@@ -14,7 +14,7 @@ public class logbookBackend {
 //    private static String name1 = "a h";
 //    private static String name = name1.replaceAll("\\s+","");
 
-    public static void insertToDB(Today_v1_2 today, ArrayList<String> names, String login_email) {
+    public static void insertToDB(Today_simple today, ArrayList<String> names, String login_email) {
 
         Connection conn = null;
         Statement stmt = null;

@@ -24,7 +24,7 @@
       </TableView>
       <TextField fx:id="Gluctxt" layoutX="504.0" layoutY="82.0" prefHeight="27.0" prefWidth="105.0" promptText="Blood Glucose" />
       <TextField fx:id="Carbtxt" layoutX="504.0" layoutY="116.0" prefHeight="27.0" prefWidth="105.0" promptText="Carbs Eaten" />
-      <Button fx:id="btn" layoutX="504.0" layoutY="184.0" mnemonicParsing="false" onAction="#btnAdd" text="Add" />
+      <Button fx:id="btn" layoutX="504.0" layoutY="182.0" mnemonicParsing="false" onAction="#btnAdd" prefHeight="25.0" text="Add" />
       <TextArea layoutX="39.0" layoutY="43.0" prefHeight="178.0" prefWidth="128.0" />
       <Text layoutX="39.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Pre Breakfast       " wrappingWidth="128.0" />
       <Line endX="100.0" layoutX="140.0" layoutY="69.0" startX="-100.0" stroke="#979696" strokeWidth="0.5" />
@@ -50,6 +50,7 @@
          </yAxis>
       </LineChart>
       <TextField fx:id="Instxt" layoutX="504.0" layoutY="150.0" prefHeight="27.0" prefWidth="105.0" promptText="Insulin dose" />
+      <Button fx:id="pastBtn" layoutX="504.0" layoutY="246.0" mnemonicParsing="false" onAction="#goCalendar" prefHeight="25.0" prefWidth="105.0" text="Past entries" />
    </children>
    <opaqueInsets>
       <Insets top="100.0" />

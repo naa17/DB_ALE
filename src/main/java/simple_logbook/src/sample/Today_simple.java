@@ -2,7 +2,7 @@ package simple_logbook.src.sample;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class Today_v1_2 {
+public class Today_simple {
     public SimpleStringProperty Gluc;
     public SimpleStringProperty Carb;
     public SimpleStringProperty Time;
@@ -16,7 +16,7 @@ public class Today_v1_2 {
     }
     */
 
-    public Today_v1_2(String Gluc, String Carb, String Time, String Date)
+    public Today_simple(String Gluc, String Carb, String Time, String Date)
     {
         this.Gluc = new SimpleStringProperty(Gluc);
         this.Carb = new SimpleStringProperty(Carb);
@@ -24,7 +24,7 @@ public class Today_v1_2 {
         this.Date=new SimpleStringProperty(Date);
     }
 
-    public Today_v1_2()
+    public Today_simple()
     {}
     public String getGluc()
     {
