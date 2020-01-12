@@ -1,3 +1,4 @@
+//Registration page
 package registrationFX.src.sample;
 
 import javafx.application.Application;

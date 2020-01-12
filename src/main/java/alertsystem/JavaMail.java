@@ -19,8 +19,9 @@ public class JavaMail {
     //This is the main function that is run
     public static void mainEmail(String login_email, ArrayList<String> names, int logbookType) throws Exception
     {
-        //names.get(0) is name with spaces
-        //names.get(1) is name without spaces
+        //Names input:
+        //names.get(0) is patient name with spaces
+        //names.get(1) is patient name without spaces
 
         //Initialize string statements for database
         String getGlu;
@@ -114,14 +115,13 @@ public class JavaMail {
     public static boolean checkValues(ArrayList<Double> glucose)
     {
         //Setting up values
-        int BGC_Average_upper_post_b_glu, BGC_Average_lower_post_b_glu, count;
+        int BGC_Average_upper_post_b_glu,  count;
         BGC_Average_upper_post_b_glu = 165;
-        BGC_Average_lower_post_b_glu = 95;
         count = 0;
 
         for(int i = 0; i < glucose.size(); i++)
         {
-            if (glucose.get(i) > BGC_Average_upper_post_b_glu || glucose.get(i) < BGC_Average_lower_post_b_glu)
+            if (glucose.get(i) > BGC_Average_upper_post_b_glu )
             {
                 count = count + 1;
             }
@@ -129,13 +129,15 @@ public class JavaMail {
 
         boolean value;
         value = false;
-        if(count > 2) //If the person has 2 glucose values out of bounds
+        //If the person has 2 glucose values out of bounds
+        if(count > 2)
         {
             value = true;
         }
 
         return value;
     }
+
     //This function creates alerts and pop-up windows
     private static void showAlert(String header, String content)
     {

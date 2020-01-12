@@ -1,3 +1,4 @@
+//Usermaster class
 package simple_logbook.src.sample;
 
 import javafx.beans.property.SimpleDoubleProperty;

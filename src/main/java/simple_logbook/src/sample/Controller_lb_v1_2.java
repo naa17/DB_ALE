@@ -1,3 +1,5 @@
+//Simple logbook page
+
 package simple_logbook.src.sample;
 
 import javafx.collections.ObservableList;
@@ -42,8 +44,6 @@ public class Controller_lb_v1_2 implements Initializable {
     public Button profile;
     public LineChart lineChart;
 
-    // public ObservableList<Today_v1_2> data1;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -56,14 +56,10 @@ public class Controller_lb_v1_2 implements Initializable {
 
     }
 
-
-
-
-
     // load values from database into table - from the same day
     public void loadAdd(ActionEvent actionEvent) {
         System.out.println("load");
-        // load previous values from same from databse
+        // load previous values from same day from database
         buildData();
     }
 
@@ -74,26 +70,16 @@ public class Controller_lb_v1_2 implements Initializable {
         System.out.println("Table is here");
 
         try {
-
             conn = ConnectionFactory_s.getConnection();
-            //stmt = conn.createStatement();
 
-            System.out.println("YOU in try catch");
             stmt = conn.createStatement();
             String sql = "Select name FROM patientsfulldetails Where email like '" + login_email + "'";
-            System.out.println("RS Sucksss");
             ResultSet rs = stmt.executeQuery(sql);
-            System.out.println("uhm");
             ArrayList<String> names = new ArrayList<String>();
 
-            System.out.println("~~~~BURNA BOYYYY~~~~~");
-            System.out.println(sql);
             while (rs.next()) {
-                System.out.println(rs.getString("name"));
-                //String name = rs.getString("name").replaceAll("\\s+", "");
                 names.add(rs.getString("name"));
                 names.add(rs.getString("name").replaceAll("\\s+", ""));
-                System.out.println(names);
                 return names;
             }
             rs.close();
@@ -104,11 +90,8 @@ public class Controller_lb_v1_2 implements Initializable {
         return null;
     }
 
-
-
-
+    //Displaying current date's values into UI
     public void buildData() {
-        //ConnectionFactory objDbClass = new ConnectionFactory();
         Connection con = ConnectionFactory_s.getConnection();
         ObservableList<Today_simple> data1 =table.getItems();
         try {
@@ -116,7 +99,7 @@ public class Controller_lb_v1_2 implements Initializable {
             if (isNullOrEmpty((login_email))){
                 login_email = Registration_Controller.emailReg;
             }
-            System.out.println(login_email);
+
             ArrayList<String> login_names = findTable(login_email);
             String login_name = login_names.get(1);
             String today_Date = getDate();
@@ -143,79 +126,75 @@ public class Controller_lb_v1_2 implements Initializable {
         }
 
     }
+
 // Function from https://dzone.com/articles/getting-current-date-time-in-java
     public String getDate(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
         LocalDate today = LocalDate.now();
-
         return (formatter.format(today));
     }
 // end of reference
 
-// add new values to the table
-public void btnAdd(ActionEvent actionEvent) throws Exception {
-    System.out.println("YES");
+    // add new values to the table, to their corresponding time
+    public void btnAdd(ActionEvent actionEvent) throws Exception {
 
-    // If 1st row is empty new day - prebreakfast class
-    // If 2nd row - postbreakfast
-    // etc
+        // If 1st row is empty new day - prebreakfast class
+        // If 2nd row - postbreakfast
+        // etc
 
-    ObservableList<Today_simple> items = table.getItems();
+        ObservableList<Today_simple> items = table.getItems();
 
-    // add a different time of day value depending on cells filled in table
+        // add a different time of day value depending on cells filled in table
+        String time="";
+        if(items.isEmpty())
+        {
+            // pre breakfast
+            time="preBreakfast";
+        }
 
-    String time="";
-    if(items.isEmpty())
-    {
-        // pre breakfast
-        time="preBreakfast";
+        else if(items.size()==1)
+        {
+            time="postBreakfast";
+        }
+
+        else if(items.size()==2)
+        {
+            time="preLunch";
+        }
+
+        else if(items.size()==3)
+        {
+            time="postLunch";
+        }
+
+        else if(items.size()==4)
+        {
+            time="preDinner";
+        }
+
+        else if(items.size()==5)
+        {
+            time="postDinner";
+        }
+
+        else if(items.size()==6)
+        {
+            time="bedtime";
+        }
+
+        Today_simple newToday = new Today_simple(Gluctxt.getText(), Carbtxt.getText(), time, getDate());
+        table.getItems().add(newToday);
+
+        String login_email = Controller_mp_v1.email1;
+        if (isNullOrEmpty((login_email))){
+            login_email = Registration_Controller.emailReg;
+        }
+
+        ArrayList<String> login_names = findTable(login_email);
+        logbookBackend.insertToDB(newToday, login_names, login_email);
     }
 
-    else if(items.size()==1)
-    {
-        time="postBreakfast";
-    }
 
-    else if(items.size()==2)
-    {
-        time="preLunch";
-    }
-
-    else if(items.size()==3)
-    {
-        time="postLunch";
-    }
-
-    else if(items.size()==4)
-    {
-        time="preDinner";
-    }
-
-    else if(items.size()==5)
-    {
-        time="postDinner";
-    }
-
-    else if(items.size()==6)
-    {
-        time="bedtime";
-    }
-
-    Today_simple newToday = new Today_simple(Gluctxt.getText(), Carbtxt.getText(), time, getDate());
-    table.getItems().add(newToday);
-
-    String login_email = Controller_mp_v1.email1;
-    if (isNullOrEmpty((login_email))){
-        login_email = Registration_Controller.emailReg;
-    }
-
-    ArrayList<String> login_names = findTable(login_email);
-    logbookBackend.insertToDB(newToday, login_names, login_email);
-
-
-
-}
     public static boolean isNullOrEmpty(String str) {
         if(str != null && !str.isEmpty())
             return false;
@@ -275,26 +254,22 @@ public void btnAdd(ActionEvent actionEvent) throws Exception {
 
     }
 
+    //Go to the profile page
     public void accessProfile(ActionEvent actionEvent) throws Exception
     {
-        System.out.println("YOU going to profile");
         URL urlp = new File("src\\main\\java\\profile.fxml").toURI().toURL();
         Parent root1 = FXMLLoader.load((urlp));
-        System.out.println("YEAH YOU HERE");
         Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window1.setTitle("Profile Page");
         window1.setScene(new Scene(root1, 800, 800));
         window1.show();
-
-
     }
 
+    //go to the calendar page
     public void goCalendar(ActionEvent actionEvent) throws Exception
     {
-        System.out.println("YOU going to past entries");
         URL urlp = new File("src\\main\\java\\calendar_s.fxml").toURI().toURL();
         Parent root1 = FXMLLoader.load((urlp));
-        System.out.println("YEAH YOU HERE");
         Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window1.setTitle("Past entries");
         window1.setScene(new Scene(root1, 800, 800));

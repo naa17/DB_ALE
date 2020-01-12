@@ -1,18 +1,15 @@
+//Defining verification class. Includes password and email
 package login_OOP.src.mp_v1;
 
 public class Verification {
     public String email;
     public String password;
-    //public int id;
 
 
     public Verification(){
         //this.email=email;
         //this.password=password;
     }
-
-    //public int getId() {return id;}
-    //public void setId(int Id) {this.id = id;}
 
     public String getEmail() {
         return email;

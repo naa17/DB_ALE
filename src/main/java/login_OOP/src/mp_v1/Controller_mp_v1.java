@@ -23,8 +23,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
     public class Controller_mp_v1 {
         @FXML
         public TextField emailField;
@@ -38,7 +36,7 @@ import java.util.List;
         public static boolean Register = false;
 
 
-
+        //Log in button
         @FXML
         public void handle(ActionEvent actionEvent) throws IOException, SQLException {
             String email = emailField.getText();
@@ -72,15 +70,8 @@ import java.util.List;
                         //create a new Patient object. Stores all their information
                         Patient p = PatientDAO.getDetailsForEmail(email1);
 
-//                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-//                        System.out.println(p.getInsulinAdmin());
-//                        System.out.println(p.getInsulinType());
-//                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-//                        System.out.println(registrationBackend.logbookType(p));
-
-                        //checking which logbook corresponds to them
+                        //checking which logbook corresponds to the logged user
                         if (registrationBackend.logbookType(p).equals("simple")) {
-//                            System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
                             URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                             Parent root2 = FXMLLoader.load(url2);
                             Stage window2 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -110,32 +101,35 @@ import java.util.List;
                     }
                 }
 
-                }else System.out.println("You have a problem :(");
-
+                }else {
+//                System.out.println("You have a problem :(");
             }
 
+        }
+
+        //Go to registration page when registration button is clicked
         public void regButton(ActionEvent actionEvent) throws Exception{
             Register = true;
-            System.out.println(Register);
 
             if (getRegister()) {
-                System.out.println("YOU IN REGISTER");
                 URL url1 = new File("src\\main\\java\\registration.fxml").toURI().toURL();
                 Parent root1 = FXMLLoader.load((url1));
-                System.out.println("YEAH YOU HERE");
                 Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
                 window1.setTitle("Registration Page");
                 window1.setScene(new Scene(root1, 800, 800));
                 window1.show();
-            }else {System.out.println("YUp it's not working...");}
+            }else {
+//                System.out.println("Registration not working...");
+            }
         }
 
         public static boolean getRegister(){
             return Register;
         }
 
+        //Save email and password into a string list
         private List<String> MakeList(String email, String passw)
-        {   // List with strings
+        {
             List<String> loginDetails = new ArrayList<String>();
             loginDetails.add(email);
             loginDetails.add(passw);

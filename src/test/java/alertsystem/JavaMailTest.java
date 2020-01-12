@@ -21,7 +21,7 @@ public class JavaMailTest {
 
         gl.add((double) 99999);
         gl.add((double) 171);
-        gl.add((double) 15);
+        gl.add((double) 200);
         assertEquals(true, javamail.checkValues(gl));
         javamail = null;
     }

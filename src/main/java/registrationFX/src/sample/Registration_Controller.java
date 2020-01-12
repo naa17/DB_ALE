@@ -1,3 +1,5 @@
+//Registration page controller. Specifies button click actions.
+
 package registrationFX.src.sample;
 import comprehensive_logbook.src.sample.PatientDAO;
 import javafx.event.ActionEvent;
@@ -42,6 +44,7 @@ public class Registration_Controller {
 
     public static String emailReg;
 
+    //Registration of the new user/patient
     @FXML
     private void SubmitDetails(ActionEvent event) throws IOException, SQLException {
         event.consume();
@@ -55,11 +58,11 @@ public class Registration_Controller {
 
         emailReg = p.getEmail();
 
+        //checking any text field is empty.
         for (int i = 0; i < patientDetails.size(); i++) {
-            System.out.println(patientDetails.get(i));
 
             if (patientDetails.get(i).isEmpty()) {
-                System.out.println("Please fill in all values and submit again");
+//                System.out.println("Please fill in all values and submit again");
                 filled = 0;
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Warning Dialog");
@@ -67,25 +70,23 @@ public class Registration_Controller {
                 alert.setContentText("Please fill in all values and submit again");
 
                 alert.showAndWait();
-
             }
-
         }
 
-
+        //if all text fields are filled, and both patient's and doctor's email is a valid email syntax
         if (filled == 1 && isValidEmailAddress(email.getText()) && isValidEmailAddress(doctorContact.getText())) {
-            System.out.println("ready to get rollinnn");
-            //String name_no_spaces = patient_Name.replaceAll("\\s+", "");
-            //System.out.println(name_no_spaces);
-            if (registrationBackend.regCheckEmailIsUnique(patientDetails.get(2))){
-                registrationBackend.createLogbook(p);
-                registrationBackend.registerPatient(p);
-                System.out.println("we rollinnn");
 
+            //checking the patient email is unique
+            if (registrationBackend.regCheckEmailIsUnique(patientDetails.get(2))){
+                //creates a corresponding logbook table in the database
+                registrationBackend.createLogbook(p);
+                //registers the patient in the database
+                registrationBackend.registerPatient(p);
+
+                //redirecting to the corresponding logbook page UI
                 try {
                     Patient p1 = PatientDAO.getDetailsForEmail(email.getText());
                     if (registrationBackend.logbookType(p1).equals("simple")) {
-                        System.out.println("simple");
                         URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                         Parent root2 = FXMLLoader.load(url2);
                         Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -114,19 +115,15 @@ public class Registration_Controller {
                     }
 
                 }catch(Exception e){
-                    e.printStackTrace();
-                    //System.out.println("JUPP NOT VORWKKING");    // prints standard error
+                    e.printStackTrace();// prints standard error
                 }
             }
-;
-
-
         } else if(!isValidEmailAddress(email.getText())|| !isValidEmailAddress(doctorContact.getText())){
             showAlert("Invalid email address","The email you entered is not a valid email");
-
         }
     }
 
+    //Saving patient's details into a string list
     private List<String> getPatientDetails() {
         List<String> patientDetails = new ArrayList<String>();
         patientDetails.add(PatientName.getText());
@@ -141,7 +138,7 @@ public class Registration_Controller {
         return patientDetails;
     }
 
-    //The below function was gotten from: https://stackoverflow.com/questions/624581/what-is-the-best-java-email-address-validation-method
+    //The below function is from: https://stackoverflow.com/questions/624581/what-is-the-best-java-email-address-validation-method
     //This function checks to see if the recipient's email address is valid or not
     public static boolean isValidEmailAddress(String email) {
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";

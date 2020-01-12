@@ -1,3 +1,5 @@
+//Simple logbook methods
+
 package simple_logbook.src.sample;
 
 import alertsystem.JavaMail;
@@ -10,10 +12,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class logbookBackend {
-//
-//    private static String name1 = "a h";
-//    private static String name = name1.replaceAll("\\s+","");
 
+    //insert user inputted values into the database
     public static void insertToDB(Today_simple today, ArrayList<String> names, String login_email) {
 
         Connection conn = null;
@@ -27,13 +27,13 @@ public class logbookBackend {
 
             stmt.executeUpdate(CREATE_TABLE_SQL);
 
-            System.out.println("Values inserted");
+//            System.out.println("Values inserted");
             JavaMail mail = new JavaMail();
 
+            //Alert system feature: sending any post- values to be checked against a threshold
             if (today.getTime().substring(0,2).equals("po")){
                 mail.mainEmail(login_email, names, 1);
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -53,6 +53,7 @@ public class logbookBackend {
             }
         }
     }
+
 // Function from https://dzone.com/articles/getting-current-date-time-in-java
     public static String getDate(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

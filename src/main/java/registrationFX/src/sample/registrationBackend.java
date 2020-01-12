@@ -1,3 +1,5 @@
+//Registration page methods
+
 package registrationFX.src.sample;
 
 import javafx.scene.control.Alert;
@@ -24,9 +26,8 @@ public class registrationBackend implements DAO {
         ResultSet rs = ps.executeQuery();
         try {
             if (rs.next()) {
-                //if enters here, email does already exist in
-//                System.out.println("regBackend method: Email must be unique. This email is already registered.");
-                showAlert("Email not unique","This email is already registered. Please try with another email account.");
+                //email does already exist in
+                 showAlert("Email not unique","This email is already registered. Please try with another email account.");
                 return false;
             }
             rs.close();
@@ -38,17 +39,13 @@ public class registrationBackend implements DAO {
         return true;
     }
 
-    //Input: Object from Patient class
-    //Void method: no output.
-    //This method creates the corresponding logbook depending on details
-    //Only does it for simple logbook for now
+    //Input: Object from Patient class. Contains all registration details.
+    //This method declares the corresponding sql string.
+    // and calls the method that creates the corresponding logbook depending on details (insulin admin and type).
     public static void createLogbook(Patient p) {
-
-        System.out.println(p.getName());
         //Deleting spaces from 'name surname' pair
         String name1 = p.getName();
         String name = name1.replaceAll("\\s+", "");
-        System.out.println(p.getName());
 
         //Simple Logbook
         if (logbookType(p).equals("simple")) {
@@ -73,7 +70,6 @@ public class registrationBackend implements DAO {
 
             createLogbookType(CREATE_TABLE_SQL, name);
         }
-
         //intensive logbook
         if (logbookType(p).equals("intensive")) {
             final String CREATE_TABLE_SQL = "CREATE TABLE " + name + " ("
@@ -91,10 +87,10 @@ public class registrationBackend implements DAO {
         }
     }
 
+    //Executes the sql string to create the logbook table for the patient.
     public static void createLogbookType(String sql, String name){
         Connection conn = null;
         Statement stmt = null;
-
         try {
 
             conn = registrationFX.src.sample.ConnectionFactory_reg.getConnection();
@@ -143,6 +139,7 @@ public class registrationBackend implements DAO {
         System.out.println("User registered");
     }
 
+    //Prepares the registration sql string using according patient object fields
     private static PreparedStatement prepStat(Connection conn, PreparedStatement preparedStatement, Patient p, String INSERT_USER_SQL) throws SQLException {
         preparedStatement = conn.prepareStatement(INSERT_USER_SQL);
         preparedStatement.setString(1, p.getName());//p.getName());
@@ -157,7 +154,6 @@ public class registrationBackend implements DAO {
 
         return preparedStatement;
     }
-
 
     //determining the logbook type from user input in registration
     public static String logbookType(Patient p){
@@ -181,36 +177,4 @@ public class registrationBackend implements DAO {
     }
 
 }
-//    //Input: Object from Patient class
-//    //Void method: no output.
-//    //This method copies email/pwd into login verification table
-//    //so user is recognized next time they login
-//    public static void registerPatientInLoginTable(Patient p) throws SQLException {
-//        String email = p.getEmail();
-//        String pw = p.getPassword();
-////        final String REG_TO_LOGIN_SQL = "INSERT INTO patientsfulldetails (email,password) \"\n" +
-////                "                + \"VALUES('"+email+ "','" +pw+ ")'";
-//        final String REG_TO_LOGIN_SQL = "INSERT INTO test (email,password) VALUES(?,?)";
-//
-//        Connection conn;
-//        PreparedStatement ps = null;
-//        try {
-//            conn = ConnectionFactory.getConnection();
-////            stmt = conn.createStatement();
-//
-//            ps = conn.prepareStatement(REG_TO_LOGIN_SQL);
-//            ps.setString(1, email);
-//            ps.setString(2, pw);
-//
-//            ps.executeUpdate();
-//
-////            ResultSet rs = ps.executeQuery();
-//            System.out.println("User registered to login table");
-//
-//            ps.close();
-//            conn.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
 

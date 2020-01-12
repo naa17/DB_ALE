@@ -1,8 +1,9 @@
+//Patient class: has all details as entered in registration
+
 package registrationFX.src.sample;
 
 public class Patient {
 
-    //private static String name;
     private String name;
     private String contact;
     private String email;
@@ -12,7 +13,7 @@ public class Patient {
     private String diabetesType;
     private String insulinType;
     private String insulinAdmin;
-    //added logbookType field
+    //added logbookType field, not used in the end
     private String logbookType;
 
     public Patient(){

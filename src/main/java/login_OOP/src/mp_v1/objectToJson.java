@@ -1,5 +1,7 @@
-package login_OOP.src.mp_v1;//converts input (a list of Verification objects) to Json format. Outputs a json string
+//converts input (a list of Verification objects) to Json format. Outputs a json string.
+//Not used.
 
+package login_OOP.src.mp_v1;
 import simple_logbook.src.sample.Today_simple;
 
 import java.util.List;

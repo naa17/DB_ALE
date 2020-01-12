@@ -1,3 +1,4 @@
+//Simple logbook
 package simple_logbook.src.sample;
 
 import javafx.application.Application;

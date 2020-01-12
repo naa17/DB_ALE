@@ -6,12 +6,12 @@ import static org.junit.Assert.assertEquals;
 
 public class Today_v1_2Test {
 
-    Today_v1_2 today;
+    Today_simple today;
 
     @Test
     public void TestisEmptyFalse()
     {
-        today = new Today_v1_2("2", "2", "2", "2");
+        today = new Today_simple("2", "2", "2", "2");
         assertEquals(false, today.isEmpty());
     }
 

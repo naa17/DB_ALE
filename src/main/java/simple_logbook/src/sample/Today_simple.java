@@ -1,3 +1,4 @@
+//Today class. Includes simple logbook's necessary entries
 package simple_logbook.src.sample;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -8,13 +9,6 @@ public class Today_simple {
     public SimpleStringProperty Time;
     public  SimpleStringProperty Date;
 
-    /*
-    public Today_v1_2()
-    {
-        this.Gluc=null;
-        this.Carb=null;
-    }
-    */
 
     public Today_simple(String Gluc, String Carb, String Time, String Date)
     {
@@ -24,8 +18,8 @@ public class Today_simple {
         this.Date=new SimpleStringProperty(Date);
     }
 
-    public Today_simple()
-    {}
+    public Today_simple() {}
+
     public String getGluc()
     {
         return Gluc.get();
