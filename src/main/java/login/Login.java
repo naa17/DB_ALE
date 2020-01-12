@@ -1,3 +1,4 @@
+//Login page methods
 package login;
 
 import javafx.scene.control.Alert;
@@ -18,32 +19,28 @@ public class Login {
     {
         String email1 = list.get(0);
         String password = list.get(1);
+//        The connection to the database has been refactored so it only returns the result set when inputted an email
         ResultSet rs = makeConnection(email1);
 
         try {
-
-            if(rs.next()) {
-                //Checking for password
+            if(rs.next()) { //True if the email exists
+                //Checking that the password matches
                 String dbPwd = rs.getString("password"); //from table
                 if (password.equals(dbPwd)) {
                     //Redirect to next page
-//                    System.out.println("User credentials match.");
                     passwordExist = true;
                 } else {
-                    //Print out "Invalid password!"
                     String header = "Invalid password";
                     String content = "Please fill in the correct password and submit again";
                     showAlert(header, content);
                 }
 
 
-            }else {
+            }else { //Enters here if the email is not registered in the database
                 String header = "Invalid email";
                 String content = "Please fill in a different email and submit again";
                 showAlert(header, content);
             }
-
-
         } catch (Exception e){
         e.printStackTrace();
         }
@@ -61,13 +58,13 @@ public class Login {
         return ps.executeQuery();
     }
 
-    //Check the password given the email
+    //Check the password in the database matches the given the email
     private static boolean checkPassword(ResultSet rs, String password) throws SQLException {
         String dbPwd = rs.getString("password"); //from table
         if (password.equals(dbPwd))
         {
             //Redirect to next page
-            System.out.println("User credentials match.");
+//            System.out.println("User credentials match.");
             passwordExist = true;
         }
         return passwordExist;

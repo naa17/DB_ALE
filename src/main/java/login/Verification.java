@@ -1,3 +1,4 @@
+//Verification class. Contains email and password
 package login;
 
 public class Verification {
@@ -7,12 +8,7 @@ public class Verification {
 
 
     public Verification() {
-        //this.email=email;
-        //this.password=password;
     }
-
-    //public int getId() {return id;}
-    //public void setId(int Id) {this.id = id;}
 
     public String getEmail() {
         return email;

@@ -1,3 +1,5 @@
+//Used to try and test deploying the JavaFX app into a server and see on browser.
+//This is a simple Hello World Servlet class.
 package org.webservlet;
 
 import java.io.IOException;

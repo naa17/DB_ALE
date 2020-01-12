@@ -1,3 +1,5 @@
+//Login page Controller
+//Specifies what actions to take when buttons are pushed.
 package login;
 
 import DB_ALE.Patient;
@@ -41,13 +43,13 @@ public class Controller_mp_v1 {
             String passw = passwordField.getText();
             email1 = email;
             List<String> loginDetails = new ArrayList<String>();
+//            saving (email, password) pair into a string list
             loginDetails = MakeList(email, passw);
             int filled=1;
 
-            // Check empty text fields and warning error
+            // Checking all fields are filled - warning error
             for(int i=0; i<loginDetails.size();i++) {
                 if (loginDetails.get(i).isEmpty()) {
-                    System.out.println("Please fill in all values and submit again");
                     String header = "Unfilled textfields";
                     String content = "Please fill in all values and submit again";
                     showAlert(header, content);
@@ -68,7 +70,7 @@ public class Controller_mp_v1 {
                         //create a new Patient object. Stores all their information
                         Patient p = PatientDAO.getDetailsForEmail(email1);
 
-                        //checking which logbook corresponds to the logged user
+                        //checking which logbook corresponds to the logged user-redirecting to their logbook page
                         if (RegistrationBackend.logbookType(p).equals("simple")) {
                             URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                             Parent root2 = FXMLLoader.load(url2);
@@ -77,7 +79,6 @@ public class Controller_mp_v1 {
                             window2.setScene(new Scene(root2, 800, 600));
                             window2.show();
                         } else if (RegistrationBackend.logbookType(p).equals("comprehensive")) {
-                            System.out.println("comprehensive");
                             URL url2 = new File("src\\main\\java\\lb_v2.fxml").toURI().toURL();
                             Parent root3 = FXMLLoader.load(url2);
                             Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -85,7 +86,6 @@ public class Controller_mp_v1 {
                             window3.setScene(new Scene(root3, 800, 600));
                             window3.show();
                         } else if (RegistrationBackend.logbookType(p).equals("intensive")) {
-                            System.out.println("intensive");
                             URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
                             Parent root3 = FXMLLoader.load(url2);
                             Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -100,12 +100,12 @@ public class Controller_mp_v1 {
                 }
 
                 }else {
-//                System.out.println("You have a problem :(");
             }
 
         }
 
         //Go to registration page when registration button is clicked
+//    Specifies the registration page fxml file directory
         public void regButton(ActionEvent actionEvent) throws Exception{
             Register = true;
 
