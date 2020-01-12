@@ -1,3 +1,7 @@
+//Usermaster class
+//The TableView contains classes in each cell, they have to be SimpleStringProperty
+//The database has numeric type values that can be converted to String but not to SimpleStringProperty
+//This class helps doing the conversion
 package logbook_intensive;
 
 import javafx.beans.property.SimpleStringProperty;

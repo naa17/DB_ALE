@@ -1,3 +1,4 @@
+//Today class for the intensive method - contains all data that is needed for this logbook type
 package logbook_intensive;
 
 import javafx.beans.property.SimpleStringProperty;

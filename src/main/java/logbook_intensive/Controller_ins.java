@@ -1,3 +1,5 @@
+//Controller for the intensive logbook page
+//This specifies what actions to take when buttons are pushed
 package logbook_intensive;
 
 import javafx.collections.ObservableList;
@@ -62,7 +64,6 @@ public class Controller_ins implements Initializable {
         hi_bolus.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("hi_bolus"));
         basal_rate.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("basal_rate"));
         ketones.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("Ketones"));
-         //inputTable.setItems(data);
         table.setEditable(true);
         Gluc.setCellFactory(TextFieldTableCell.forTableColumn());
         CHO_grams.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -78,33 +79,29 @@ public class Controller_ins implements Initializable {
     public void loadAdd(ActionEvent actionEvent)
     {
         System.out.println("load");
-        // load previous values from same from databse
+        // load previous values from same from database
         buildData();
     }
 
+//    Finds the table name for the user's logbook
     public ArrayList<String> findTable(String login_email) {
 
         Connection conn = null;
         Statement stmt = null;
-        System.out.println("Table is here");
 
         try {
 
             conn = DB_ALE.ConnectionFactory.getConnection();
-            //stmt = conn.createStatement();
 
-            System.out.println("YOU in try catch");
             stmt = conn.createStatement();
+
             String sql = "Select name FROM patientsfulldetails Where email like '" + login_email + "'";
-            System.out.println("RS Sucksss");
+
             ResultSet rs = stmt.executeQuery(sql);
             ArrayList<String> names = new ArrayList<String>();
-            System.out.println("uhm");
             while (rs.next()) {
-                System.out.println(rs.getString("name"));
                 names.add(rs.getString("name"));
                 names.add(rs.getString("name").replaceAll("\\s+", ""));
-                System.out.println(names);
                 return names;
             }
             rs.close();
@@ -115,9 +112,8 @@ public class Controller_ins implements Initializable {
         return null;
     }
 
-
+//  Gets today's logbook values to be displayed
     public void buildData() {
-        //DB_ALE.ConnectionFactory objDbClass = new DB_ALE.ConnectionFactory();
         Connection con = DB_ALE.ConnectionFactory.getConnection();
         ObservableList<Today_ins> data1 =table.getItems();
         try {
@@ -130,6 +126,7 @@ public class Controller_ins implements Initializable {
             String SQL = "Select * from " +name +" where date like '"+getDate()+"'";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
+
             while (rs.next()) {
                 Usermaster cm = new Usermaster();
                 cm.gluc.set(rs.getInt("glucose"));
@@ -160,6 +157,7 @@ public class Controller_ins implements Initializable {
     }
 
     // Function from https://dzone.com/articles/getting-current-date-time-in-java
+//    GEtting today's date
     public static String getDate(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -168,6 +166,7 @@ public class Controller_ins implements Initializable {
         return (formatter.format(today));
     }
     // end of reference
+
     // add new values to the table
     public void btnAdd(ActionEvent actionEvent) {
         System.out.println("YES");
@@ -177,12 +176,11 @@ public class Controller_ins implements Initializable {
         // etc
 
         ObservableList<Today_ins> items = table.getItems();
-        // add a different time of day value depending on cells filled in table
+        // add a different time of day value depending on last cell filled in table
 
         String time="";
         if(items.isEmpty())
         {
-            // pre breakfast
             time="6 AM";
         }
         else if(items.size()==1)
@@ -263,6 +261,8 @@ public class Controller_ins implements Initializable {
         ArrayList<String> login_names = findTable(login_email);
         IntBackend.insertToDB(newToday, login_names, login_email);
     }
+
+//    Checking that a string is null or empty
     public static boolean isNullOrEmpty(String str) {
         if(str != null && !str.isEmpty())
             return false;
@@ -283,7 +283,7 @@ public class Controller_ins implements Initializable {
     }
 
 
-    // plot
+    // plotting the values ad recommended ones
     public void plotToday(ActionEvent actionEvent)
     {
         System.out.println("plot");
@@ -348,24 +348,22 @@ public class Controller_ins implements Initializable {
 
     }
 
+//    Going to the profile page
     public void accessProfile(ActionEvent actionEvent) throws Exception
     {
-        System.out.println("YOU going to profile");
         URL urlp = new File("src\\main\\java\\profile.fxml").toURI().toURL();
         Parent root1 = FXMLLoader.load((urlp));
-        System.out.println("YEAH YOU HERE");
         Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window1.setTitle("Profile Page");
         window1.setScene(new Scene(root1, 800, 800));
         window1.show();
     }
 
+//    go to the calendar page
     public void goCalendar(ActionEvent actionEvent) throws Exception
     {
-        System.out.println("YOU going to past entries");
         URL urlp = new File("src\\main\\java\\calendar_i.fxml").toURI().toURL();
         Parent root1 = FXMLLoader.load((urlp));
-        System.out.println("YEAH YOU HERE");
         Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window1.setTitle("Past entries");
         window1.setScene(new Scene(root1, 1000, 1000));

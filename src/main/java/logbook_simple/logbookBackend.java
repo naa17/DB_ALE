@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class logbookBackend {
 
-//    Inserting values into the user's logbook table in the databse
+//    Inserting values into the user's logbook table in the database
     public static void insertToDB(Today today, ArrayList<String> names, String login_email) {
 
         Connection conn = null;

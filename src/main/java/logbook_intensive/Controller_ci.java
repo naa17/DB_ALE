@@ -1,3 +1,5 @@
+//Controller for the calendar page for the intensive logbook page
+//Specifies which actions to do when buttons are pushed
 package logbook_intensive;
 
 import DB_ALE.ConnectionFactory;
@@ -57,19 +59,25 @@ public class Controller_ci implements  Initializable{
         ketones.setCellValueFactory(new PropertyValueFactory<Today_ins,String>("Ketones"));
     }
 
+//    The user can pick a date to load past values from
     public void pickDate(ActionEvent actionEvent) {
         LocalDate date = calendar.getValue();
         String chosen_day = String.valueOf(date);
-        System.out.println(chosen_day);
         buildData(chosen_day);
     }
 
-
+//
     public void buildData(String day) {
 
         Connection con = ConnectionFactory.getConnection();
         ObservableList<Today_ins> data1 =table.getItems();
         try {
+//            The row of the user in the database table containing all patients and their details
+//            is retrieved by querying the table from their email.
+//            Their email is retrieved from the last place it was saved which can be one of two options.
+//            If the user is registering from the first time, the place is the registration controller.
+//            In this case Controller_mp_v1.email1 is null.
+//            If they are logging in, the place is the login controller.
             String login_email = Controller_mp_v1.email1;
             if (isNullOrEmpty((login_email))){
                 login_email = Registration_Controller.emailReg;
@@ -78,6 +86,7 @@ public class Controller_ci implements  Initializable{
             String SQL = "Select * from "+login_names.get(1)+" where date like '"+day+"'";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
+//            Looping through the result set - it returns all data values recorded in the database for today
             while (rs.next()) {
                 Usermaster cm = new Usermaster();
                 cm.gluc.set(rs.getInt("glucose"));
@@ -87,6 +96,7 @@ public class Controller_ci implements  Initializable{
                 cm.basal_rate.set(rs.getInt("basalrate"));
                 cm.ketones.set(rs.getInt("ketones_exercise"));
                 cm.time.set(rs.getString("hours"));
+//                Converting The TableView's (UI) SimpleStringProperty into Strings
                 String gluc = String.valueOf(cm.getGluc());
                 String CHO_Grams = String.valueOf(cm.getCHO_grams());
                 String CHO_bolus = String.valueOf(cm.getCHO_bolus());
@@ -94,7 +104,7 @@ public class Controller_ci implements  Initializable{
                 String basal_rate = String.valueOf(cm.getBasal_rate());
                 String ketones = String.valueOf(cm.getKetones());
                 String time = cm.getTime();
-                // class today instantiated with strings from database
+//                class today instantiated with strings from database
                 Today_ins today = new Today_ins(gluc, CHO_Grams, CHO_bolus, hi_bolus, basal_rate, ketones, time, day);
                 data1.add(today);
             }
@@ -102,44 +112,37 @@ public class Controller_ci implements  Initializable{
             table.setItems(data1);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Error on Building Data");
+//            System.out.println("Error on Building Data");
         }
 
     }
 
+//    Checking that a string is null or empty
     public static boolean isNullOrEmpty(String str) {
         if(str != null && !str.isEmpty())
             return false;
         return true;
     }
 
+//    Finds the logbook table of a user given their email
     public ArrayList<String> findTable(String login_email) {
 
         Connection conn = null;
         Statement stmt = null;
-        System.out.println("Table is here");
 
         try {
 
             conn = ConnectionFactory.getConnection();
-            //stmt = conn.createStatement();
 
-            System.out.println("YOU in try catch");
             stmt = conn.createStatement();
+
             String sql = "Select name FROM patientsfulldetails Where email like '" + login_email + "'";
-            System.out.println("RS Sucksss");
             ResultSet rs = stmt.executeQuery(sql);
-            System.out.println("uhm");
             ArrayList<String> names = new ArrayList<String>();
 
-            System.out.println("~~~~BURNA BOYYYY~~~~~");
-            System.out.println(sql);
             while (rs.next()) {
-                System.out.println(rs.getString("name"));
-                //String name = rs.getString("name").replaceAll("\\s+", "");
                 names.add(rs.getString("name"));
                 names.add(rs.getString("name").replaceAll("\\s+", ""));
-                System.out.println(names);
                 return names;
             }
             rs.close();
@@ -150,13 +153,9 @@ public class Controller_ci implements  Initializable{
         return null;
     }
 
-    // add new values to the table
-
-
-    // plot
+    // plotting the recommended and today's values in the UI
     public void plotToday(ActionEvent actionEvent)
     {
-        System.out.println("plot");
 
         XYChart.Series<String, Number> series1= new XYChart.Series<>();
         XYChart.Series<String, Number> series= new XYChart.Series<>();
@@ -195,11 +194,7 @@ public class Controller_ci implements  Initializable{
 
     }
 
-//    public void logbook(ActionEvent actionEvent)
-//    {
-//        System.out.println("going to logbook");
-//    }
-
+//    going to the logbook page from the calendar
     public void logbook(javafx.event.ActionEvent actionEvent) throws Exception
     {
 
@@ -211,7 +206,6 @@ public class Controller_ci implements  Initializable{
             }
             Patient p = PatientDAO.getDetailsForEmail(login_email);
             if (RegistrationBackend.logbookType(p).equals("simple")) {
-                System.out.println("simple");
                 URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                 Parent root2 = FXMLLoader.load(url2);
                 Stage window2 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -220,7 +214,6 @@ public class Controller_ci implements  Initializable{
                 window2.show();
             }
             else if (RegistrationBackend.logbookType(p).equals("comprehensive")){
-                System.out.println("comprehensive");
                 URL url2 = new File("src\\main\\java\\lb_v2.fxml").toURI().toURL();
                 Parent root3 = FXMLLoader.load(url2);
                 Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -231,7 +224,6 @@ public class Controller_ci implements  Initializable{
             }
 
             else if (RegistrationBackend.logbookType(p).equals("intensive")){
-                System.out.println("intensive");
                 URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
                 Parent root3 = FXMLLoader.load(url2);
                 Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
