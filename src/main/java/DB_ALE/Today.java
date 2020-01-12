@@ -1,3 +1,5 @@
+//Today class. Contains data needed for logging a day's values into the logbook
+//The comprehensive logbook page contains a today class which inherits from this
 package DB_ALE;
 
 import javafx.beans.property.SimpleStringProperty;

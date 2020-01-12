@@ -1,3 +1,5 @@
+//This is to connect to the Heroku provisioned database
+//Returns a connection class object
 package DB_ALE;
 
 import java.net.URI;

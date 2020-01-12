@@ -1,3 +1,4 @@
+//Patient class - contains all information about the patient (from registration)
 package DB_ALE;
 
 public class Patient {
