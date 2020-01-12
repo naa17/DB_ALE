@@ -1,3 +1,5 @@
+//Profile page controller
+//Specifies actions when profile page buttons are clicked.
 package profile;
 
 import DB_ALE.Patient;
@@ -45,8 +47,9 @@ public class Controller implements Initializable {
         buildData();
     }
 
+//    will return patient object with updated details
+//    Not yet implemented
     public void update(javafx.event.ActionEvent actionEvent) {
-        System.out.println("updating");
         String name= Nametxt.getPromptText();
         String contact=contactxt.getPromptText();
         String email=Emailtxt.getPromptText();
@@ -79,17 +82,24 @@ public class Controller implements Initializable {
         Patient p = new Patient(name, contact, email, password, doctorName, doctorContact, diabType, insType, insAdmin);
     }
 
-
+//  checking if a string is null or empty
     public static boolean isNullOrEmpty(String str) {
         if(str != null && !str.isEmpty())
             return false;
         return true;
     }
 
+//    querying patients' database to display current user's registration details
     public void buildData() {
         Connection con = DB_ALE.ConnectionFactory.getConnection();
         try {
-            String login_email = Controller_mp_v1.email1;
+//            The row of the user in the database table containing all patients and their details
+//            is retrieved by querying the table from their email.
+//            Their email is retrieved from the last place it was saved which can be one of two options.
+//            If the user is registering from the first time, the place is the registration controller.
+//            In this case Controller_mp_v1.email1 is null.
+//            If they are logging in, the place is the login controller.
+            String login_email = Controller_mp_v1.email1; //controller_mp_v1 is the login page controller
             if (isNullOrEmpty((login_email))){
                 login_email = Registration_Controller.emailReg;
             }
@@ -116,7 +126,7 @@ public class Controller implements Initializable {
 
     }
 
-
+//Go back to the corresponding logbook page from the profile page.
     public void goLogbook(javafx.event.ActionEvent actionEvent) throws Exception
     {
 
@@ -127,6 +137,8 @@ public class Controller implements Initializable {
                     login_email = Registration_Controller.emailReg;
                 }
                 DB_ALE.Patient p = PatientDAO.getDetailsForEmail(login_email);
+//                Getting Patient's info into a patient object.
+//                To know which logbook to go back to, details related to insulin data on the patients is needed.
                 if (RegistrationBackend.logbookType(p).equals("simple")) {
                     System.out.println("simple");
                     URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
@@ -146,11 +158,6 @@ public class Controller implements Initializable {
                     window3.show();
                     //nextPage("lb_v1_2.fxml", actionEvent, "Simple Logbook Page");
                 }
-               /* else if (registrationBackend.logbookType(p).equals("comprehensive")){
-                    System.out.println("comprehensive");
-                    nextPage("lb_v2.fxml", actionEvent, "Comprehensive Logbook Page");
-                }*/
-
                 else if (RegistrationBackend.logbookType(p).equals("intensive")){
                     System.out.println("intensive");
                     URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
@@ -170,6 +177,7 @@ public class Controller implements Initializable {
 
     }
 
+//    not used for now
     public void nextPage(String fxml, ActionEvent event,String title) throws IOException {
         URL url2 = new File(fxml).toURI().toURL();
         Parent root2 = FXMLLoader.load(url2);

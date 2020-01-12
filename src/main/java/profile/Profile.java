@@ -1,3 +1,5 @@
+//Profile page
+// Contains the directory for the profile fxml file.
 package profile;
 
 import javafx.application.Application;
