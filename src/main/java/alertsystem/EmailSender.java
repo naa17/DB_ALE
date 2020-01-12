@@ -1,3 +1,5 @@
+//Sends an email only if 3 or more post meal glucose values are out of safe bounds
+//For intensive logbook method, it checks all values of glucose inserted
 package alertsystem;
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
