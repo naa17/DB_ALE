@@ -1,3 +1,4 @@
+//Login page
 package login_OOP.src.mp_v1;
 
 //import com.sun.deploy.security.SelectableSecurityManager;
@@ -59,23 +60,27 @@ import java.util.List;
             }
 
             if(filled==1)
+            //if the text fields are filled
             {
                 Login.checkLogin(loginDetails);
 
-                objectToJson.objectToJson(verificationDAO.getDetailsForEmail(email));
-                System.out.println("JSONised data: COMPLETE :D");
+//                objectToJson.objectToJson(verificationDAO.getDetailsForEmail(email));
 
                 if(Login.getLogin()) {
+                    //if the password and email exist and match
                     try {
+                        //create a new Patient object. Stores all their information
                         Patient p = PatientDAO.getDetailsForEmail(email1);
 
-                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                        System.out.println(p.getInsulinAdmin());
-                        System.out.println(p.getInsulinType());
-                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                        System.out.println(registrationBackend.logbookType(p));
+//                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//                        System.out.println(p.getInsulinAdmin());
+//                        System.out.println(p.getInsulinType());
+//                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//                        System.out.println(registrationBackend.logbookType(p));
+
+                        //checking which logbook corresponds to them
                         if (registrationBackend.logbookType(p).equals("simple")) {
-                            System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
+//                            System.out.println("YOU HAVE SAFELY LOGGED IN O.O");
                             URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                             Parent root2 = FXMLLoader.load(url2);
                             Stage window2 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
