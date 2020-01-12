@@ -16,22 +16,16 @@ Basic unit testing was done to test the different isolated parts of the system. 
 
 ## Break down into end to end tests
 
-Explain what these tests test and why
-Give an example
-And coding style tests
-Explain what these tests test and why
-Give an example
-Deployment SARAH
-Add additional notes about how to deploy this on a live system
+Bugs related to user input need to be fixed.
 
 ## Built With
 
-* [JavaFX](https://openjfx.io/) - Used for front-end UI
+* [JavaFX](https://openjfx.io/) - Front-end UI
 * [Gradle](https://gradle.org/) - Building and manage the dependencies
 * [PostgreSQL](https://www.postgresql.org/) - Used to generate RSS Feeds
-* [Heroku] (https://dashboard.heroku.com/) - Database service
-* [Travis] (https://travis-ci.org/) - Continuous integration and testing
-* [JUnit] (https://junit.org/junit4/) - Unit testing
+* [Heroku](https://dashboard.heroku.com/) - Database service
+* [Travis](https://travis-ci.org/) - Continuous integration and testing
+* [JUnit4](https://junit.org/junit4/) - Unit testing
 
 ## Versioning
 
