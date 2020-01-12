@@ -1,3 +1,4 @@
+//Intensive page - specifies its fxml file for the UI
 package logbook_comprehensive;
 
 import javafx.application.Application;

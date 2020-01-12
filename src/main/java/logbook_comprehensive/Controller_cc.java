@@ -1,3 +1,5 @@
+//Controller for the calendar page for the comprehensive logbook page
+//Specifies which actions to do when buttons are pushed
 package logbook_comprehensive;
 
 import DB_ALE.ConnectionFactory;
@@ -51,6 +53,7 @@ public class Controller_cc implements  Initializable{
         ins.setCellValueFactory(new PropertyValueFactory<Today_comp,String>("ins"));
     }
 
+    //    The user can pick a date to load past values from
     public void pickDate(ActionEvent actionEvent) {
         LocalDate date = calendar.getValue();
         String chosen_day = String.valueOf(date);
@@ -64,6 +67,12 @@ public class Controller_cc implements  Initializable{
         Connection con = ConnectionFactory.getConnection();
         ObservableList<Today_comp> data1 =table.getItems();
         try {
+//            The row of the user in the database table containing all patients and their details
+//            is retrieved by querying the table from their email.
+//            Their email is retrieved from the last place it was saved which can be one of two options.
+//            If the user is registering from the first time, the place is the registration controller.
+//            In this case Controller_mp_v1.email1 is null.
+//            If they are logging in, the place is the login controller.
             String login_email = Controller_mp_v1.email1;
             if (isNullOrEmpty((login_email))){
                 login_email = Registration_Controller.emailReg;
@@ -72,6 +81,7 @@ public class Controller_cc implements  Initializable{
             String SQL = "Select * from "+login_names.get(1)+" where date like '"+day+"'";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
+//            Looping through the result set - it returns all data values recorded in the database for today
             while (rs.next()) {
                 Usermaster cm = new Usermaster();
                 cm.gluc.set(rs.getInt("glucose"));
@@ -95,12 +105,14 @@ public class Controller_cc implements  Initializable{
 
     }
 
+    //    Checking that a string is null or empty
     public static boolean isNullOrEmpty(String str) {
-        if(str != null && !str.isEmpty())
+        if (str != null && !str.isEmpty())
             return false;
         return true;
     }
 
+    //    Finds the logbook table of a user given their email
     public ArrayList<String> findTable(String login_email) {
 
         Connection conn = null;
@@ -110,24 +122,19 @@ public class Controller_cc implements  Initializable{
         try {
 
             conn = ConnectionFactory.getConnection();
-            //stmt = conn.createStatement();
 
-            System.out.println("YOU in try catch");
             stmt = conn.createStatement();
+
             String sql = "Select name FROM patientsfulldetails Where email like '" + login_email + "'";
-            System.out.println("RS Sucksss");
+
             ResultSet rs = stmt.executeQuery(sql);
-            System.out.println("uhm");
+
             ArrayList<String> names = new ArrayList<String>();
 
-            System.out.println("~~~~BURNA BOYYYY~~~~~");
-            System.out.println(sql);
             while (rs.next()) {
-                System.out.println(rs.getString("name"));
-                //String name = rs.getString("name").replaceAll("\\s+", "");
+
                 names.add(rs.getString("name"));
                 names.add(rs.getString("name").replaceAll("\\s+", ""));
-                System.out.println(names);
                 return names;
             }
             rs.close();
@@ -138,13 +145,9 @@ public class Controller_cc implements  Initializable{
         return null;
     }
 
-    // add new values to the table
-
-
-    // plot
+    // plotting recommended and today's values
     public void plotToday(ActionEvent actionEvent)
     {
-        System.out.println("plot");
 
         XYChart.Series<String, Number> series1= new XYChart.Series<>();
         XYChart.Series<String, Number> series= new XYChart.Series<>();
@@ -179,10 +182,9 @@ public class Controller_cc implements  Initializable{
 
         lineChart.getData().add(series);
         lineChart.getData().add(series1);
-
-
     }
 
+    //    going to the logbook page from the calendar
     public void logbook(javafx.event.ActionEvent actionEvent) throws Exception
     {
 
@@ -194,7 +196,6 @@ public class Controller_cc implements  Initializable{
             }
             Patient p = PatientDAO.getDetailsForEmail(login_email);
             if (RegistrationBackend.logbookType(p).equals("simple")) {
-                System.out.println("simple");
                 URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                 Parent root2 = FXMLLoader.load(url2);
                 Stage window2 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -203,7 +204,6 @@ public class Controller_cc implements  Initializable{
                 window2.show();
             }
             else if (RegistrationBackend.logbookType(p).equals("comprehensive")){
-                System.out.println("comprehensive");
                 URL url2 = new File("src\\main\\java\\lb_v2.fxml").toURI().toURL();
                 Parent root3 = FXMLLoader.load(url2);
                 Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -214,7 +214,6 @@ public class Controller_cc implements  Initializable{
             }
 
             else if (RegistrationBackend.logbookType(p).equals("intensive")){
-                System.out.println("intensive");
                 URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
                 Parent root3 = FXMLLoader.load(url2);
                 Stage window3 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -223,8 +222,6 @@ public class Controller_cc implements  Initializable{
                 window3.show();
                 //nextPage("lb_v3.fxml", actionEvent, "Intensive Logbook Page");
             }
-
-
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -240,9 +237,6 @@ public class Controller_cc implements  Initializable{
         window2.setScene(new Scene(root2, 800, 600));
         window2.show();
     }
-
-
-
 
 }
 

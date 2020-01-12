@@ -1,3 +1,5 @@
+//Controller for the intensive logbook page
+//This specifies what actions to take when buttons are pushed
 package logbook_comprehensive;
 
 import javafx.collections.ObservableList;
@@ -69,10 +71,11 @@ public class Controller_lb2 implements Initializable {
     public void loadAdd(ActionEvent actionEvent)
     {
         System.out.println("load");
-        // load previous values from same from databse
+        // load previous values from same from database
         buildData();
     }
 
+    //    Finds the table name for the user's logbook
     public ArrayList<String> findTable(String login_email) {
 
         Connection conn = null;
@@ -82,20 +85,17 @@ public class Controller_lb2 implements Initializable {
         try {
 
             conn = DB_ALE.ConnectionFactory.getConnection();
-            //stmt = conn.createStatement();
 
-            System.out.println("YOU in try catch");
             stmt = conn.createStatement();
+
             String sql = "Select name FROM patientsfulldetails Where email like '" + login_email + "'";
-            System.out.println("RS Sucksss");
+
             ResultSet rs = stmt.executeQuery(sql);
             ArrayList<String> names = new ArrayList<String>();
-            System.out.println("uhm");
+
             while (rs.next()) {
-                System.out.println(rs.getString("name"));
                 names.add(rs.getString("name"));
                 names.add(rs.getString("name").replaceAll("\\s+", ""));
-                System.out.println(names);
                 return names;
             }
             rs.close();
@@ -106,9 +106,8 @@ public class Controller_lb2 implements Initializable {
         return null;
     }
 
-
+    //  Gets today's logbook values to be displayed
     public void buildData() {
-        //DB_ALE.ConnectionFactory objDbClass = new DB_ALE.ConnectionFactory();
         Connection con = DB_ALE.ConnectionFactory.getConnection();
         ObservableList<Today_comp> data1 =table.getItems();
 
@@ -147,6 +146,7 @@ public class Controller_lb2 implements Initializable {
     }
 
     // Function from https://dzone.com/articles/getting-current-date-time-in-java
+//    Getting today's date
     public String getDate(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -166,7 +166,7 @@ public class Controller_lb2 implements Initializable {
 
         ObservableList<Today_comp> items = table.getItems();
 
-        // add a different time of day value depending on cells filled in table
+        // add a different time of day value depending on last cell filled in table
         String time="";
 
         if(items.isEmpty())
@@ -216,13 +216,13 @@ public class Controller_lb2 implements Initializable {
         System.out.println("entering insert to db");
         CompBackend.insertToDB(newToday, login_names, login_email);
     }
+
+    //    Checking that a string is null or empty
     public static boolean isNullOrEmpty(String str) {
         if(str != null && !str.isEmpty())
             return false;
         return true;
     }
-
-
 
 // editing table values
 
@@ -235,7 +235,7 @@ public class Controller_lb2 implements Initializable {
     }
 
 
-    // plot
+    // plotting today's values and recommended ones
     public void plotToday(ActionEvent actionEvent)
     {
         System.out.println("plot");
@@ -277,6 +277,7 @@ public class Controller_lb2 implements Initializable {
 
     }
 
+//    go to the profile page
     public void accessProfile(ActionEvent actionEvent) throws Exception
     {
         System.out.println("YOU going to profile");
@@ -289,6 +290,7 @@ public class Controller_lb2 implements Initializable {
         window1.show();
     }
 
+    //    go to the calendar page
     public void goCalendar(ActionEvent actionEvent) throws Exception
     {
         System.out.println("YOU going to past entries");

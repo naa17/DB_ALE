@@ -1,3 +1,4 @@
+//Patient data access object
 package logbook_comprehensive;
 
 import login.DAO;
@@ -9,6 +10,8 @@ import java.sql.Statement;
 
 public class PatientDAO implements DAO {
 
+
+    //creates a new Patient object from the database's details
         public static DB_ALE.Patient getDetailsForEmail(String email) {
             String sql = "Select * from patientsfulldetails where email like '%" +
                     email + "%'";

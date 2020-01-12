@@ -1,3 +1,4 @@
+//Today class for the comprehensive method - contains all data that is needed for this logbook type
 package logbook_comprehensive;
 
 import javafx.beans.property.SimpleStringProperty;

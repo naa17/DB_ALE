@@ -157,7 +157,7 @@ public class Controller_ins implements Initializable {
     }
 
     // Function from https://dzone.com/articles/getting-current-date-time-in-java
-//    GEtting today's date
+//    Getting today's date
     public static String getDate(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -283,10 +283,9 @@ public class Controller_ins implements Initializable {
     }
 
 
-    // plotting the values ad recommended ones
+    // plotting today's values and recommended ones
     public void plotToday(ActionEvent actionEvent)
     {
-        System.out.println("plot");
 
         XYChart.Series<String, Number> series1= new XYChart.Series<>();
         XYChart.Series<String, Number> series= new XYChart.Series<>();

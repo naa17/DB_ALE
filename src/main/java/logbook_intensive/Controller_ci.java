@@ -66,7 +66,7 @@ public class Controller_ci implements  Initializable{
         buildData(chosen_day);
     }
 
-//
+
     public void buildData(String day) {
 
         Connection con = ConnectionFactory.getConnection();
