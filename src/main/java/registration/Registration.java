@@ -1,3 +1,4 @@
+//Registration page. Specifies the path of the registration fxml file.
 package registration;
 
 import javafx.application.Application;

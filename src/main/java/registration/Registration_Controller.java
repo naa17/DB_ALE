@@ -1,3 +1,5 @@
+//Registration Controller
+//Specifies actions of page buttons.
 package registration;
 import logbook_comprehensive.PatientDAO;
 import javafx.event.ActionEvent;
@@ -42,6 +44,7 @@ public class Registration_Controller {
 
     public static String emailReg;
 
+//    Registration submit button action: registers the patient into the database (table patientsfulldetails), and creates their logbook table
     @FXML
     private void SubmitDetails(ActionEvent event) throws IOException, SQLException {
         event.consume();
@@ -56,10 +59,10 @@ public class Registration_Controller {
         emailReg = p.getEmail();
 
         for (int i = 0; i < patientDetails.size(); i++) {
-            System.out.println(patientDetails.get(i));
 
+//            Checking that the registration text fields are filled
             if (patientDetails.get(i).isEmpty()) {
-                System.out.println("Please fill in all values and submit again");
+//                System.out.println("Please fill in all values and submit again");
                 filled = 0;
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Warning Dialog");
@@ -72,20 +75,19 @@ public class Registration_Controller {
 
         }
 
-
+//      If the text fields are filled, and the email addresses (for doctor, and patient) are of correct email syntax
         if (filled == 1 && isValidEmailAddress(email.getText()) && isValidEmailAddress(doctorContact.getText())) {
-            System.out.println("ready to get rollinnn");
-            //String name_no_spaces = patient_Name.replaceAll("\\s+", "");
-            //System.out.println(name_no_spaces);
-            if (RegistrationBackend.regCheckEmailIsUnique(patientDetails.get(2))){
-                RegistrationBackend.createLogbook(p);
-                RegistrationBackend.registerPatient(p);
-                System.out.println("we rollinnn");
 
+//            Checking that that the patient email is uniqua, a.k.a not yet registered on the database
+            if (RegistrationBackend.regCheckEmailIsUnique(patientDetails.get(2))){
+//                If it is unique
+                RegistrationBackend.createLogbook(p); //a corresponding logbooktable  is created int the database
+                RegistrationBackend.registerPatient(p); //the patient is registered on the database
+
+//                Redirecting to corresponding next page: Logbook page
                 try {
                     DB_ALE.Patient p1 = PatientDAO.getDetailsForEmail(email.getText());
                     if (RegistrationBackend.logbookType(p1).equals("simple")) {
-                        System.out.println("simple");
                         URL url2 = new File("src\\main\\java\\lb_v1_2.fxml").toURI().toURL();
                         Parent root2 = FXMLLoader.load(url2);
                         Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -102,7 +104,6 @@ public class Registration_Controller {
                         window3.setScene(new Scene(root3, 800, 600));
                         window3.show();
                     }
-
                     if (RegistrationBackend.logbookType(p).equals("intensive")){
                         System.out.println("intensive");
                         URL url2 = new File("src\\main\\java\\lb_v3.fxml").toURI().toURL();
@@ -114,19 +115,17 @@ public class Registration_Controller {
                     }
 
                 }catch(Exception e){
-                    e.printStackTrace();
-                    //System.out.println("JUPP NOT VORWKKING");    // prints standard error
+                    e.printStackTrace();// prints standard error
                 }
             }
-;
-
-
         } else if(!isValidEmailAddress(email.getText())|| !isValidEmailAddress(doctorContact.getText())){
+//            The email address syntax is invalid
             showAlert("Invalid email address","The email you entered is not a valid email");
 
         }
     }
 
+//    Creating a string list containing all patient details from the registration page
     private List<String> getPatientDetails() {
         List<String> patientDetails = new ArrayList<String>();
         patientDetails.add(PatientName.getText());

@@ -1,3 +1,4 @@
+//Registration page methods
 package registration;
 
 import javafx.scene.control.Alert;
@@ -9,9 +10,10 @@ public class RegistrationBackend implements DAO {
     public RegistrationBackend() {
     }
 
-    //Input: user entered email from the registration page
-    //Output: Boolean. False if the email already exists
-    //True if email has not yet been registered --> Can proceed to be registered.
+//    Checking that the patient email is unique
+//    Input: user entered email from the registration page
+//    Output: Boolean. False if the email already exists
+//    True if email has not yet been registered --> Can proceed to be registered.
     public static boolean regCheckEmailIsUnique(String inputEmail) throws SQLException {
 
         Connection conn = DB_ALE.ConnectionFactory.getConnection();
@@ -25,7 +27,6 @@ public class RegistrationBackend implements DAO {
         try {
             if (rs.next()) {
                 //if enters here, email does already exist in
-//                System.out.println("regBackend method: Email must be unique. This email is already registered.");
                 showAlert("Email not unique","This email is already registered. Please try with another email account.");
                 return false;
             }
@@ -38,17 +39,14 @@ public class RegistrationBackend implements DAO {
         return true;
     }
 
+    //This method instantiates the SQL strings needed to be executed to create the logbook table
     //Input: Object from Patient class
     //Void method: no output.
-    //This method creates the corresponding logbook depending on details
-    //Only does it for simple logbook for now
     public static void createLogbook(DB_ALE.Patient p) {
 
-        System.out.println(p.getName());
         //Deleting spaces from 'name surname' pair
         String name1 = p.getName();
         String name = name1.replaceAll("\\s+", "");
-        System.out.println(p.getName());
 
         //Simple Logbook
         if (logbookType(p).equals("simple")) {
@@ -91,18 +89,18 @@ public class RegistrationBackend implements DAO {
         }
     }
 
+//    This method creates the corresponding logbook depending on insulin details
     public static void createLogbookType(String sql, String name){
         Connection conn = null;
         Statement stmt = null;
 
         try {
-
+//            Creating a connection
             conn = DB_ALE.ConnectionFactory.getConnection();
+//            Creating a statement
             stmt = conn.createStatement();
-
+//            Executing the SQL string
             stmt.executeUpdate(sql);
-
-            System.out.println("Table created");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -140,12 +138,13 @@ public class RegistrationBackend implements DAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println("User registered");
+//        System.out.println("User registered");
     }
 
+//    Prepares the SQL statement to be executed
     private static PreparedStatement prepStat(Connection conn, PreparedStatement preparedStatement, DB_ALE.Patient p, String INSERT_USER_SQL) throws SQLException {
         preparedStatement = conn.prepareStatement(INSERT_USER_SQL);
-        preparedStatement.setString(1, p.getName());//p.getName());
+        preparedStatement.setString(1, p.getName());
         preparedStatement.setString(2, p.getContact());
         preparedStatement.setString(3, p.getEmail());
         preparedStatement.setString(4, p.getPassword());
