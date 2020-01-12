@@ -31,9 +31,9 @@ import java.util.ResourceBundle;
 public class Controller_lb_v1_2 implements Initializable {
 
     @FXML
-    public TableView<Today_v1_2> table;
-    public TableColumn<Today_v1_2, String> Gluc;
-    public TableColumn<Today_v1_2, String> Carb;
+    public TableView<Today_simple> table;
+    public TableColumn<Today_simple, String> Gluc;
+    public TableColumn<Today_simple, String> Carb;
     public TextField Gluctxt;
     public TextField Carbtxt;
     public Button btn;
@@ -47,8 +47,8 @@ public class Controller_lb_v1_2 implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Gluc.setCellValueFactory(new PropertyValueFactory<Today_v1_2, String>("Gluc"));
-        Carb.setCellValueFactory(new PropertyValueFactory<Today_v1_2, String>("Carb"));
+        Gluc.setCellValueFactory(new PropertyValueFactory<Today_simple, String>("Gluc"));
+        Carb.setCellValueFactory(new PropertyValueFactory<Today_simple, String>("Carb"));
         //inputTable.setItems(data);
         table.setEditable(true);
         Gluc.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -110,7 +110,7 @@ public class Controller_lb_v1_2 implements Initializable {
     public void buildData() {
         //ConnectionFactory objDbClass = new ConnectionFactory();
         Connection con = ConnectionFactory_s.getConnection();
-        ObservableList<Today_v1_2> data1 =table.getItems();
+        ObservableList<Today_simple> data1 =table.getItems();
         try {
             String login_email = Controller_mp_v1.email1;
             System.out.println(login_email);
@@ -127,7 +127,7 @@ public class Controller_lb_v1_2 implements Initializable {
                 cm.carbs.set(rs.getInt("carbs"));
                 cm.time.set(rs.getString("timesofday"));
 
-                Today_v1_2 today = new Today_v1_2(String.valueOf(cm.getGluc()), String.valueOf(cm.getCarbs()),cm.getTime(), getDate());
+                Today_simple today = new Today_simple(String.valueOf(cm.getGluc()), String.valueOf(cm.getCarbs()),cm.getTime(), getDate());
 
                 // class today instantiated with strings from database
                 data1.add(today);
@@ -158,7 +158,7 @@ public void btnAdd(ActionEvent actionEvent) throws Exception {
     // If 2nd row - postbreakfast
     // etc
 
-    ObservableList<Today_v1_2> items = table.getItems();
+    ObservableList<Today_simple> items = table.getItems();
 
     // add a different time of day value depending on cells filled in table
 
@@ -199,7 +199,7 @@ public void btnAdd(ActionEvent actionEvent) throws Exception {
         time="bedtime";
     }
 
-    Today_v1_2 newToday = new Today_v1_2(Gluctxt.getText(), Carbtxt.getText(), time, getDate());
+    Today_simple newToday = new Today_simple(Gluctxt.getText(), Carbtxt.getText(), time, getDate());
     table.getItems().add(newToday);
 
     String login_email = Controller_mp_v1.email1;
@@ -220,9 +220,9 @@ public void btnAdd(ActionEvent actionEvent) throws Exception {
     }
 
 // editing table values
-    public void EditValue(TableColumn.CellEditEvent<Today_v1_2, String> TodayStringCellEditEvent) {
+    public void EditValue(TableColumn.CellEditEvent<Today_simple, String> TodayStringCellEditEvent) {
 
-        Today_v1_2 Today = table.getSelectionModel().getSelectedItem();
+        Today_simple Today = table.getSelectionModel().getSelectedItem();
         Today.setGluc(TodayStringCellEditEvent.getNewValue());
         Today.setCarb(TodayStringCellEditEvent.getNewValue());
       }
@@ -241,7 +241,7 @@ public void btnAdd(ActionEvent actionEvent) throws Exception {
         series1.setName("Recommended values");
         series.setName("Today values");
 
-        ObservableList<Today_v1_2> items = table.getItems();
+        ObservableList<Today_simple> items = table.getItems();
         series1.getData().add(new XYChart.Data<>("8 am",90));
         series1.getData().add(new XYChart.Data<>("9 am",180));
         series1.getData().add(new XYChart.Data<>("12 am",100));
@@ -284,6 +284,18 @@ public void btnAdd(ActionEvent actionEvent) throws Exception {
         window1.show();
 
 
+    }
+
+    public void goCalendar(ActionEvent actionEvent) throws Exception
+    {
+        System.out.println("YOU going to past entries");
+        URL urlp = new File("src\\main\\java\\calendar_s.fxml").toURI().toURL();
+        Parent root1 = FXMLLoader.load((urlp));
+        System.out.println("YEAH YOU HERE");
+        Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window1.setTitle("Past entries");
+        window1.setScene(new Scene(root1, 800, 800));
+        window1.show();
     }
 
 }

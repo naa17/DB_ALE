@@ -357,6 +357,18 @@ public class Controller_ins implements Initializable {
         window1.show();
     }
 
+    public void goCalendar(ActionEvent actionEvent) throws Exception
+    {
+        System.out.println("YOU going to past entries");
+        URL urlp = new File("src\\main\\java\\calendar_i.fxml").toURI().toURL();
+        Parent root1 = FXMLLoader.load((urlp));
+        System.out.println("YEAH YOU HERE");
+        Stage window1 = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window1.setTitle("Past entries");
+        window1.setScene(new Scene(root1, 1000, 1000));
+        window1.show();
+    }
+
 
 }
 
