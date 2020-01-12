@@ -1,6 +1,7 @@
 
 package alertsystem;
 
+import DB_ALE.ConnectionFactory;
 import org.junit.Test;
 
 import javax.mail.Session;

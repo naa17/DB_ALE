@@ -74,7 +74,7 @@ public class JavaMail {
     }
 
     public static List<Double> extractGlucoseList(String str) throws SQLException {
-        Connection conn = ConnectionFactory.getConnection();
+        Connection conn = DB_ALE.ConnectionFactory.getConnection();
         //Create the sql string selecting the post breakfast, lunch and dinner BGC for the last entry
 
         Statement s = conn.createStatement();
@@ -92,7 +92,7 @@ public class JavaMail {
     }
 
     public static ArrayList<String> extractDoctor(String str) throws SQLException {
-        Connection conn = ConnectionFactory.getConnection();
+        Connection conn = DB_ALE.ConnectionFactory.getConnection();
         //Create the sql string selecting the post breakfast, lunch and dinner BGC for the last entry
 
         Statement s = conn.createStatement();
