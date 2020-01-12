@@ -13,6 +13,7 @@ import java.util.List;
 
 public class JavaMail {
 
+    //Code gotten from: https://www.youtube.com/watch?v=WKkDgLvU0m0
     public static EmailSender emailsender = new EmailSender();
 
     //This is the main function that is run
@@ -114,8 +115,8 @@ public class JavaMail {
     {
         //Setting up values
         int BGC_Average_upper_post_b_glu, BGC_Average_lower_post_b_glu, count;
-        BGC_Average_upper_post_b_glu = 5;
-        BGC_Average_lower_post_b_glu = 9;
+        BGC_Average_upper_post_b_glu = 165;
+        BGC_Average_lower_post_b_glu = 95;
         count = 0;
 
         for(int i = 0; i < glucose.size(); i++)

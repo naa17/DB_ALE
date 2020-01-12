@@ -141,6 +141,7 @@ public class Registration_Controller {
         return patientDetails;
     }
 
+    //The below function was gotten from: https://stackoverflow.com/questions/624581/what-is-the-best-java-email-address-validation-method
     //This function checks to see if the recipient's email address is valid or not
     public static boolean isValidEmailAddress(String email) {
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
