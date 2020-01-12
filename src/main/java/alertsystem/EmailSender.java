@@ -23,15 +23,15 @@ public class EmailSender
         sess = doPasswordAuthentication(myAccountEmail, password);
         System.out.println(sess);
         Message message = prepareMessage(sess, myAccountEmail, recipient, recipient_name, patientName);
-        System.out.println("I am entering the Transport.send(message) section...");
+//        System.out.println("I am entering the Transport.send(message) section...");
         try{
             Transport.send(message);
             hasSent = true;
-            System.out.println("Message sent successfully!");
+//            System.out.println("Message sent successfully!");
 
         } catch(MessagingException e){
             hasSent = false;
-            System.out.println("Error yo");
+//            System.out.println("Error in EmailSender");
         }
 
         return hasSent;

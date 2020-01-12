@@ -1,3 +1,4 @@
+
 package alertsystem;
 
 import javafx.scene.control.Alert;
@@ -47,7 +48,6 @@ public class JavaMail {
             header = "Doctor alerted!";
             content = "Your glucose values are out of bounds - your doctor has been alerted.";
             showAlert(header, content);
-            System.out.println(content);
         }
     }
 
@@ -59,7 +59,7 @@ public class JavaMail {
 
         return (formatter.format(today));
     }
-// end of reference
+    // end of reference
 
 
     //This function sends an email if it needs to be sent and the email address is valid
@@ -75,6 +75,7 @@ public class JavaMail {
         return hasSent;
     }
 
+//    get all existing glucose values in the database for the current date
     public static List<Double> extractGlucoseList(String str) throws SQLException {
         Connection conn = DB_ALE.ConnectionFactory.getConnection();
         //Create the sql string selecting the post breakfast, lunch and dinner BGC for the last entry
@@ -89,7 +90,6 @@ public class JavaMail {
             tempglu = Double.valueOf(rs.getInt("glucose"));
             postglucose.add(tempglu); //This is glucose
         }
-        System.out.println("postglucose values: " + postglucose);
         return postglucose;
     }
 
@@ -107,7 +107,6 @@ public class JavaMail {
             doctor.add(rs.getString(1)); //This is email doctor
             doctor.add(rs.getString(2)); //This is name doctor
         }
-        System.out.println("doctor list: " + doctor);
         return doctor;
     }
 
