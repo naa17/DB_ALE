@@ -32,11 +32,11 @@ Bugs related to user input need to be fixed.
 We use GitHub for versioning. For the versions available, see the tags and commits on this repository.
 
 ## Authors
-•	Noa Appelbom – front-end 
-•	Krithika Balaji – alert system + unit testing
-•	María de la paz Cardona Sánchez – front-end
-•	Marcella Iswanto – back-end
-•	Sarah Kratz-Wang – GitHub + deployment
+* Noa Appelbom – front-end 
+* Krithika Balaji – alert system + unit testing
+* María de la paz Cardona Sánchez – front-end
+* Marcella Iswanto – back-end
+* Sarah Kratz-Wang – GitHub + deployment
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
